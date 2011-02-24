@@ -36,7 +36,6 @@ class ContactInfo extends Entity {
     if ($this->contactInfoFields.length > 0 ){
       $this->xml_obj->appendChild(new DOMElement('address'),$this->address );
     }
-
     $this->xml_obj->appendChild(new DOMElement('instituation'),$this->instituation );
     $this->xml_obj->appendChild(new DOMElement('city'),$this->city );
     $this->xml_obj->appendChild(new DOMElement('administrativeArea'),$this->administrativeArea );
