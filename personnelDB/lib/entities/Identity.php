@@ -1,10 +1,9 @@
 <?php
 
 namespace PersonnelDB;
+use \DOMElement as DOMElement;
 
-// Include abstract parent class
 require_once('Entity.php');
-
 
 class Identity extends Entity {
 
@@ -19,7 +18,7 @@ class Identity extends Entity {
     parent::__construct($inf);
 
     // Populate aliases
-    $this->aliases = $this->storefront->IdentityStore->getAliases($this->personID);
+    $this->aliases = $this->storeFront->IdentityStore->getAliases($this->personID);
   }
 
   public function destruct() {
@@ -35,7 +34,7 @@ class Identity extends Entity {
 
   public function to_xml() {
     $this->xml_obj = new DOMElement('identity');
-    $this->xml_obj->appendChild(new DOMElement('prefix'),$this->prefix );
+    $this->xml_obj->appendChild(new DOMElement('prefix' ,$this->prefix ));
     $this->xml_obj->appendChild(new DOMElement('firstName'),$this->firstName );
     $this->xml_obj->appendChild(new DOMElement('middleName'),$this->middleName );
     $this->xml_obj->appendChild(new DOMElement('lastName'),$this->lastName );
@@ -49,6 +48,4 @@ class Identity extends Entity {
   }
 
   public function from_xml() {}
-  }
 }
-
