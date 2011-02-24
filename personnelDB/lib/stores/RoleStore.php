@@ -17,17 +17,25 @@ class RoleStore extends Store {
 
   /* ACCESS METHODS */
 
-  public function getEmpty() { }
+  // Returns a new role
+  public function getEmpty() { 
+    return new Role();
+  }
 
-  public function getAll() { }
+  // Returns an array of all the roles in the database
+  public function getAll() {
+    return $this->makeEntityArray('Role', ROLE_GETALL);
+  }
 
-  public function getById() { }
-
-  public function getByFilter() { }
-
+  // Returns a role given it's id
+  public function getById($id) { 
+    $list = $this->makeEntityArray('Role', ROLE_GETBYID, array($id));
+    return isset($list[0]) ? $list[0] : null;
+  }
 
   /* UPDATE METHODS */
 
-  public function put() { }
+    public function put() {
+    }
 
 }
