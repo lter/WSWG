@@ -47,6 +47,7 @@ class Identity extends Entity {
     if (aliases.length > 0){
       $this->xml_obj->appendChild(new DOMElement('aliases'),$this->aliases );
     }
+    return $this->xml_obj;
   }
 
   public function from_xml() {}

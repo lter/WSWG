@@ -33,6 +33,8 @@ class Role extends Entity {
     $this->xml_obj->appendChild(new DOMElement('beginDate'),$this->beginDate );
     $this->xml_obj->appendChild(new DOMElement('endDate'),$this->endDate );
     $this->xml_obj->appendChild(new DOMElement('isActive'),$this->isActive );
+
+    return $this->xml_obj;
   }
 
   public function from_xml() {
