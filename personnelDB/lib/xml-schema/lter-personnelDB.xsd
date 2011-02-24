@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="eml://ecoinformatics.org/lter-personnelDB-1.0.0"
+    targetNamespace="eml://ecoinformatics.org/lter-personnelDB-1.0.0">
+    <xs:annotation>
+        <xs:documentation>This schema defines a data exchange standard for the LTER personnel database. Each personnel document must include
+            one or more person elements describing the identity, roles and contact information for an individual associated with the LTER
+            Network. Copyright 2011 Long Term Ecological Research Network.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType name="textField">
+        <xs:annotation>
+            <xs:documentation>Custom data type definition for a 0-255 character string text field.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="255"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="emailAddress">
+        <xs:annotation>
+            <xs:documentation>Custom data type definition for an email address.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@]+@[^\.]+\..+"/>
+        </xs:restriction>
+    </xs:simpleType>     
+    <xs:element name="personnel">
+        <xs:annotation>
+            <xs:documentation>This is the root element of an lter-personnelDB document.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>The person element contains the database identifier, identity information, roles and contact
+                            information for one or more individuals in the LTER Network. At least one person element is
+                            required.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="personID" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>The personID element contains an unsigned integer representing the database identifier
+                                        for a personnel record in the LTER Database. This is a required element. When preparing data for
+                                        submission specify a value of 0 to indicate a new entry or a non-zero entry to indicate an existing
+                                        entry to update.</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="0"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="identity" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>The identity element includes the primary identification information for an individual,
+                                    including name, title and primary email address. Only 1 set of identity information is permitted per
+                                    person element.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="prefix" type="textField" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>The prefix element contains a name prefix or salutation (e.g. Dr., Mr. or Ms.). This element is optional.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="firstName" type="textField" minOccurs="1" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>The firstName element contains the first or given name of the person. This element is required.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="middleName" type="textField" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>The middleName element contains the middle name of  the person. This element is optional.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="lastName" type="textField" minOccurs="1" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>The lastName element contains the last or surname of the person. This element is required.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="suffix" type="textField" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>The suffix element contains the name suffix of the person (e.g. Jr., III). This element is optional.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="preferredName" type="textField" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>The preferredName element contains the nickname or other preferred variation of the person's full name.
+                                                This element is optional.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="title" type="textField" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>The title element contains the institutional or organizational title of the person (e.g. Assistant Professor, 
+                                                Institute of Applied Ecology Director). This element is optional.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="primaryEmail" type="emailAddress" minOccurs="1" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>The primaryEmail element contains the primary contact email for use in LTER Network official
+                                                communication. The LTER email alias will reference this address. This is a required element.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="optOut" type="xs:boolean" minOccurs="1" maxOccurs="1" default="0">
+                                            <xs:annotation>
+                                                <xs:documentation>The optOut element contains a boolean value specifying whether contact information 
+                                                other than name should be omitted from the personnel directory list on the LTER web site. Acceptable values
+                                                are true, false, 1 (i.e. true) and 0 (i.e. false). This is a required element with a default value of 0 (false).</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="nameAlias" type="textField" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>The nameAlias element contains alternative full names under which the person is or has been
+                                                known for use in directory searches (e.g. name prior to marriage, divorce or name change). This is an optional element
+                                                and it can be repeated as necessary.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="roleList" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>The roleList element contains descriptions of LTER Network roles held by the person at one or more LTER sites. 
+                                    This element is optional, but it cannot be repeated more than once and if used then it must include one or more role elements.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="role" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>The role element contains elements describing a LTER Network role held by the person. This is a required
+                                                element that can be repeated as many times as appropriate.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="roleID" minOccurs="1" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The roleID element contains an unsigned integer representing the personnel database ID
+                                                            of the role record for a person. This is a required element that cannot be repeated. For new roles to be added to the
+                                                            database, use a roleID of 0.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:integer">
+                                                                <xs:minInclusive value="0"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="roleType" type="textField" minOccurs="1" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The roleType element contains a role type from a controlled vocabularly of NSF roles or
+                                                            local roles defined in the LTER Personnel Database. This is a required element that cannot be repeated.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="siteAcronym" minOccurs="1" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The siteAcronym element contains a 3-letter acronym specifying the LTER site at which the
+                                                            person holds this role. For network-wide roles not associated with a specific site, specify NWK siteAcronym.
+                                                            This is a required element that cannot be repeated.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:length value="3"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="beginDate" type="xs:date" minOccurs="0" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The beginDate element contains the beginning date of the person's participation
+                                                            in the role. This element is optional.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="endDate" type="xs:date" minOccurs="0" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The endDate element contains the ending date of the person's participation
+                                                                in the role. This element is optional.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="isActive" type="xs:boolean" minOccurs="1" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The isActive element contains a boolean value indicating whether or not the person is
+                                                             currently active in the role. Possible values are true, false, 1 (i.e. true) or 0 (i.e. false). This element is required, 
+                                                             and note that only one combination of roleType and siteAcronym should have isActive of true for the same person.
+                                                             </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="type" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>The type attribute specified the type or scope of role. Allowed values are "nsf" for NSF roles and "local"
+                                                        for other site-defined and network-wide roles in the Personnel Database.</xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:enumeration value="nsf"/>
+                                                            <xs:enumeration value="local"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="contactInfoList" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>The contactInfoList element contains one or more sets of contact information for the person. This element
+                                    is optional, but if included cannot be repeated and must include at least one contactInfo element.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="contactInfo" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>The contactInfo element contains one set of contact information fields, including a descriptive
+                                                label element and isPrimary boolean element specifying which set of contact information should be used for 
+                                                official LTER communication.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="contactInfoID">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The contactInfoID element contains an unsigned integer representing the LTER Personnel Database ID 
+                                                            of the contact information record. This is a required element. For new sets of contact information, specify 0 for contactInfoID.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:integer">
+                                                                <xs:minInclusive value="0"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="label" type="textField" minOccurs="1" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The label element contains a descriptive text label describing the set of contact information for the 
+                                                            person (e.g. Primary institutional contact information, Field station address during the summer). This label  is intended
+                                                            to convey information to end-users of the LTER directory regarding which contact information is appropriate to use
+                                                            under different circumstances. This is a required element.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="isPrimary" type="xs:boolean" minOccurs="1" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The isPrimary element contains a boolean value specifying whether the contact information
+                                                            represents the primary address of the person for official LTER communication. Possible values are true, false,
+                                                            1 (i.e. true) and 0 (i.e. false). This is a required element.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="address" type="textField" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The address element contains the delivery address for the person (e.g. street address). This
+                                                            element is optional and can be repeated for multiple address lines.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="institution" type="textField" minOccurs="0" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The institution element contains the name of the institution or organization. This element is optional.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="city" type="textField" minOccurs="0" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The city element contains the name of the city. This element is optional.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="administrativeArea" type="textField" minOccurs="0" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The administativeArea contains the name of the state, province or other adminstrative area.
+                                                            This element is optional.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="postalCode" type="textField" minOccurs="0" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The postalCode element contains the Zipcode or other postal code for the address. 
+                                                            This element is optional.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="country" type="textField" minOccurs="0" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The country element contains the name of the country in which the person lives. This element is optional.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="phone" type="textField" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The phone element contains a voice phone or pager number at which the person can be reached. This is an optional
+                                                            element that can be repeated as many times as appropriate.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="fax" type="textField" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The fax contains the number of a fax (or facsimile) machine that can be used to send documents. This is an optional
+                                                                element that can be repeated as many times as appropriate.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="email" type="emailAddress" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The email element contains an electronic mail address at which the person can be reached. This is an optional
+                                                                element that can be repeated as many times as appropriate.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
