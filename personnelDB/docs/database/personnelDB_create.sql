@@ -9,17 +9,21 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 DROP TABLE IF EXISTS `person` ;
 
 CREATE  TABLE IF NOT EXISTS `person` (
-  `personID` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `prefix` VARCHAR(255) NULL ,
-  `firstName` VARCHAR(255) NULL ,
-  `middleName` VARCHAR(255) NULL ,
+  `personID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `prefix` VARCHAR(255) NULL DEFAULT NULL ,
+  `firstName` VARCHAR(255) NULL DEFAULT NULL ,
+  `middleName` VARCHAR(255) NULL DEFAULT NULL ,
   `lastName` VARCHAR(255) NOT NULL ,
-  `suffix` VARCHAR(255) NULL ,
-  `preferredName` VARCHAR(255) NULL ,
+  `suffix` VARCHAR(255) NULL DEFAULT NULL ,
+  `preferredName` VARCHAR(255) NULL DEFAULT NULL ,
   `primaryEmail` VARCHAR(255) NOT NULL ,
-  `optOut` BIT(1) NOT NULL DEFAULT 0 ,
+  `title` VARCHAR(255) NULL DEFAULT NULL ,
+  `optOut` BIT(1) NOT NULL DEFAULT b'0' ,
   PRIMARY KEY (`personID`) )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+AUTO_INCREMENT = 179
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -38,6 +42,7 @@ CREATE  TABLE IF NOT EXISTS `nameAlias` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
@@ -50,11 +55,13 @@ CREATE INDEX `fk_person_nameAlias` ON `nameAlias` (`personID` ASC) ;
 DROP TABLE IF EXISTS `nsfRoleType` ;
 
 CREATE  TABLE IF NOT EXISTS `nsfRoleType` (
-  `nsfRoleTypeID` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `nsfRoleType` VARCHAR(255) NOT NULL ,
-  `isRepeatable` BIT(1) NOT NULL DEFAULT 1 ,
+  `nsfRoleTypeID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `roleType` VARCHAR(255) NOT NULL ,
+  `isRepeatable` BIT(1) NOT NULL DEFAULT b'1' ,
   PRIMARY KEY (`nsfRoleTypeID`) )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -63,12 +70,15 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `site` ;
 
 CREATE  TABLE IF NOT EXISTS `site` (
-  `siteID` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `siteID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `site` VARCHAR(255) NOT NULL ,
   `siteAcronym` CHAR(3) NOT NULL ,
-  `notificationEmail` VARCHAR(255) NULL ,
+  `notificationEmail` VARCHAR(255) NULL DEFAULT NULL ,
   PRIMARY KEY (`siteID`) )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+AUTO_INCREMENT = 341
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -79,8 +89,8 @@ DROP TABLE IF EXISTS `localRoleType` ;
 CREATE  TABLE IF NOT EXISTS `localRoleType` (
   `localRoleTypeID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `scope` INT(10) UNSIGNED NOT NULL ,
-  `localRoleType` VARCHAR(255) NOT NULL ,
-  `isRepeatable` BIT(1) NOT NULL DEFAULT 1 ,
+  `roleType` VARCHAR(255) NOT NULL ,
+  `isRepeatable` BIT(1) NOT NULL DEFAULT b'1' ,
   PRIMARY KEY (`localRoleTypeID`, `scope`) ,
   CONSTRAINT `fk_site_localRoleType`
     FOREIGN KEY (`scope` )
@@ -100,17 +110,19 @@ CREATE INDEX `fk_site_localRoleType` ON `localRoleType` (`scope` ASC) ;
 DROP TABLE IF EXISTS `nsfRole` ;
 
 CREATE  TABLE IF NOT EXISTS `nsfRole` (
-  `nsfRoleID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `roleID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `personID` INT(10) UNSIGNED NOT NULL ,
-  `nsfRoleTypeID` INT(10) UNSIGNED NOT NULL ,
+  `roleTypeID` INT(10) UNSIGNED NOT NULL ,
   `siteID` INT(10) UNSIGNED NOT NULL ,
   `beginDate` DATE NULL DEFAULT NULL ,
   `endDate` DATE NULL DEFAULT NULL ,
-  `isActive` BIT(1) NOT NULL DEFAULT 1 ,
-  PRIMARY KEY (`nsfRoleID`, `personID`, `nsfRoleTypeID`, `siteID`) ,
+  `isActive` BIT(1) NOT NULL DEFAULT b'1' ,
+  PRIMARY KEY (`roleID`, `personID`, `roleTypeID`, `siteID`) ,
   CONSTRAINT `fk_nsfRoleType_nsfRole`
-    FOREIGN KEY (`nsfRoleTypeID` )
-    REFERENCES `nsfRoleType` (`nsfRoleTypeID` ),
+    FOREIGN KEY (`roleTypeID` )
+    REFERENCES `nsfRoleType` (`nsfRoleTypeID` )
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
   CONSTRAINT `fk_person_nsfRole`
     FOREIGN KEY (`personID` )
     REFERENCES `person` (`personID` )
@@ -118,14 +130,16 @@ CREATE  TABLE IF NOT EXISTS `nsfRole` (
     ON UPDATE CASCADE,
   CONSTRAINT `fk_site_nsfRole`
     FOREIGN KEY (`siteID` )
-    REFERENCES `site` (`siteID` ))
+    REFERENCES `site` (`siteID` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
 CREATE INDEX `fk_person_nsfRole` ON `nsfRole` (`personID` ASC) ;
 
-CREATE INDEX `fk_nsfRoleType_nsfRole` ON `nsfRole` (`nsfRoleTypeID` ASC) ;
+CREATE INDEX `fk_nsfRoleType_nsfRole` ON `nsfRole` (`roleTypeID` ASC) ;
 
 CREATE INDEX `fk_site_nsfRole` ON `nsfRole` (`siteID` ASC) ;
 
@@ -136,17 +150,19 @@ CREATE INDEX `fk_site_nsfRole` ON `nsfRole` (`siteID` ASC) ;
 DROP TABLE IF EXISTS `localRole` ;
 
 CREATE  TABLE IF NOT EXISTS `localRole` (
-  `localRoleID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `roleID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `personID` INT(10) UNSIGNED NOT NULL ,
-  `localRoleTypeID` INT(10) UNSIGNED NOT NULL ,
+  `roleTypeID` INT(10) UNSIGNED NOT NULL ,
   `siteID` INT(10) UNSIGNED NOT NULL ,
   `beginDate` DATE NULL DEFAULT NULL ,
   `endDate` DATE NULL DEFAULT NULL ,
-  `isActive` BIT(1) NOT NULL DEFAULT 1 ,
-  PRIMARY KEY (`localRoleID`, `personID`, `localRoleTypeID`, `siteID`) ,
+  `isActive` BIT(1) NOT NULL DEFAULT b'1' ,
+  PRIMARY KEY (`roleID`, `personID`, `roleTypeID`, `siteID`) ,
   CONSTRAINT `fk_localRoleType_localRole`
-    FOREIGN KEY (`localRoleTypeID` )
-    REFERENCES `localRoleType` (`localRoleTypeID` ),
+    FOREIGN KEY (`roleTypeID` )
+    REFERENCES `localRoleType` (`localRoleTypeID` )
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
   CONSTRAINT `fk_person_localRole`
     FOREIGN KEY (`personID` )
     REFERENCES `person` (`personID` )
@@ -154,14 +170,16 @@ CREATE  TABLE IF NOT EXISTS `localRole` (
     ON UPDATE CASCADE,
   CONSTRAINT `fk_site_localRole`
     FOREIGN KEY (`siteID` )
-    REFERENCES `site` (`siteID` ))
+    REFERENCES `site` (`siteID` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
 CREATE INDEX `fk_person_localRole` ON `localRole` (`personID` ASC) ;
 
-CREATE INDEX `fk_localRoleType_localRole` ON `localRole` (`localRoleTypeID` ASC) ;
+CREATE INDEX `fk_localRoleType_localRole` ON `localRole` (`roleTypeID` ASC) ;
 
 CREATE INDEX `fk_site_localRole` ON `localRole` (`siteID` ASC) ;
 
@@ -176,10 +194,10 @@ CREATE  TABLE IF NOT EXISTS `contactInfo` (
   `personID` INT(10) UNSIGNED NOT NULL ,
   `siteID` INT(10) UNSIGNED NOT NULL ,
   `label` VARCHAR(255) NOT NULL ,
-  `isPrimary` BIT(1) NOT NULL DEFAULT 0 ,
+  `isPrimary` BIT(1) NOT NULL DEFAULT b'0' ,
   `beginDate` DATE NULL DEFAULT NULL ,
   `endDate` DATE NULL DEFAULT NULL ,
-  `isActive` BIT(1) NOT NULL DEFAULT 1 ,
+  `isActive` BIT(1) NOT NULL DEFAULT b'1' ,
   PRIMARY KEY (`contactInfoID`, `personID`, `siteID`) ,
   CONSTRAINT `fk_person_contactInfo`
     FOREIGN KEY (`personID` )
@@ -188,7 +206,9 @@ CREATE  TABLE IF NOT EXISTS `contactInfo` (
     ON UPDATE CASCADE,
   CONSTRAINT `fk_site_contactInfo`
     FOREIGN KEY (`siteID` )
-    REFERENCES `site` (`siteID` ))
+    REFERENCES `site` (`siteID` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
@@ -204,13 +224,16 @@ CREATE INDEX `fk_site_contactInfo` ON `contactInfo` (`siteID` ASC) ;
 DROP TABLE IF EXISTS `contactInfoFieldType` ;
 
 CREATE  TABLE IF NOT EXISTS `contactInfoFieldType` (
-  `contactInfoFieldTypeID` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `contactInfoFieldTypeID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `contactInfoFieldType` VARCHAR(255) NOT NULL ,
-  `isRepeatable` BIT(1) NOT NULL DEFAULT 1 ,
-  `validationExpression` VARCHAR(255) NULL ,
-  `emlType` VARCHAR(255) NULL ,
+  `isRepeatable` BIT(1) NOT NULL DEFAULT b'1' ,
+  `validationExpression` VARCHAR(255) NULL DEFAULT NULL ,
+  `emlType` VARCHAR(255) NULL DEFAULT NULL ,
   PRIMARY KEY (`contactInfoFieldTypeID`) )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+AUTO_INCREMENT = 27
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -227,7 +250,9 @@ CREATE  TABLE IF NOT EXISTS `contactInfoField` (
   PRIMARY KEY (`contactInfoFieldID`, `contactInfoID`, `contactInfoFieldTypeID`) ,
   CONSTRAINT `fk_contactInfoFieldType_contactInfoField`
     FOREIGN KEY (`contactInfoFieldTypeID` )
-    REFERENCES `contactInfoFieldType` (`contactInfoFieldTypeID` ),
+    REFERENCES `contactInfoFieldType` (`contactInfoFieldTypeID` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_contactInfo_contactInfoField`
     FOREIGN KEY (`contactInfoID` )
     REFERENCES `contactInfo` (`contactInfoID` )
