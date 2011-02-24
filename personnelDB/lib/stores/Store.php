@@ -12,7 +12,11 @@ abstract class Store {
 
   /* MEMBER DATA */
 
+  // Database connection
   protected $iDBConnection;
+
+  // List of available filters for this entity, populated in constructor
+  private $filterList = array();
 
 
   /* METHODS */
@@ -67,4 +71,47 @@ abstract class Store {
     return $ret;
   }
 
+  // Input: $class: class name used to instantiate objects
+  //	    $stub: SQL statement that will be modified and run
+  //	    $filters: array of filter/value pairs to be processed
+  // Return: An array of objects created by applying filter constraints to $stub
+  public function makeFilteredArray($class, $stub, $filters) {
+    $where = array();
+
+    // Create a nested array of constraints from filter/value pairs, throw
+    //  an exception if an unknown filter is found
+    foreach ($filters as $filter => $value) {
+      if (array_key_exists($filter, $this->filterList)) {
+	// Create array for this filter if needed
+	if (!array_key_exists($filter, $where))
+	  $where[$filter] = array();
+	
+	// For each DB field mapped to this filter, add a constraint
+	foreach ($this->filterList[$field] as $field)
+	  $where[$filter][] = array($field, $value);
+      } else {
+	throw new Exception("'$field' is not a valid Identity filter");
+      }
+    }
+
+    // Compile WHERE clause and append to query stub
+    $wherePieces = array();
+    $queryVars = array();
+    foreach ($where as $filter => $constraints) {
+      $subWherePieces = array();
+      foreach ($constraints as $constraint => $value) {
+	$subWherePieces = "$constraint = ?";
+	$queryVars = $value;
+      }
+
+      // Within a filter, constraints are ORed
+      $wherePieces[] = '('.implode(' OR ', $subWherePieces).')';
+    }
+
+    // Between filters, constraints are ANDed
+    $sql = empty($wherePieces) ? $stub : "$stub WHERE ".implode(' AND ', $wherePieces);
+
+    // Execute query and return an entity array
+    return $this->makeEntityArray($class, $sql, $queryVars);
+  }
 }

@@ -2,6 +2,18 @@
 
 namespace PersonnelDB;
 
+ini_set('include_path', '.:/Users/mkortz/Source/WSWG/share/lib');
+
+// Include stores
+include('stores/IdentityStore.php');
+
+// Include entities
+include('entities/Identity.php');
+
+// Include SQL
+include('SQL/IdentitySQL.php');
+
+
 class PersonnelDB {
 
   private static $storeFront;
@@ -27,32 +39,6 @@ class PersonnelDB {
     return self::$storeFront;
   }
 
-  // Input: $a, $b: Arrays to be intersected; array members must all be one class
-  // Return: An array containing the intersection between $a and $b
-  public function intersection($a, $b) {
-	return array_uintersect($a, $b, 'PersonnelDB::compare');
-  }
-
-  // Input: $a, $b: Arrays to be union; array members must all be one class
-  // Return: An array containing the union of $a and $b
-  public function union($a, $b) {
-	return array_merge($a, array_udiff($b, $a, 'PersonnelDB::compare'));
-  }
-
-  // Input: $a, $b: Enities to be compared
-  // Return: -1 if a < b, 1 if a > b, 0 if a==b
-  private static function compare($a, $b) {
-	if (get_class($a) != get_class($b)) {
-	  // Entities should not be compared if they are not the same type
-	  throw new Exception('Attempt to compare '.get_class($a).' to '.get_class($b));
-	} elseif ($a->uniqueId > $b->uniqueId) {
-	  return 1;
-	} elseif ($a->uniqueId < $b->uniqueId) {
-	  return -1;
-	} else {
-	  return 0;
-	}
-  }
 
   /* OVERLOADED METHODS */
 

@@ -2,7 +2,16 @@
 
 namespace PersonnelDB;
 
+// Include abstract parent class
+require_once('Entity.php');
+
+
 class Identity extends Entity {
+
+  /* MEMBER DATA */
+
+  private $aliases = array();
+
 
   /* METHODS */
 
