@@ -70,7 +70,7 @@ class iDBConnection {
 
   // Connect or throw an exception
   public function connect() {
-    $this->mysqli = new mysqli($this->host, $this->user, $this->pass, $this->name, $this->port);
+    $this->mysqli = new \mysqli($this->host, $this->user, $this->pass, $this->name, $this->port);
 
     if ($this->mysqli->connect_error) {
       // Save info and unset to avoid weirdness when disconnecting
