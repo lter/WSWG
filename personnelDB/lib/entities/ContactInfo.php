@@ -31,11 +31,12 @@ class ContactInfo extends Entity {
     $this->xml_obj->appendChild(new DOMElement('lable'),$this->lable );
     $this->xml_obj->appendChild(new DOMElement('isPrimary'),$this->isPrimary );
     $this->xml_obj->appendChild(new DOMElement('isActive'),$this->isActive );
-    
+
     // address
     if ($this->contactInfoFields.length > 0 ){
       $this->xml_obj->appendChild(new DOMElement('address'),$this->address );
     }
+
     $this->xml_obj->appendChild(new DOMElement('instituation'),$this->instituation );
     $this->xml_obj->appendChild(new DOMElement('city'),$this->city );
     $this->xml_obj->appendChild(new DOMElement('administrativeArea'),$this->administrativeArea );
