@@ -31,16 +31,31 @@ class ContactInfo extends Entity {
     $this->xml_obj->appendChild(new DOMElement('lable'),$this->lable );
     $this->xml_obj->appendChild(new DOMElement('isPrimary'),$this->isPrimary );
     $this->xml_obj->appendChild(new DOMElement('isActive'),$this->isActive );
+    
     // address
+    if ($this->contactInfoFields.length > 0 ){
+      $this->xml_obj->appendChild(new DOMElement('address'),$this->address );
+    }
     $this->xml_obj->appendChild(new DOMElement('instituation'),$this->instituation );
     $this->xml_obj->appendChild(new DOMElement('city'),$this->city );
     $this->xml_obj->appendChild(new DOMElement('administrativeArea'),$this->administrativeArea );
     $this->xml_obj->appendChild(new DOMElement('postalCode'),$this->postalCode );
     $this->xml_obj->appendChild(new DOMElement('country'),$this->country );
-    // phone
-    // fax
-    // email
 
+    // phone
+    if ($this->contactInfoFields.length > 0 )  {
+      $this->xml_obj->appendChild(new DOMElement('phone'),$this->phone );
+    }
+
+    // fax
+    if ($this->contactInfoFields.length > 0) {
+      $this->xml_obj->appendChild(new DOMElement('fax'),$this->fax );
+    }
+
+    // email
+    if ($this->contactInfoFields.length > 0 ) {
+      $this->xml_obj->appendChild(new DOMElement('email'),$this->email );
+    }
     return $this->xml_obj;
   }
 
