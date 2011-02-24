@@ -28,14 +28,13 @@ $r_server = new RESTServer('/services/person');
 
 
 // Register patterns
-$r_server->registerHandler('GET', '/^\/(contact|role|site|identity)$/i', 'getentity');
-$r_server->registerHandler('GET', '/^\/(contact|role|site|identity)\/_$/i', 'getnewentity');
-$r_server->registerHandler('GET', '/^\/(contact|role|site|identity)\/(\d+(,\d+){0,})$/i', 'getentitybyid');
-$r_server->registerHandler('GET', '/^\/(contact|role|site|identity)\/(\D.*)$/i', 'getentitybyfilter');
+$r_server->registerHandler('GET', '/^\/(person|contact|role|site|identity)$/i', 'getentity');
+$r_server->registerHandler('GET', '/^\/(person|contact|role|site|identity)\/_$/i', 'getnewentity');
+$r_server->registerHandler('GET', '/^\/(person|contact|role|site|identity)\/(\d+(,\d+){0,})$/i', 'getentitybyid');
+$r_server->registerHandler('GET', '/^\/(person|contact|role|site|identity)\/(\D.*)$/i', 'getentitybyfilter');
 
-$r_server->registerHandler('POST', '/^\/(contact|identity|role)$/i', 'postentity');
-$r_server->registerHandler('PUT', '/^\/(contact|identity|role)\/(\d+)$/i', 'putentity');
-$r_server->registerHandler('POST', '/^\/comment$/i', 'postcomment');
+$r_server->registerHandler('POST', '/^\/(person|contact|identity|role)$/i', 'postentity');
+$r_server->registerHandler('PUT', '/^\/(person|contact|identity|role)\/(\d+)$/i', 'putentity');
 
 
 // set allowed request methods
