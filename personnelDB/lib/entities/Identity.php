@@ -37,15 +37,15 @@ class Identity extends Entity {
 
   public function to_xml() {
     $this->xml_obj = new DOMElement('identity');
-    $this->xml_obj->appendChild($this->xml_obj->createElement('prefix'),$this->prefix );
-    $this->xml_obj->appendChild($this->xml_obj->createElement('firstName'),$this->firstName );
-    $this->xml_obj->appendChild($this->xml_obj->createElement('middleName'),$this->middleName );
-    $this->xml_obj->appendChild($this->xml_obj->createElement('lastName'),$this->lastName );
-    $this->xml_obj->appendChild($this->xml_obj->createElement('preferredName'),$this->preferredName );
-    $this->xml_obj->appendChild($this->xml_obj->createElement('title'),$this->title );
-    $this->xml_obj->appendChild($this->xml_obj->createElement('optOut'),$this->optOut );
+    $this->xml_obj->appendChild(new DOMElement('prefix'),$this->prefix );
+    $this->xml_obj->appendChild(new DOMElement('firstName'),$this->firstName );
+    $this->xml_obj->appendChild(new DOMElement('middleName'),$this->middleName );
+    $this->xml_obj->appendChild(new DOMElement('lastName'),$this->lastName );
+    $this->xml_obj->appendChild(new DOMElement('preferredName'),$this->preferredName );
+    $this->xml_obj->appendChild(new DOMElement('title'),$this->title );
+    $this->xml_obj->appendChild(new DOMElement('optOut'),$this->optOut );
     if (aliases.length > 0){
-      $this->xml_obj->appendChild($this->xml_obj->createElement('aliases'),$this->aliases );
+      $this->xml_obj->appendChild(new DOMElement('aliases'),$this->aliases );
     }
   }
 
