@@ -2,12 +2,20 @@
 
 namespace PersonnelDB;
 
+require_once('Store.php');
+require_once('personnelDB/SQL/SiteSQL.php');
+require_once('personnelDB/entities/Site.php');
+
 class SiteStore extends Store {
 
   /* METHODS */
   
   public function __construct() {
     parent::__construct();
+
+    $this->filterList = array (
+			       'name' => array('site', 'siteAcronym')
+			       );
   }
   
   public function __destruct() {
@@ -17,13 +25,27 @@ class SiteStore extends Store {
 
   /* ACCESS METHODS */
 
-  public function getEmpty() { }
+  // Returns a new site entity
+  public function getEmpty() { 
+    return new Site();
+  }
 
-  public function getAll() { }
+  // Returns an array of all the sites in the database
+  public function getAll() {
+    return $this->makeEntityArray('Site', SITE_GETALL);
+  }
 
-  public function getById() { }
+  // Returns a single site matching $id, or null if no match exists
+  public function getById($id) {
+    $list = $this->makeEntityArray('Site', SITE_GETBYID, array($id));
+    return isset($list[0]) ? $list[0] : null;
+  }
 
-  public function getByFilter() { }
+  // Returns an array of sites matching the filter/value pairs
+  //  given in $filters, or null if there are no matches
+  public function getByFilter($filters = array()) {
+    return $this->makeFilteredArray('Site', SITE_GETBYFILTER_STUB, $filters);
+  }
 
 
   /* UPDATE METHODS */
