@@ -1,0 +1,8 @@
+<?php
+
+namespace WSWG;
+
+define('DBUSER', 'username');
+define('DBPASS', 'password');
+define('DBHOST', 'localhost');
+define('DBPORT', '3306');

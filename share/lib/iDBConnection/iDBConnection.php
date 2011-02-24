@@ -2,12 +2,10 @@
 
 namespace WSWG;
 
-// Configuration
-define('DBUSER', 'ws_user');
-define('DBPASS', 'w$WG.23');
-define('DBHOST', 'localhost');
-define('DBPORT', '3306');
-
+// Include configuration file
+//  NOTE: The config file is not in version control! Copy iDBConfig.example to
+//   iDBConfig.php and make the necessary changes.
+include('iDBConfig.php');
 
 // iDBConnection class
 //  Class to wrap the PHP database functions, providing the following benefits:
