@@ -47,4 +47,6 @@ class Identity extends Entity {
       $this->xml_obj.appendChild(getContactInfo());
     }
   }
+
+  public function from_xml() {}
   }
