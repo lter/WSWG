@@ -31,8 +31,6 @@ class Identity extends Entity {
 
   public function getPerson() { }
 
-}
-
  /* Serialization */
 
   public function to_xml() {
@@ -52,3 +50,5 @@ class Identity extends Entity {
 
   public function from_xml() {}
   }
+}
+
