@@ -1,0 +1,23 @@
+<?php
+/**
+ * REST service configuration 
+ */
+
+// Application classes
+//
+include('/path/to/PersonnelDBPackage.php');
+
+// REST server
+include('/path/to/RESTServer.php');
+
+// Object serializing 
+//
+include('/path/to/TransmuterPackage.php');
+
+// Service-specific includes
+//
+include('utils.php');
+include('handlers.php');
+include('FilterParser.php');
+
+?>
