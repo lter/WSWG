@@ -40,22 +40,23 @@ class Person extends Entity {
 
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml() {
-    $xml_obj = new DOMElement('person');
-    $xml_obj->appendChild(new DOMElement('personID',getIdentity()->personID));
+    $xml_doc = new \DOMDocument('1.0','utf-8');
+    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
+    $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
     $xml_obj->appendChild(getIdentity()->to_xml_fragment());
-    if (getRoles()->length > 0) {
+    if (getRoles()) {
       $role_xml = $xml_obj->appendChild(new DOMElement('roleList'));
       foreach(roles as $role) {
         $role_xml->appendChild($role->to_xml_fragment());
       }
     }
-    if (getContactInfo()->length > 0) {
+    if (getContactInfo()) {
       $contact_xml = $xml_obj->appendChild(new DOMElement('contactInfoList'));
       foreach(contactInfo as $contact) {
         $contact_xml->appendChild($contact->to_xml_fragment());
       }
     }
-    return $xml_obj;
+    return $xml_doc;
   }
 
   public function from_xml($xml_dom) {

@@ -46,12 +46,12 @@ class Role extends Entity {
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('role'));
     $xml_obj->setAttribute('type',$this->getRoleType()->roleType);
     $xml_obj->appendChild($xml_doc->createElement('roleID',$this->roleID ));
-    $xml_obj->appendChild($xml_doc->createElement('roleType',$this->roleType ));
+    $this->add_xml_if($xml_doc, $xml_obj, 'roleType');
     $site = $this->getSite();
-    $xml_obj->appendChild($xml_doc->createElement('siteAcronym',$site->siteAcronym ));
-    $xml_obj->appendChild($xml_doc->createElement('beginDate',$this->beginDate ));
-    $xml_obj->appendChild($xml_doc->createElement('endDate',$this->endDate ));
-    $xml_obj->appendChild($xml_doc->createElement('isActive',$this->isActive ));
+    $this->add_xml_if($xml_doc, $xml_obj, 'siteAcronym');
+    $this->add_xml_if($xml_doc, $xml_obj, 'beginDate');
+    $this->add_xml_if($xml_doc, $xml_obj, 'endDate');
+    $this->add_xml_if($xml_doc, $xml_obj, 'isActive');
 
     return $xml_obj;
   }
