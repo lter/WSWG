@@ -9,6 +9,7 @@ abstract class Entity {
   /* MEMBER DATA */
 
   protected $storeFront;
+  protected $xml_obj;
   private $contents;
   public $uniqueId;
 

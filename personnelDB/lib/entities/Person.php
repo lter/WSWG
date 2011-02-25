@@ -25,17 +25,16 @@ class Person extends Entity {
 
   // returns a representation of itself as an xml string that conforms to the personelDB.xsd 
   public function to_xml() {
-    $this->xml_obj = new DOMElement('person');
-    $this->person_id = new DOMElement('personID');
-    $this->xml_obj->appendChild(new DOMElement('personID',getIdentity()->personID));
-    $this->xml_obj->appendChild(getIdentity()->to_xml());
+    xml_obj = new DOMElement('person');
+    xml_obj->appendChild(new DOMElement('personID',getIdentity()->personID));
+    xml_obj->appendChild(getIdentity()->to_xml());
     if (getRoles()->length > 0) {
-      $this->xml_obj->appendChild(getRoles()->to_xml());
+      xml_obj->appendChild(getRoles()->to_xml());
     }
     if (getContactInfo()->length > 0) {
-      $this->xml_obj->appendChild(getContactInfo());
+      xml_obj->appendChild(getContactInfo());
     }
-    return $this->xml_obj;
+    return xml_obj;
   }
 
   public function from_xml() {

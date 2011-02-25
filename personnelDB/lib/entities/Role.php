@@ -25,16 +25,16 @@ class Role extends Entity {
 
   /* Serialization */
   public function to_xml() {
-    $this->xml_obj = new DOMElement('role');
-    $this->xml_obj->setAttribute('type',getNodeType()->roleType);
-    $this->xml_obj->appendChild(new DOMElement('roleID'),$this->roleID );
-    $this->xml_obj->appendChild(new DOMElement('roleType'),$this->roleType );
-    $this->xml_obj->appendChild(new DOMElement('getSite()->siteAcronym'),$this->getSite()->siteAcronym );
-    $this->xml_obj->appendChild(new DOMElement('beginDate'),$this->beginDate );
-    $this->xml_obj->appendChild(new DOMElement('endDate'),$this->endDate );
-    $this->xml_obj->appendChild(new DOMElement('isActive'),$this->isActive );
+    xml_obj = new DOMElement('role');
+    xml_obj->setAttribute('type',getNodeType()->roleType));
+    xml_obj->appendChild(new DOMElement('roleID',$this->roleID ));
+    xml_obj->appendChild(new DOMElement('roleType',$this->roleType ));
+    xml_obj->appendChild(new DOMElement('getSite()->siteAcronym',$this->getSite()->siteAcronym ));
+    xml_obj->appendChild(new DOMElement('beginDate',$this->beginDate ));
+    xml_obj->appendChild(new DOMElement('endDate',$this->endDate ));
+    xml_obj->appendChild(new DOMElement('isActive',$this->isActive ));
 
-    return $this->xml_obj;
+    return xml_obj;
   }
 
   public function from_xml() {
