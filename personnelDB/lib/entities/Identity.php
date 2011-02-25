@@ -35,13 +35,13 @@ class Identity extends Entity {
   public function to_xml_fragment() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('identity'));
-    $xml_obj->appendChild($xml_doc->createElement('prefix',$this->prefix ));
-    $xml_obj->appendChild($xml_doc->createElement('firstName',$this->firstName ));
-    $xml_obj->appendChild($xml_doc->createElement('middleName',$this->middleName ));
-    $xml_obj->appendChild($xml_doc->createElement('lastName',$this->lastName ));
-    $xml_obj->appendChild($xml_doc->createElement('preferredName',$this->preferredName ));
-    $xml_obj->appendChild($xml_doc->createElement('title',$this->title ));
-    $xml_obj->appendChild($xml_doc->createElement('optOut',$this->optOut ));
+    $this->add_xml_if($xml_doc, $xml_obj, 'prefix');
+    $this->add_xml_if($xml_doc, $xml_obj, 'firstName');
+    $this->add_xml_if($xml_doc, $xml_obj, 'middleName');
+    $this->add_xml_if($xml_doc, $xml_obj, 'lastName');
+    $this->add_xml_if($xml_doc, $xml_obj, 'preferredName');
+    $this->add_xml_if($xml_doc, $xml_obj, 'title');
+    $this->add_xml_if($xml_doc, $xml_obj, 'optOut');
     foreach($this->aliases as $alias) {
       $xml_obj->appendChild($xml_doc->createElement('aliases',$alias));
     }
