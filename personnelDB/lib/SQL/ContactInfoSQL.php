@@ -8,7 +8,10 @@ define('CONTACT_GETALL',		'SELECT contactInfo.* FROM contactInfo');
 
 define('CONTACT_GETBYID',		'SELECT contactInfo.* FROM contactInfo WHERE contactInfoID = ?');
 
-define('CONTACT_GETBYFILTER_STUB',	'SELECT contactInfo.* FROM contactInfo NATURAL JOIN site');
+define('CONTACT_GETBYFILTER_STUB',	'SELECT contactInfo.* FROM contactInfo
+						NATURAL JOIN site
+						NATURAL JOIN person
+						NATURAL LEFT JOIN nameAlias');
 
 define('FIELD_GETBYCONTACT',		'SELECT contactInfoFieldType, value, sortOrder, isRepeatable, 
 						validationExpression, emlType

@@ -47,7 +47,7 @@ class ContactInfoStore extends Store {
 
   // Returns an array of contact info blocks matching the filter/value pairs
   //  given in $filters, or null if there are no matches
-  public function getByFilter() {
+  public function getByFilter($filters = array()) {
     return $this->makeFilteredArray('ContactInfo', CONTACT_GETBYFILTER_STUB, $filters);
   }
 
