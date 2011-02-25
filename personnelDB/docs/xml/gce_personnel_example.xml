@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding="UTF-8" ?>
 <personnel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
    <person>
       <personID>0</personID>
       <identity>
@@ -35,6 +34,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2005-06-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -64,14 +64,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Other Professional</roleType>
+            <roleType type="nsf">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-07-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Professional</roleType>
+            <roleType type="local">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-07-01</beginDate>
             <isActive>1</isActive>
@@ -82,6 +82,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-07-01</beginDate>
             <isActive>1</isActive>
             <address>Sapelo Island National Estuarine Research Reserve</address>
             <address>P.O. Box 15</address>
@@ -93,6 +94,97 @@
             <phone>(912) 485-2251</phone>
             <fax>(912) 485-2141</fax>
             <email>aimee@darientel.net</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Amy</firstName>
+         <middleName>E.</middleName>
+         <lastName>Kunza Vargas</lastName>
+         <preferredName>Amy Kunza Vargas</preferredName>
+         <primaryEmail>amykunza@hotmail.com</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Amy Kunza Vargas</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>915A Saulnier</address>
+            <institution>University of Houston</institution>
+            <city>Houston</city>
+            <administrativeArea>Texas</administrativeArea>
+            <postalCode>77019</postalCode>
+            <country>USA</country>
+            <email>amykunza@hotmail.com</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Alana</firstName>
+         <middleName>R.</middleName>
+         <lastName>Lynes</lastName>
+         <preferredName>Alana Lynes</preferredName>
+         <title>Pennings M.S. Student</title>
+         <primaryEmail>alynes76@sbcglobal.net</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Alana Lynes</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-09-01</beginDate>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-09-01</beginDate>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2006-09-01</beginDate>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+            <address>Department of Biology and Biochemistry</address>
+            <address>369 Science and Research Bldg 2</address>
+            <address>University of Houston</address>
+            <institution>University of Houston</institution>
+            <city>Houston</city>
+            <administrativeArea>Texas</administrativeArea>
+            <postalCode>77204-5001</postalCode>
+            <country>USA</country>
+            <email>alynes76@sbcglobal.net</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -112,10 +204,26 @@
       <roleList>
          <role>
             <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-12-10</beginDate>
+            <endDate>2009-10-20</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
             <roleType type="nsf">Faculty Associate</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2009-10-20</beginDate>
             <isActive>1</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-12-10</beginDate>
+            <endDate>2009-10-20</endDate>
+            <isActive>0</isActive>
          </role>
          <role>
             <roleID>0</roleID>
@@ -130,6 +238,8 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-10-20</beginDate>
+            <endDate>2009-10-20</endDate>
             <isActive>1</isActive>
             <address>Department of Geological Sciences</address>
             <address>University of South Carolina</address>
@@ -200,14 +310,30 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Affiliated Investigator</roleType>
+            <roleType type="nsf">Faculty Associate</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2009-10-22</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Faculty Associate</roleType>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-02-01</beginDate>
+            <endDate>2009-10-22</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-02-01</beginDate>
+            <endDate>2009-10-22</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Affiliated Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2009-10-22</beginDate>
             <isActive>1</isActive>
@@ -218,6 +344,8 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-10-22</beginDate>
+            <endDate>2009-10-22</endDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -229,6 +357,90 @@
             <phone>(706) 542-4299</phone>
             <fax>(706) 542-5888</fax>
             <email>bmiller@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>William</firstName>
+         <middleName>P.</middleName>
+         <lastName>Porubsky</lastName>
+         <preferredName>Bill Porubsky</preferredName>
+         <primaryEmail>newcastl@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>William Porubsky</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <fax>(706) 542-5889</fax>
+            <email>newcastl@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Briana</firstName>
+         <lastName>Ransom</lastName>
+         <preferredName>Briana Ransom</preferredName>
+         <primaryEmail>bransom@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Briana Ransom</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <email>bransom@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -266,6 +478,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-08-02</beginDate>
             <isActive>1</isActive>
             <address>Department of Biology</address>
             <address>University of Florida</address>
@@ -292,13 +505,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Other Professional</roleType>
+            <roleType type="nsf">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Professional</roleType>
+            <roleType type="local">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -353,6 +566,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-06-01</beginDate>
             <isActive>1</isActive>
             <address>University of Georgia Marine Education Center and Aquarium</address>
             <address>30 Ocean Science Circle</address>
@@ -383,14 +597,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Co-Principal Investigator</roleType>
+            <roleType type="nsf">co-Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-08-03</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">co-Principal Investigator</roleType>
+            <roleType type="local">Co-Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-08-03</beginDate>
             <isActive>1</isActive>
@@ -401,6 +615,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-08-03</beginDate>
             <isActive>1</isActive>
             <address>10 Ocean Science Circle</address>
             <address>Skidaway Institute of Oceanography</address>
@@ -493,6 +708,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2000-05-01</beginDate>
             <isActive>1</isActive>
             <address>School of Public and Environmental Affairs</address>
             <address>Indiana University at Bloomington</address>
@@ -581,6 +797,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-09-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -607,13 +824,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Doctoral Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Doctoral Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -669,6 +886,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2011-01-01</beginDate>
             <isActive>1</isActive>
             <address>229 Marine Sciences Bldg.</address>
             <address>University of Georgia</address>
@@ -761,6 +979,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-09-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Economics and Finance</address>
             <address>University of Wyoming</address>
@@ -770,6 +989,61 @@
             <postalCode>82071</postalCode>
             <country>USA</country>
             <email>ckenned1@uwyo.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Dr.</prefix>
+         <firstName>Chuan-Kai</firstName>
+         <lastName>Ho</lastName>
+         <preferredName>Chuan-Kai Ho</preferredName>
+         <title>Postdoctoral Research Associate</title>
+         <primaryEmail>ckho88@pie.com.tw</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Chuan-Kai Ho</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>5007 Avenue U</address>
+            <address>Texas A&amp;M University</address>
+            <institution>Texas A&amp;M University</institution>
+            <city>Galveston</city>
+            <administrativeArea>Texas</administrativeArea>
+            <postalCode>77551</postalCode>
+            <country>USA</country>
+            <email>ckho88@pie.com.tw</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -805,6 +1079,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-09-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -833,13 +1108,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Doctoral Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Doctoral Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -895,6 +1170,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-08-02</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -941,6 +1217,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2010-01-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Integrative Biology</address>
             <address>University of South Florida</address>
@@ -993,6 +1270,50 @@
             <postalCode>30602-3636</postalCode>
             <country>USA</country>
             <email>cschutte@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Christine</firstName>
+         <lastName>Tilburg</lastName>
+         <preferredName>Christine Tilburg</preferredName>
+         <title>GA Coastal Research Council Program Coordinator</title>
+         <primaryEmail>ctilburg@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Christine Tilburg</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602</postalCode>
+            <country>USA</country>
+            <phone>(706) 542-1283</phone>
+            <fax>(706) 542-5888</fax>
+            <email>ctilburg@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -1071,6 +1392,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-05-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -1116,6 +1438,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-10-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -1162,6 +1485,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-06-01</beginDate>
             <isActive>1</isActive>
             <address>Sapelo Island National Estuarine Research Reserve</address>
             <institution>Sapelo Island National Estuarine Research Reserve</institution>
@@ -1172,6 +1496,138 @@
             <phone>(912) 485-2251</phone>
             <fax>(912) 485-2141</fax>
             <email>dhurley@darientel.net</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Dan</firstName>
+         <lastName>Runfola</lastName>
+         <preferredName>Dan Runfola</preferredName>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Dan Runfola</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2009-01-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2009-01-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2009-01-01</beginDate>
+            <isActive>0</isActive>
+            <address>Clark University</address>
+            <institution>Clark University</institution>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Daniel</firstName>
+         <middleName>F.</middleName>
+         <lastName>Saucedo</lastName>
+         <preferredName>Daniel Saucedo</preferredName>
+         <title>GCE-LTER Research Technician</title>
+         <primaryEmail>dsaucedo@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Daniel Saucedo</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-09-06</beginDate>
+            <endDate>2010-07-16</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-09-06</beginDate>
+            <endDate>2010-07-16</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2006-09-06</beginDate>
+            <endDate>2010-07-16</endDate>
+            <isActive>0</isActive>
+            <address>University of Georgia Marine Institute</address>
+            <institution>University of Georgia Marine Institute</institution>
+            <city>Sapelo Island</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>31327</postalCode>
+            <country>USA</country>
+            <phone>(912) 485-2204</phone>
+            <fax>(912) 485-2133</fax>
+            <email>dsaucedo@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Dr.</prefix>
+         <firstName>Edgardo</firstName>
+         <lastName>Diaz-Ferguson</lastName>
+         <preferredName>Edgardo Diaz-Ferguson</preferredName>
+         <title>Post-doctoral Associate (Silliman/Wares)</title>
+         <primaryEmail>edgarbio@yahoo.com</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Edgardo Diaz-Ferguson</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Postdoctoral Associate</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Post Doctoral Associate</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>110 Bartram Hall</address>
+            <address>Department of Zoology</address>
+            <address>University of Florida</address>
+            <institution>University of Florida</institution>
+            <city>Gainesville</city>
+            <administrativeArea>Florida</administrativeArea>
+            <postalCode>32611</postalCode>
+            <country>USA</country>
+            <email>edgarbio@yahoo.com</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -1251,6 +1707,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2005-10-31</beginDate>
             <isActive>1</isActive>
             <address>Georgia Museum of Natural History</address>
             <address>Natural History Building</address>
@@ -1261,6 +1718,49 @@
             <postalCode>30602-1881</postalCode>
             <country>USA</country>
             <email>ereitz@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Gabriela</firstName>
+         <middleName>M.</middleName>
+         <lastName>Blohm</lastName>
+         <preferredName>Gabriela Blohm</preferredName>
+         <title>M.S. Student</title>
+         <primaryEmail>gblohm@zoo.ufl.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Gabriela Blohm</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Department of Zoology</address>
+            <address>University of Florida</address>
+            <institution>University of Florida</institution>
+            <city>Gainesville</city>
+            <administrativeArea>Florida</administrativeArea>
+            <postalCode>32609</postalCode>
+            <country>USA</country>
+            <email>gblohm@zoo.ufl.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -1278,14 +1778,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Masters Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-09-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Masters Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-09-01</beginDate>
             <isActive>1</isActive>
@@ -1296,6 +1796,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2007-09-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -1340,6 +1841,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-06-01</beginDate>
             <isActive>1</isActive>
             <address>University of Georgia Marine Institute</address>
             <institution>University of Georgia Marine Institute</institution>
@@ -1366,14 +1868,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Doctoral Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-09-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Doctoral Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-09-01</beginDate>
             <isActive>1</isActive>
@@ -1384,6 +1886,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-09-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Biology and Biochemistry</address>
             <address>369 Science and Research Bldg 2</address>
@@ -1430,6 +1933,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-09-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -1456,13 +1960,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Doctoral Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Doctoral Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -1487,6 +1991,52 @@
    <person>
       <personID>0</personID>
       <identity>
+         <firstName>Julie</firstName>
+         <lastName>Amft</lastName>
+         <preferredName>Julie Amft</preferredName>
+         <title>Research Coordinator</title>
+         <primaryEmail>julie.amft@skio.usg.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Julie Amft</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2000-05-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Research Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2000-05-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2000-05-01</beginDate>
+            <isActive>0</isActive>
+            <address>10 Ocean Science Circle</address>
+            <institution>Skidaway Institute of Oceanography</institution>
+            <city>Savannah</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>31411</postalCode>
+            <country>USA</country>
+            <phone>(912) 598-2305</phone>
+            <fax>(912) 598-2310</fax>
+            <email>julie.amft@skio.usg.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
          <prefix>Dr.</prefix>
          <firstName>Jackson</firstName>
          <middleName>O.</middleName>
@@ -1500,10 +2050,26 @@
       <roleList>
          <role>
             <roleID>0</roleID>
+            <roleType type="local">Co-Principal Investigator</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2000-05-01</beginDate>
+            <endDate>2009-11-20</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
             <roleType type="nsf">Faculty Associate</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2009-11-20</beginDate>
             <isActive>1</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">co-Principal Investigator</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2000-05-01</beginDate>
+            <endDate>2009-11-20</endDate>
+            <isActive>0</isActive>
          </role>
          <role>
             <roleID>0</roleID>
@@ -1518,6 +2084,8 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-11-20</beginDate>
+            <endDate>2009-11-20</endDate>
             <isActive>1</isActive>
             <address>10 Ocean Science Circle</address>
             <institution>Skidaway Institute of Oceanography</institution>
@@ -1547,13 +2115,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Other Professional</roleType>
+            <roleType type="nsf">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Professional</roleType>
+            <roleType type="local">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -1574,6 +2142,143 @@
             <phone>(706) 542-1283</phone>
             <fax>(706) 542-5888</fax>
             <email>jeflory@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Ms.</prefix>
+         <firstName>Jenny</firstName>
+         <middleName>Leigh</middleName>
+         <lastName>Fenton</lastName>
+         <preferredName>Jenny Fenton</preferredName>
+         <title>Research Technician (Alber)</title>
+         <primaryEmail>gapeach@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Jenny Fenton</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <phone>706-542-1467</phone>
+            <email>gapeach@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Mr.</prefix>
+         <firstName>Josh</firstName>
+         <middleName>W.</middleName>
+         <lastName>Frost</lastName>
+         <preferredName>Josh Frost</preferredName>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Josh Frost</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+            <address>School of Public and Environmental Affairs</address>
+            <address>Indiana University</address>
+            <institution>Indiana University</institution>
+            <city>Bloomington</city>
+            <administrativeArea>Indiana</administrativeArea>
+            <postalCode>47405-2100</postalCode>
+            <country>USA</country>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Jon</firstName>
+         <lastName>Garbisch</lastName>
+         <preferredName>Jon Garbisch</preferredName>
+         <primaryEmail>garbisch@darientel.net</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Jon Garbisch</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-01-01</beginDate>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-01-01</beginDate>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2007-01-01</beginDate>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+            <address>University of Georgia Marine Institute</address>
+            <institution>University of Georgia Marine Institute</institution>
+            <city>Sapelo Island</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>31327</postalCode>
+            <country>USA</country>
+            <fax>(912) 485-2133</fax>
+            <email>garbisch@darientel.net</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -1610,6 +2315,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-09-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Zoology</address>
             <address>University fo Florida</address>
@@ -1620,6 +2326,132 @@
             <country>USA</country>
             <phone>(352) 392-1137</phone>
             <email>johngriffin@ufl.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Josh</firstName>
+         <lastName>Hall</lastName>
+         <preferredName>Josh Hall</preferredName>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Josh Hall</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>School of Public and Environmental Affairs</address>
+            <address>Indiana University</address>
+            <address>1315 E. 10th St.</address>
+            <institution>Indiana University at Bloomington</institution>
+            <city>Bloomington</city>
+            <administrativeArea>Indiana</administrativeArea>
+            <postalCode>47405-2100</postalCode>
+            <country>USA</country>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Justin</firstName>
+         <lastName>Hartmann</lastName>
+         <preferredName>Justin Hartmann</preferredName>
+         <primaryEmail>hartmannjustin@yahoo.com</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Justin Hartmann</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <email>hartmannjustin@yahoo.com</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Justine</firstName>
+         <middleName>I.</middleName>
+         <lastName>Lyons</lastName>
+         <preferredName>Justine Lyons</preferredName>
+         <primaryEmail>jlyons@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Justine Lyons</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <phone>(706) 542-5900</phone>
+            <fax>(706) 542-5888</fax>
+            <email>jlyons@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -1687,10 +2519,24 @@
          </role>
          <role>
             <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-06-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
             <roleType type="local">Masters Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2008-04-15</beginDate>
             <isActive>1</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-06-01</beginDate>
+            <isActive>0</isActive>
          </role>
       </roleList>
       <contactInfoList>
@@ -1698,6 +2544,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2008-04-15</beginDate>
             <isActive>1</isActive>
             <address>Division of Herpetology</address>
             <address>Department of Zoology</address>
@@ -1726,13 +2573,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Masters Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Masters Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -1751,6 +2598,49 @@
             <postalCode>30602</postalCode>
             <country>USA</country>
             <email>jrocker1@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>John</firstName>
+         <middleName>P.</middleName>
+         <lastName>Carpenter</lastName>
+         <preferredName>John Carpenter</preferredName>
+         <title>Assistant Information Manager / GIS Specialist</title>
+         <primaryEmail>john.carpenter@ncwildlife.org</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>John Carpenter</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-10-22</beginDate>
+            <endDate>2010-04-09</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Assistant Information Manager</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-10-22</beginDate>
+            <endDate>2010-04-09</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2007-10-22</beginDate>
+            <endDate>2010-04-09</endDate>
+            <isActive>0</isActive>
+            <institution>North Carolina Wildlife Resources Commission</institution>
+            <email>john.carpenter@ncwildlife.org</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -1788,6 +2678,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2010-08-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -1799,6 +2690,53 @@
             <phone>(706) 542-1283</phone>
             <fax>(706) 542-5888</fax>
             <email>jps@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>John</firstName>
+         <middleName>D.</middleName>
+         <lastName>Robinson</lastName>
+         <preferredName>John Robinson</preferredName>
+         <title>Wares Ph.D. Student</title>
+         <primaryEmail>robinson.johnd@gmail.com</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>John Robinson</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-07-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-07-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2006-07-01</beginDate>
+            <isActive>0</isActive>
+            <address>Department of Genetics</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602</postalCode>
+            <country>USA</country>
+            <phone>(706) 542-7815</phone>
+            <email>robinson.johnd@gmail.com</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -1818,14 +2756,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Other Professional</roleType>
+            <roleType type="nsf">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2000-05-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Professional</roleType>
+            <roleType type="local">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2000-05-01</beginDate>
             <isActive>1</isActive>
@@ -1836,6 +2774,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2000-05-01</beginDate>
             <isActive>1</isActive>
             <institution>Aquatic Research South</institution>
             <administrativeArea>Georgia</administrativeArea>
@@ -1877,6 +2816,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-02-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Biology</address>
             <address>Creighton University</address>
@@ -1903,10 +2843,11 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Research Professional</roleType>
+            <roleType type="nsf">Other Staff</roleType>
             <siteAcronym>GCE</siteAcronym>
-            <beginDate>2007-11-01</beginDate>
-            <isActive>1</isActive>
+            <beginDate>2007-06-01</beginDate>
+            <endDate>2007-11-01</endDate>
+            <isActive>0</isActive>
          </role>
          <role>
             <roleID>0</roleID>
@@ -1915,12 +2856,29 @@
             <beginDate>2007-11-01</beginDate>
             <isActive>1</isActive>
          </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Research Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-11-01</beginDate>
+            <isActive>1</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-06-01</beginDate>
+            <endDate>2007-11-01</endDate>
+            <isActive>0</isActive>
+         </role>
       </roleList>
       <contactInfoList>
          <contactInfo>
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2007-11-01</beginDate>
+            <endDate>2007-11-01</endDate>
             <isActive>1</isActive>
             <address>University of Georgia Marine Institute</address>
             <institution>University of Georgia Marine Institute</institution>
@@ -1931,6 +2889,50 @@
             <phone>(912) 485-2204</phone>
             <fax>(912) 485-2133</fax>
             <email>shalack@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Mr.</prefix>
+         <firstName>Jon</firstName>
+         <lastName>Shelby</lastName>
+         <preferredName>Jon Shelby</preferredName>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Jon Shelby</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+            <address>School of Public and Environmental Affairs</address>
+            <address>Indiana University</address>
+            <institution>Indiana University</institution>
+            <city>Bloominton</city>
+            <administrativeArea>Indiana</administrativeArea>
+            <postalCode>47405-2100</postalCode>
+            <country>USA</country>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -1967,6 +2969,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2000-05-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -1996,13 +2999,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Doctoral Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Doctoral Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -2059,6 +3062,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-08-02</beginDate>
             <isActive>1</isActive>
             <address>Department of Genetics</address>
             <address>University of Georgia</address>
@@ -2087,14 +3091,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Technician</roleType>
+            <roleType type="nsf">Other Staff</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2008-11-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Staff</roleType>
+            <roleType type="local">Technician</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2008-11-01</beginDate>
             <isActive>1</isActive>
@@ -2105,6 +3109,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2008-11-01</beginDate>
             <isActive>1</isActive>
             <address>University of Georgia Marine Institute</address>
             <institution>University of Georgia Marine Institute</institution>
@@ -2114,6 +3119,52 @@
             <country>USA</country>
             <fax>(912) 485-2133</fax>
             <email>kanstead@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Kenneth</firstName>
+         <lastName>Helm</lastName>
+         <preferredName>Ken Helm</preferredName>
+         <title>Principal Monitoring Technician</title>
+         <primaryEmail>khelm@darientel.net</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Kenneth Helm</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2000-05-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2000-05-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2000-05-01</beginDate>
+            <isActive>0</isActive>
+            <address>University of Georgia Marine Institute</address>
+            <institution>University of Georgia Marine Institute</institution>
+            <city>Sapelo Island</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>31327</postalCode>
+            <country>USA</country>
+            <phone>(912) 485-2204</phone>
+            <fax>(912) 485-2133</fax>
+            <email>khelm@darientel.net</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2150,6 +3201,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-11-07</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -2159,6 +3211,88 @@
             <postalCode>30602</postalCode>
             <country>USA</country>
             <email>kshunter@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Kandy</firstName>
+         <lastName>Krull</lastName>
+         <preferredName>Kandy Krull</preferredName>
+         <title>Craft M.S. Student</title>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Kandy Krull</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <institution>Indiana University</institution>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Kristin</firstName>
+         <lastName>Meehan</lastName>
+         <preferredName>Kris Meehan</preferredName>
+         <title>Assistant Information Manager / GIS Specialist</title>
+         <primaryEmail>klmeehan@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Kristin Meehan</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-01-08</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Assistant Information Manager</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-01-08</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2007-01-08</beginDate>
+            <isActive>0</isActive>
+            <address>Department of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <phone>(706) 542-5955</phone>
+            <fax>(706) 542-5888</fax>
+            <email>klmeehan@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2175,14 +3309,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Doctoral Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-09-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Doctoral Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-09-01</beginDate>
             <isActive>1</isActive>
@@ -2193,6 +3327,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-09-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -2202,6 +3337,50 @@
             <postalCode>30602-3636</postalCode>
             <country>USA</country>
             <email>K8S@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Ms.</prefix>
+         <firstName>Kristen</firstName>
+         <lastName>Wardlaw</lastName>
+         <preferredName>Kristen Wardlaw</preferredName>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Kristen Wardlaw</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+            <address>School of Public and Environmental Affairs</address>
+            <address>Indiana University</address>
+            <institution>Indiana University</institution>
+            <city>Bloomington</city>
+            <administrativeArea>Indiana</administrativeArea>
+            <postalCode>47405-2100</postalCode>
+            <country>USA</country>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2238,6 +3417,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2010-12-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Biology and Biochemistry</address>
             <address>University of Houston</address>
@@ -2264,13 +3444,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Other Professional</roleType>
+            <roleType type="nsf">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Professional</roleType>
+            <roleType type="local">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -2346,14 +3526,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Affiliated Investigator</roleType>
+            <roleType type="nsf">Faculty Associate</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2005-10-18</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Faculty Associate</roleType>
+            <roleType type="local">Affiliated Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2005-10-18</beginDate>
             <isActive>1</isActive>
@@ -2364,6 +3544,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2005-10-18</beginDate>
             <isActive>1</isActive>
             <address>Botany Department</address>
             <address>University of Georgia</address>
@@ -2375,6 +3556,47 @@
             <phone>(706) 542-2969</phone>
             <fax>(706) 542-1805</fax>
             <email>donovan@plantbio.uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Liqing</firstName>
+         <lastName>Jiang</lastName>
+         <preferredName>Liqing Jiang</preferredName>
+         <primaryEmail>lqjiang@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Liqing Jiang</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>GA</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <email>lqjiang@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2437,14 +3659,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Lead Principal Investigator</roleType>
+            <roleType type="nsf">Lead Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Lead Principal Investigator</roleType>
+            <roleType type="local">Lead Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
@@ -2455,6 +3677,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -2503,6 +3726,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2008-02-12</beginDate>
             <isActive>1</isActive>
             <address>University of Georgia Marine Institute</address>
             <institution>University of Georgia Marine Institute</institution>
@@ -2514,6 +3738,49 @@
             <phone>(912) 485-2203</phone>
             <fax>(912) 485-2133</fax>
             <email>booth@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Matthew</firstName>
+         <middleName>R.</middleName>
+         <lastName>First</lastName>
+         <preferredName>Matt First</preferredName>
+         <primaryEmail>mfirst@whoi.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Matthew First</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>211 Watson, MS# 52 </address>
+            <address>Woods Hole Oceanographic Institute</address>
+            <institution>Woods Hole Oceanographic Institute</institution>
+            <city>Woods Hole</city>
+            <administrativeArea>Massachusetts</administrativeArea>
+            <postalCode>02543</postalCode>
+            <country>USA</country>
+            <phone>(508) 289-3958</phone>
+            <email>mfirst@whoi.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2549,6 +3816,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2010-09-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Biology</address>
             <address>University of Florida</address>
@@ -2595,6 +3863,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2000-05-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -2606,6 +3875,97 @@
             <phone>(706) 542-5893</phone>
             <fax>(706) 542-5888</fax>
             <email>mjoye@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Mr.</prefix>
+         <firstName>Mark</firstName>
+         <middleName>J.</middleName>
+         <lastName>Loomis</lastName>
+         <preferredName>Mark Loomis</preferredName>
+         <primaryEmail>mjloomis@indiana.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Mark Loomis</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2007-09-01</beginDate>
+            <isActive>0</isActive>
+            <address>School of Public and Environmental Affairs</address>
+            <address>Indiana University</address>
+            <institution>Indiana University</institution>
+            <city>Bloomington</city>
+            <administrativeArea>Indiana</administrativeArea>
+            <postalCode>47405-2100</postalCode>
+            <country>USA</country>
+            <email>mjloomis@indiana.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Megan</firstName>
+         <lastName>Machmuller</lastName>
+         <preferredName>Megan Machmuller</preferredName>
+         <title>Joye M.S. Student</title>
+         <primaryEmail>megmach@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Megan Machmuller</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+            <address>Department of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602</postalCode>
+            <country>USA</country>
+            <email>megmach@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2642,6 +4002,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-03-05</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -2653,6 +4014,52 @@
             <phone>(706) 542-6481</phone>
             <fax>(706) 542-5888</fax>
             <email>mmoran@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Mario</firstName>
+         <lastName>Muscarella</lastName>
+         <preferredName>Mario Muscarella</preferredName>
+         <title>Research Technician</title>
+         <primaryEmail>mmuscare@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Mario Muscarella</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <endDate>2010-07-01</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <endDate>2010-07-01</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <endDate>2010-07-01</endDate>
+            <isActive>0</isActive>
+            <address>1 Turkey Fountain Way</address>
+            <address>UGA Marine Institute</address>
+            <institution>UGA Marine Institute</institution>
+            <city>Sapelo Island</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>31327</postalCode>
+            <country>USA</country>
+            <phone>(912) 485-2203</phone>
+            <email>mmuscare@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2689,6 +4096,84 @@
             <address>University of West Florida</address>
             <institution>University of West Florida</institution>
             <email>mfn1@students.uwf.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Mark</firstName>
+         <lastName>Pendergras</lastName>
+         <preferredName>Mark Pendergras</preferredName>
+         <title>Hammock project technician (Alber)</title>
+         <primaryEmail>markpgras@hotmail.com</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Mark Pendergras</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <institution>University of Georgia</institution>
+            <email>markpgras@hotmail.com</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Monica</firstName>
+         <lastName>Poelchau</lastName>
+         <preferredName>Monica Poelchau</preferredName>
+         <title>Research Technician (Wares)</title>
+         <primaryEmail>poelchau@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Monica Poelchau</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Department of Genetics</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602</postalCode>
+            <country>USA</country>
+            <email>poelchau@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2749,14 +4234,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Research Professional</roleType>
+            <roleType type="nsf">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Professional</roleType>
+            <roleType type="local">Research Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
@@ -2767,6 +4252,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
             <address>10 Ocean Science Circle</address>
             <address>Skidaway Institute of Oceanography</address>
@@ -2813,6 +4299,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2005-07-10</beginDate>
             <isActive>1</isActive>
             <address>FB Organismische Biologie</address>
             <address>AG Ökologie &amp; Diversität der Tiere</address>
@@ -2841,13 +4328,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Technician</roleType>
+            <roleType type="nsf">Other Staff</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Staff</roleType>
+            <roleType type="local">Technician</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -2865,6 +4352,87 @@
             <postalCode>31327</postalCode>
             <country>USA</country>
             <email>scoville@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Nicholas</firstName>
+         <middleName>W.</middleName>
+         <lastName>Tackett</lastName>
+         <preferredName>Nick Tackett</preferredName>
+         <title>Craft M.S. Student</title>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Nicholas Tackett</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <institution>Indiana University</institution>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Peter</firstName>
+         <lastName>Baas</lastName>
+         <preferredName>Peter Baas</preferredName>
+         <title>Joye M.S. Student</title>
+         <primaryEmail>pbaas@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Peter Baas</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <endDate>2009-06-01</endDate>
+            <isActive>0</isActive>
+            <address>Department of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602</postalCode>
+            <country>USA</country>
+            <email>pbaas@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2900,6 +4468,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2004-04-01</beginDate>
             <isActive>1</isActive>
             <address>Sapelo Island National Estuarine Research Reserve</address>
             <address>P.O. Box 15</address>
@@ -2911,6 +4480,233 @@
             <phone>(912) 485-2251</phone>
             <fax>(912) 485-2141</fax>
             <email>bluewatermotion@hotmail.com</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Dr.</prefix>
+         <firstName>Patricia</firstName>
+         <middleName>A.</middleName>
+         <lastName>Hembree</lastName>
+         <preferredName>Trisha Hembree</preferredName>
+         <title>Teacher, Hull Middle School</title>
+         <primaryEmail>phembree@charter.net</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Patricia Hembree</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Hull Middle School</address>
+            <address>1950 Old Peachtree Rd.</address>
+            <institution>Hull Middle School</institution>
+            <city>Duluth</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30097</postalCode>
+            <country>USA</country>
+            <phone>(770) 232.3200</phone>
+            <email>phembree@charter.net</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Dr.</prefix>
+         <firstName>Paul</firstName>
+         <lastName>McKay</lastName>
+         <preferredName>Paul McKay</preferredName>
+         <primaryEmail>Paul.McKay.ctr@nrlssc.navy.mil</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Paul McKay</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Ocean Dynamics and Prediction Branch</address>
+            <address>Oceanography Division (Code 7322)</address>
+            <address>Naval Research Laboratory Building 1009</address>
+            <institution>Naval Research Laboratory</institution>
+            <city>Stennis Space Center</city>
+            <administrativeArea>MS</administrativeArea>
+            <postalCode>39529-5004</postalCode>
+            <country>USA</country>
+            <phone>(228) 688-5664</phone>
+            <email>Paul.McKay.ctr@nrlssc.navy.mil</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Ross</firstName>
+         <lastName>Brittain</lastName>
+         <preferredName>Ross Brittain</preferredName>
+         <title>Craft Ph.D. Student</title>
+         <primaryEmail>rabritta@indiana.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Ross Brittain</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>School of Public and Environmental Affairs</address>
+            <address>Indiana University</address>
+            <institution>Indiana University at Bloomington</institution>
+            <city>Bloomington</city>
+            <administrativeArea>Indiana</administrativeArea>
+            <postalCode>47405-2100</postalCode>
+            <country>USA</country>
+            <email>rabritta@indiana.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Rachel</firstName>
+         <lastName>Gisewhite</lastName>
+         <preferredName>Rachel Gisewhite</preferredName>
+         <primaryEmail>gisewhit@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Rachel Gisewhite</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-03-05</beginDate>
+            <endDate>2006-10-01</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-03-05</beginDate>
+            <endDate>2006-10-01</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2006-03-05</beginDate>
+            <endDate>2006-10-01</endDate>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <email>gisewhit@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <prefix>Dr.</prefix>
+         <firstName>Robert</firstName>
+         <middleName>E.</middleName>
+         <lastName>Hodson</lastName>
+         <preferredName>Bob Hodson</preferredName>
+         <title>Affiliated Investigator / Professor</title>
+         <primaryEmail>rhodson@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Robert Hodson</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Faculty Associate</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-03-05</beginDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Affiliated Investigator</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-03-05</beginDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2006-03-05</beginDate>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602-3636</postalCode>
+            <country>USA</country>
+            <phone>(706) 542-5952</phone>
+            <fax>(706) 542-5888</fax>
+            <email>rhodson@uga.edu</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -2937,6 +4733,22 @@
          </role>
          <role>
             <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2010-06-01</beginDate>
+            <endDate>2011-02-18</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2010-06-01</beginDate>
+            <endDate>2011-02-18</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
             <roleType type="local">Affiliated Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2011-02-18</beginDate>
@@ -2948,6 +4760,8 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2011-02-18</beginDate>
+            <endDate>2011-02-18</endDate>
             <isActive>1</isActive>
             <address>Center for Marine and Wetland Studies</address>
             <address>1270 Atlantic Avenus, Room 111</address>
@@ -2977,13 +4791,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Technician</roleType>
+            <roleType type="nsf">Other Staff</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Staff</roleType>
+            <roleType type="local">Technician</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -3022,6 +4836,22 @@
          </role>
          <role>
             <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2010-06-01</beginDate>
+            <endDate>2011-02-18</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2010-06-01</beginDate>
+            <endDate>2011-02-18</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
             <roleType type="local">Affiliated Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2011-02-18</beginDate>
@@ -3033,6 +4863,8 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2011-02-18</beginDate>
+            <endDate>2011-02-18</endDate>
             <isActive>1</isActive>
             <address>Center for Marine and Wetland Studies</address>
             <address>1270 Atlantic Avenue</address>
@@ -3051,6 +4883,53 @@
    <person>
       <personID>0</personID>
       <identity>
+         <firstName>Steven</firstName>
+         <lastName>Bell</lastName>
+         <preferredName>Steven Bell</preferredName>
+         <primaryEmail>sjbell@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Steven Bell</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2005-07-01</beginDate>
+            <endDate>2006-11-07</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Research Professional</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2005-07-01</beginDate>
+            <endDate>2006-11-07</endDate>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <beginDate>2005-07-01</beginDate>
+            <endDate>2006-11-07</endDate>
+            <isActive>0</isActive>
+            <address>Dept. of Marine Sciences</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602</postalCode>
+            <country>USA</country>
+            <email>sjbell@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
          <firstName>Scott</firstName>
          <lastName>Gifford</lastName>
          <preferredName>Scott Gifford</preferredName>
@@ -3062,13 +4941,13 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Doctoral Student</roleType>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Doctoral Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <isActive>1</isActive>
          </role>
@@ -3087,6 +4966,82 @@
             <postalCode>30602</postalCode>
             <country>USA</country>
             <email>sgifford@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Sean</firstName>
+         <lastName>Graham</lastName>
+         <preferredName>Sean Graham</preferredName>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Sean Graham</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <institution>Indiana University at Bloomington</institution>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Sabrina</firstName>
+         <lastName>Pankey</lastName>
+         <preferredName>Sabrina Pankey</preferredName>
+         <title>Research Technician (Wares)</title>
+         <primaryEmail>abrinas@gmail.com</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Sabrina Pankey</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <address>Dept. of Genetics</address>
+            <address>University of Georgia</address>
+            <institution>University of Georgia</institution>
+            <city>Athens</city>
+            <administrativeArea>Georgia</administrativeArea>
+            <postalCode>30602</postalCode>
+            <country>USA</country>
+            <email>abrinas@gmail.com</email>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -3124,6 +5079,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2000-05-01</beginDate>
             <isActive>1</isActive>
             <address>Department of Biology and Biochemistry</address>
             <address>University of Houston</address>
@@ -3153,14 +5109,30 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Doctoral Student</roleType>
+            <roleType type="nsf">Other Staff</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-06-01</beginDate>
+            <endDate>2007-08-01</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-09-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Graduate Student</roleType>
+            <roleType type="local">Technician</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2006-06-01</beginDate>
+            <endDate>2007-08-01</endDate>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Doctoral Student</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-09-01</beginDate>
             <isActive>1</isActive>
@@ -3171,6 +5143,8 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2007-09-01</beginDate>
+            <endDate>2007-08-01</endDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -3215,6 +5189,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2008-04-15</beginDate>
             <isActive>1</isActive>
             <address>409 Carr Hall</address>
             <address>University of Florida</address>
@@ -3241,14 +5216,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Assistant Information Manager</roleType>
+            <roleType type="nsf">Other Professional</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2010-07-12</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">Other Professional</roleType>
+            <roleType type="local">Assistant Information Manager</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2010-07-12</beginDate>
             <isActive>1</isActive>
@@ -3259,6 +5234,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2010-07-12</beginDate>
             <isActive>1</isActive>
             <address>Department of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -3289,14 +5265,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">co-Principal Investigator</roleType>
+            <roleType type="local">Co-Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Co-Principal Investigator</roleType>
+            <roleType type="nsf">co-Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
@@ -3307,6 +5283,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -3425,14 +5402,26 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Co-Principal Investigator</roleType>
+            <roleType type="nsf">co-Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2009-12-13</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">co-Principal Investigator</roleType>
+            <roleType type="nsf">Faculty Associate</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Affiliated Investigator</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Co-Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2009-12-13</beginDate>
             <isActive>1</isActive>
@@ -3443,6 +5432,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-12-13</beginDate>
             <isActive>1</isActive>
             <address>Department of Anthropology</address>
             <address>4048 Smith Laboratory W. 18TH Ave. </address>
@@ -3490,6 +5480,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-03-05</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -3501,6 +5492,41 @@
             <phone>(706) 542-1285</phone>
             <fax>(706) 542-5888</fax>
             <email>wcai@uga.edu</email>
+         </contactInfo>
+      </contactInfoList>
+   </person>
+   <person>
+      <personID>0</personID>
+      <identity>
+         <firstName>Wes</firstName>
+         <lastName>Ket</lastName>
+         <preferredName>Ket Wes</preferredName>
+         <title>Craft M.S. Student</title>
+         <primaryEmail>gcelter@uga.edu</primaryEmail>
+         <optOut>0</optOut>
+         <nameAlias>Wes Ket</nameAlias>
+      </identity>
+      <roleList>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Graduate Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="local">Masters Student</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <isActive>0</isActive>
+         </role>
+      </roleList>
+      <contactInfoList>
+         <contactInfo>
+            <contactInfoID>0</contactInfoID>
+            <label>Primary institutional contact information</label>
+            <isPrimary>1</isPrimary>
+            <isActive>0</isActive>
+            <institution>Indiana University</institution>
          </contactInfo>
       </contactInfoList>
    </person>
@@ -3520,14 +5546,14 @@
       <roleList>
          <role>
             <roleID>0</roleID>
-            <roleType type="local">Co-Principal Investigator</roleType>
+            <roleType type="nsf">co-Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-08-02</beginDate>
             <isActive>1</isActive>
          </role>
          <role>
             <roleID>0</roleID>
-            <roleType type="nsf">co-Principal Investigator</roleType>
+            <roleType type="local">Co-Principal Investigator</roleType>
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2006-08-02</beginDate>
             <isActive>1</isActive>
@@ -3538,6 +5564,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2006-08-02</beginDate>
             <isActive>1</isActive>
             <address>Department of Geological Sciences</address>
             <address>University of South Carolina</address>
@@ -3586,6 +5613,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2000-05-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
@@ -3632,6 +5660,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2010-09-01</beginDate>
             <isActive>1</isActive>
             <address>East China Normal University</address>
             <email>yanlhe@indiana.edu</email>
@@ -3670,6 +5699,7 @@
             <contactInfoID>0</contactInfoID>
             <label>Primary institutional contact information</label>
             <isPrimary>1</isPrimary>
+            <beginDate>2009-08-01</beginDate>
             <isActive>1</isActive>
             <address>Dept. of Marine Sciences</address>
             <address>University of Georgia</address>
