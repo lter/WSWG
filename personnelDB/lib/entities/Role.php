@@ -52,7 +52,10 @@ class Role extends Entity {
     
     $xpath = new \DOMXPath($xml_dom);
     $this->roleID = $xpath.query("*/roleID/")->nodeValue;
-    $this->roleType = $xpath.query("*/roleType/")->nodeValue;
+    $role_fragmenet = $xpath.query("*/roleType/");
+    $roletype = $role_fragment->getAttribute('type')
+//    $this->role
+
     $this->setSiteByAcronym($xpath.query("*/siteAcronym/")->nodeValue);
 
     $this->beginDate = $xpath.query("*/beginDate/")->nodeValue;
