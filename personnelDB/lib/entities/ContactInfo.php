@@ -34,42 +34,45 @@ class ContactInfo extends Entity {
 
   /* serialization */
   public function to_xml() {
-    $xml_obj = new DOMElement('person');
-    $xml_obj->appenChild(new DOMElement('personID'), $this->personID);
-    $xml_obj->appendChild(new DOMElement('contactInfoList'))->appendChild($this->to_xml_fragment());
-    return $xml_obj;
+    $xml_doc = new \DOMDocument('1.0','utf-8');
+    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
+    $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
+    $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
+    $xml_obj->appendChild($xml_doc->createElement('contactInfoList'))->appendChild($fragment);
+    return $xml_doc;
   }
 
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml_fragment() {
-    $xml_obj = new DOMElement('ContactInfo');
-    $xml_obj->appendChild(new DOMElement('contactInfoID',$this->contactInfoID ));
-    $xml_obj->appendChild(new DOMElement('label',$this->label ));
-    $xml_obj->appendChild(new DOMElement('isPrimary',$this->isPrimary ));
-    $xml_obj->appendChild(new DOMElement('isActive',$this->isActive ));
+    $xml_doc = new \DOMDocument('1.0','utf-8');
+    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('contactInfo'));
+    $this->add_xml_if($xml_doc, $xml_obj, 'contactInfoID');
+    $this->add_xml_if($xml_doc, $xml_obj, 'label');
+    $this->add_xml_if($xml_doc, $xml_obj, 'isPrimary');
+    $this->add_xml_if($xml_doc, $xml_obj, 'isActive');
     
     // address
-    if ($this->contactInfoFields.length > 0 ){
-      $xml_obj->appendChild(new DOMElement('address',$this->address ));
+    if ($this->contactInfoFields){
+      $xml_obj->appendChild($xml_doc->createElement('address',$this->address ));
     }
-    $xml_obj->appendChild(new DOMElement('instituation',$this->instituation ));
-    $xml_obj->appendChild(new DOMElement('city',$this->city ));
-    $xml_obj->appendChild(new DOMElement('administrativeArea',$this->administrativeArea ));
-    $xml_obj->appendChild(new DOMElement('postalCode',$this->postalCode ));
-    $xml_obj->appendChild(new DOMElement('country',$this->country ));
+    $this->add_xml_if($xml_doc, $xml_obj, 'institution');
+    $this->add_xml_if($xml_doc, $xml_obj, 'city');
+    $this->add_xml_if($xml_doc, $xml_obj, 'administrativeArea');
+    $this->add_xml_if($xml_doc, $xml_obj, 'postalCode');
+    $this->add_xml_if($xml_doc, $xml_obj, 'county');
     // phone 
-    if ($this->contactInfoFields.length > 0 )  {
-      $xml_obj->appendChild(new DOMElement('phone',$this->phone ));
+    if ($this->contactInfoFields)  {
+      $xml_obj->appendChild($xml_doc->createElement('phone',$this->phone ));
     }
 
     // fax
-    if ($this->contactInfoFields.length > 0) {
-      $xml_obj->appendChild(new DOMElement('fax',$this->fax ));
+    if ($this->contactInfoFields) {
+      $xml_obj->appendChild($xml_doc->createElement('fax',$this->fax ));
     }
 
     // email
-    if ($this->contactInfoFields.length > 0 ) {
-      $xml_obj->appendChild(new DOMElement('email',$this->email ));
+    if ($this->contactInfoFields ) {
+      $xml_obj->appendChild($xml_doc->createElement('email',$this->email ));
     }
     return $xml_obj;
   }
@@ -118,5 +121,11 @@ class ContactInfo extends Entity {
       // TODO: grab the correct ID
       $field->contactInfoFieldTypeID = $this->getContactInfoFieldTypeBy($type_string);
       return $field;
+  }
+
+  private function add_xml_if($xml_doc, $xml_obj,$field) {
+    if ($this->$field) {
+      $xml_obj->appendChild($xml_doc->createElement($field,$this->$field));
+    }
   }
 }
