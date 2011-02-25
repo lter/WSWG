@@ -26,8 +26,15 @@ class ContactInfo extends Entity {
   public function getSite() { }
 
   /* serialization */
-  // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml() {
+    $xml_obj = new DOMElement('person');
+    $xml_obj->appenChild(new DOMElement('personID'), $this->personID);
+    $xml_obj->appendChild(new DOMElement('contactInfoList'))->appendChild($this->to_xml_fragment());
+    return $xml_obj;
+  }
+
+  // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
+  public function to_xml_fragment() {
     $xml_obj = new DOMElement('ContactInfo');
     $xml_obj->appendChild(new DOMElement('contactInfoID',$this->contactInfoID ));
     $xml_obj->appendChild(new DOMElement('label',$this->label ));
@@ -102,7 +109,7 @@ class ContactInfo extends Entity {
       $field->contactInfoID = $this.contactInfoID;
       $field->sortOrder = $i;
       // TODO: grab the correct ID
-      // $field->contactInfoFieldTypeID = $this->storefront->contactInfoFieldTypeStore->
+      $field->contactInfoFieldTypeID = $this->getContactInfoFieldTypeBy($type_string);
       return $field;
   }
 }

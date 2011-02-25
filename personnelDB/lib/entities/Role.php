@@ -30,8 +30,15 @@ class Role extends Entity {
   }
 
   /* Serialization */
-  // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml() {
+    $xml_obj = new DOMElement('person');
+    $xml_obj->appenChild(new DOMElement('personID'), $this->personID);
+    $xml_obj->appenChild(new DOMElement('roleList'))->appendChild($this->to_xml_fragment());
+    return $xml_obj;
+  }
+
+  // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
+  public function to_xml_fragment() {
     $xml_obj = new DOMElement('role');
     $xml_obj->setAttribute('type',getNodeType()->roleType));
     $xml_obj->appendChild(new DOMElement('roleID',$this->roleID ));
@@ -55,7 +62,7 @@ class Role extends Entity {
     $role_fragment = $xpath.query("*/roleType/");
     $this->roleTypeID = $this->storeFront->RoleTypeStore->getByFilter(('roleType'=>$role_fragment->nodeValue),($role_fragment->getAttribute('type'))
 
-    $this->siteID = $this->storeFront->SiteStore->getByFilter(('site'=>$xpath.query("*/siteAcronym/")->nodeValue));
+    $this->siteID = $this->storeFront->SiteStore->getByFilter(('siteAcronym'=>$xpath.query("*/siteAcronym/")->nodeValue));
 
     $this->beginDate = $xpath.query("*/beginDate/")->nodeValue;
     $this->endDate = $xpath.query("*/endDate/")->nodeValue;

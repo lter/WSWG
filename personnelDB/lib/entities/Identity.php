@@ -34,7 +34,14 @@ class Identity extends Entity {
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
 
   public function to_xml() {
-    $xml_obj = new DOMElement('identity');
+    $xml_obj = new DOMElement('person');
+    $xml_obj->appenChild(new DOMElement('personID'), $this->personID);
+    $xml_obj->appendChild($this->to_xml_fragment());
+    return $xml_obj;
+  }
+
+  public function to_xml_fragment() {
+    $xml_obj = new DOMElement('Identity');
     $xml_obj->appendChild(new DOMElement('prefix',$this->prefix ));
     $xml_obj->appendChild(new DOMElement('firstName',$this->firstName ));
     $xml_obj->appendChild(new DOMElement('middleName',$this->middleName ));

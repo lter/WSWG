@@ -34,12 +34,18 @@ class Person extends Entity {
   public function to_xml() {
     $xml_obj = new DOMElement('person');
     $xml_obj->appendChild(new DOMElement('personID',getIdentity()->personID));
-    $xml_obj->appendChild(getIdentity()->to_xml());
+    $xml_obj->appendChild(getIdentity()->to_xml_fragment());
     if (getRoles()->length > 0) {
-      $xml_obj->appendChild(new DOMElement('roleList'))->appendChild(getRoles()->to_xml());
+      $role_xml = $xml_obj->appendChild(new DOMElement('roleList'));
+      foreach(roles as $role) {
+        $role_xml->appendChild($role->to_xml_fragment());
+      }
     }
     if (getContactInfo()->length > 0) {
-      $xml_obj->appendChild(new DOMElement('contactInfoList'))->appendChild(getContactInfo());
+      $contact_xml = $xml_obj->appendChild(new DOMElement('contactInfoList'));
+      foreach(contactInfo as $contact) {
+        $contact_xml->appendChild($contact->to_xml_fragment());
+      }
     }
     return $xml_obj;
   }
