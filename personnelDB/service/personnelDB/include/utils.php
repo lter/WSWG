@@ -61,17 +61,27 @@ function getEntityStore($ename) {
 
 
 function serializeEntities($entities, $content) {
-  $trans_obj  = getTransmuter($content);
-
-  foreach ($entities as $entity) {
-	$trans_obj->transmuteRoot($entity);
-	$trans_obj->reset();
+  switch ($content) {
+  case 'xml':
+    return serializeAsXML($entities);
+    break;
+  case 'json':
+    return serializeAsJSON($entities);
+    break;
   }
-
-  // return serialized output
-  return $trans_obj->flush();
 }
 
+function serializeAsXML($entities) {
+  $xml_obj = new DOMDocument('1.0', 'utf-8');
+	$xml_root = $xml_obj->appendChild($xml_obj->createElement('personnel'));
+  foreach($entities as $entity) {
+    $xml_root->appendChild($entity->to_xml());
+  }
+}
+
+function serializeAsJSON($entities){
+
+}
 
 function snapshot($id, $store_name) {
   $personneldb =& PersonnelDB::getInstance();
