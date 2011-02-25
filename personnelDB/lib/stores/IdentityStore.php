@@ -51,7 +51,7 @@ class IdentityStore extends Store {
   // Returns an array of alias strings for the identity matching $id
   public function getAliases($id) {
     $f = function($e) { return array(null, $e['nameAlias']); };
-    return $this->makeArray($f, IDENTITY_GETALIAS, array($id));
+    return $this->makeArray($f, ALIAS_GETBYIDENTITY, array($id));
   }
 
 

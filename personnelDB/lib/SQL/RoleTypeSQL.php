@@ -20,6 +20,6 @@ define('ROLETYPE_GETBYFILTER_NSF_STUB',	'SELECT nsfRoleType.*, "nsf" as type
 					FROM nsfRoleType JOIN site ON (false)');
 
 define('ROLETYPE_GETBYFILTER_LOCAL_STUB','SELECT localRoleType.*, "local" as type
-					FROM localRoleType JOIN site USING (siteID)');
+					FROM localRoleType NATURAL JOIN site');
 
 /* UPDATE STATEMENTS */
