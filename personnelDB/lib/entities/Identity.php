@@ -32,28 +32,31 @@ class Identity extends Entity {
 
  /* Serialization */
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
-
-  public function to_xml() {
-    $xml_obj = new DOMElement('person');
-    $xml_obj->appenChild(new DOMElement('personID'), $this->personID);
-    $xml_obj->appendChild($this->to_xml_fragment());
-    return $xml_obj;
-  }
-
   public function to_xml_fragment() {
-    $xml_obj = new DOMElement('Identity');
-    $xml_obj->appendChild(new DOMElement('prefix',$this->prefix ));
-    $xml_obj->appendChild(new DOMElement('firstName',$this->firstName ));
-    $xml_obj->appendChild(new DOMElement('middleName',$this->middleName ));
-    $xml_obj->appendChild(new DOMElement('lastName',$this->lastName ));
-    $xml_obj->appendChild(new DOMElement('preferredName',$this->preferredName ));
-    $xml_obj->appendChild(new DOMElement('title',$this->title ));
-    $xml_obj->appendChild(new DOMElement('optOut',$this->optOut ));
-    if (aliases.length > 0){
-      $xml_obj->appendChild(new DOMElement('aliases',$this->aliases ));
+    $xml_doc = new \DOMDocument('1.0','utf-8');
+    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('identity'));
+    $xml_obj->appendChild($xml_doc->createElement('prefix',$this->prefix ));
+    $xml_obj->appendChild($xml_doc->createElement('firstName',$this->firstName ));
+    $xml_obj->appendChild($xml_doc->createElement('middleName',$this->middleName ));
+    $xml_obj->appendChild($xml_doc->createElement('lastName',$this->lastName ));
+    $xml_obj->appendChild($xml_doc->createElement('preferredName',$this->preferredName ));
+    $xml_obj->appendChild($xml_doc->createElement('title',$this->title ));
+    $xml_obj->appendChild($xml_doc->createElement('optOut',$this->optOut ));
+    foreach($this->aliases as $alias) {
+      $xml_obj->appendChild($xml_doc->createElement('aliases',$alias));
     }
     return $xml_obj;
   }
+
+  public function to_xml() {
+    $xml_doc = new \DOMDocument('1.0','utf-8');
+    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
+    $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
+    $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
+    $xml_obj->appendChild($fragment);
+    return $xml_doc;
+  }
+
 
   public function from_xml($xml_dom) {
     if ($xml_dom->nodeName == 'identity')
