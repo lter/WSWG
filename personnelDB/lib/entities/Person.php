@@ -61,6 +61,7 @@ class Person extends Entity {
         $role = new Role();
       }
       $role->from_xml($role_element);
+      $role->personID = $this->personID;
       $roles->push($role);
     }
     unset($role_element);
@@ -74,7 +75,9 @@ class Person extends Entity {
         $contact = new Contact();
       }
       $contact->from_xml($contact_element);
-      $contacts->pusth($contact);
+      $contact->personID = $this->personID;
+      $contacts->push($contact);
     }
+    unset($contact_elment);
   }
 }

@@ -44,7 +44,6 @@ class Role extends Entity {
     return $xml_obj;
   }
 
-  // TODO: need to figure out if it is a nsf or local role
   public function from_xml($xml_dom) {
     if ($xml_dom->nodeName == 'role')
       throw new \Exception('role->from_xml can only deal with role nodes');
@@ -52,11 +51,11 @@ class Role extends Entity {
     
     $xpath = new \DOMXPath($xml_dom);
     $this->roleID = $xpath.query("*/roleID/")->nodeValue;
-    $role_fragmenet = $xpath.query("*/roleType/");
-    $roletype = $role_fragment->getAttribute('type')
-//    $this->role
+    
+    $role_fragment = $xpath.query("*/roleType/");
+    $this->roleTypeID = $this->storeFront->RoleTypeStore->getByFilter(('roleType'=>$role_fragment->nodeValue),($role_fragment->getAttribute('type'))
 
-    $this->setSiteByAcronym($xpath.query("*/siteAcronym/")->nodeValue);
+    $this->siteID = $this->storeFront->SiteStore->getByFilter(('site'=>$xpath.query("*/siteAcronym/")->nodeValue));
 
     $this->beginDate = $xpath.query("*/beginDate/")->nodeValue;
     $this->endDate = $xpath.query("*/endDate/")->nodeValue;
