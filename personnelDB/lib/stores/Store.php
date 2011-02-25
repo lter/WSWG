@@ -82,19 +82,21 @@ abstract class Store {
 
     // Create a nested array of constraints from filter/value pairs, throw
     //  an exception if an unknown filter is found
-    foreach ($filters as $filter => $value) {
+    foreach ($filters as $filter => $values) {
       if (array_key_exists($filter, $this->filterList)) {
 	// Create array for this filter if needed
 	if (!array_key_exists($filter, $where))
 	  $where[$filter] = array();
 	
-	// For each DB field mapped to this filter, add a constraint
-	foreach ($this->filterList[$filter] as $field) {
-	  // If an array of values was passed, create separate constraints for each value
-	  if (is_array($value))
-	    foreach ($value as $v) { $where[$filter][] = array($field, $v); }
-	  else
-	    $where[$filter][] = array($field, $value);
+	// Create separate constraints for each value
+	$values = is_array($values) ? $values : array($values);
+	foreach ($values as $value) {
+	  $not = (substr($value,0,1)) == '!' ? '!' : '';
+	  $value = ltrim($value, '!');
+	  $fields = $this->filterList[$filter];
+
+	  // For each DB field mapped to this filter, add a field to the constraint
+	  $where[$filter][] = array('not' => $not, 'value' => $value, 'fields' => $fields);
 	}
       } else {
 	throw new Exception("'$filter' is not a valid Identity filter");
@@ -105,14 +107,20 @@ abstract class Store {
     $wherePieces = array();
     $queryVars = array();
     foreach ($where as $filter => $constraints) {
-      $subWherePieces = array();
+      $filterPieces = array();
       foreach ($constraints as $constraint) {
-	$subWherePieces[] = "{$constraint[0]} LIKE ?";
-	$queryVars[] = "%{$constraint[1]}%";
-      }
+	$constraintPieces = array();
+	foreach ($constraint['fields'] as $field) {
+	  $constraintPieces[] = "{$field} LIKE ?";
+	  $queryVars[] = "%{$constraint['value']}%";
+	}
 
+	// Within a constraint, fields are ORed
+	$filterPieces[] = "{$constraint['not']}(".implode(' OR ', $constraintPieces).")";
+      }
+	
       // Within a filter, constraints are ORed
-      $wherePieces[] = '('.implode(' OR ', $subWherePieces).')';
+      $wherePieces[] = '('.implode(' OR ', $filterPieces).')';
     }
 
     // Between filters, constraints are ANDed
