@@ -3,16 +3,12 @@
 namespace PersonnelDB;
 
 // Include stores
+//include('stores/PersonStore.php');
+//include('stores/ContactInfoStore.php');
 include('stores/IdentityStore.php');
-include('stores/RoleStore.php');
-
-// Include entities
-include('entities/Identity.php');
-include('entities/Role.php');
-
-// Include SQL
-include('SQL/IdentitySQL.php');
-include('SQL/RoleSQL.php');
+//include('stores/RoleStore.php');
+include('stores/RoleTypeStore.php');
+include('stores/SiteStore.php');
 
 
 class PersonnelDB {
