@@ -60,7 +60,49 @@ class ContactInfo extends Entity {
     return $xml_obj;
   }
 
-  public function from_xml($xml_string) {
+  public function from_xml($xml_dom) {
+    if ($xml_dom->nodeName == 'contactInfo')
+      throw new \Exception('contactInfo->from_xml can only deal with contactInfo nodes');
+     }
+    $xpath = new \DOMXPath($xml_dom);
+    $this->contactInfoID = $xpath.query("*/contactInfoID/")->nodeValue;
+    $this->label = $xpath.query("*/label/")->nodeValue;
+    $this->isPrimary = $xpath.query("*/isPrimary/")->nodeValue;
+    $this->isActive = $xpath.query("*/isActive/")->nodeValue;
+    // address
+    foreach($xpath.query("*/address") as $i => $address) {
+      $this->contactInfoFields[] = assemble_contactInfoFields($phone, 'address');
+    }
+    unset($address);
+    $this->institution = $xpath.query("*/institution/")->nodeValue;
+    $this->city = $xpath.query("*/city/")->nodeValue;
+    $this->administrativeArea = $xpath.query("*/administrativeArea/")->nodeValue;
+    $this->postalCode = $xpath.query("*/postalCode/")->nodeValue;
+    $this->county = $xpath.query("*/county/")->nodeValue;
+    //phone
+    foreach($xpath.query("*/phone") as $i => $phone) {
+      $this->contactInfoFields[] = assemble_contactInfoFields($phone, 'phone');
+    }
+    unset($phone);
+    //fax
+    foreach($xpath.query("*/fax") as $i => $fax {
+      $this->contactInfoFields[] = assemble_contactInfoFields($phone, 'fax');
+    }
+    unset($fax);
+    //email
+    foreach($xpath.query("*/email") as $i => $email) {
+      $this->contactInfoFields[] = assemble_contactInfoFields($email, 'email');
+    }
+    unset($email);
+  }
 
+  private function assemble_contactInfoFields($field, $type_string){
+      $field= new ContactInfoField();
+      $field->value = $phone->nodeValue;
+      $field->contactInfoID = $this.contactInfoID;
+      $field->sortOrder = $i;
+      // TODO: grab the correct ID
+      // $field->contactInfoFieldTypeID = $this->storefront->contactInfoFieldTypeStore->
+      return $field;
   }
 }

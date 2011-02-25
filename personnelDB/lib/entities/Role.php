@@ -24,6 +24,11 @@ class Role extends Entity {
 
   public function getSite() { }
 
+  public function setSiteByAcronym($acronym) {
+    // find site by acronym
+    // set siteID to site->id
+  }
+
   /* Serialization */
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml() {
@@ -39,7 +44,19 @@ class Role extends Entity {
     return $xml_obj;
   }
 
-  public function from_xml($xml_string) {
+  // TODO: need to figure out if it is a nsf or local role
+  public function from_xml($xml_dom) {
+    if ($xml_dom->nodeName == 'role')
+      throw new \Exception('role->from_xml can only deal with role nodes');
+     }
+    
+    $xpath = new \DOMXPath($xml_dom);
+    $this->roleID = $xpath.query("*/roleID/")->nodeValue;
+    $this->roleType = $xpath.query("*/roleType/")->nodeValue;
+    $this->setSiteByAcronym($xpath.query("*/siteAcronym/")->nodeValue);
 
+    $this->beginDate = $xpath.query("*/beginDate/")->nodeValue;
+    $this->endDate = $xpath.query("*/endDate/")->nodeValue;
+    $this->isActive = $xpath.query("*/isActive/")->nodeValue;
   }
 }
