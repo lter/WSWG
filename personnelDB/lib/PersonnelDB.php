@@ -4,7 +4,7 @@ namespace PersonnelDB;
 use \Exception as Exception;
 
 // Include stores
-//include('stores/PersonStore.php');
+include('stores/PersonStore.php');
 include('stores/ContactInfoStore.php');
 include('stores/IdentityStore.php');
 include('stores/RoleStore.php');

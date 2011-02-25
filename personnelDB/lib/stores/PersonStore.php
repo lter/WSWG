@@ -2,12 +2,25 @@
 
 namespace PersonnelDB;
 
+require_once('Store.php');
+require_once('personnelDB/SQL/PersonSQL.php');
+require_once('personnelDB/entities/Person.php');
+
 class PersonStore extends Store {
 
   /* METHODS */
   
   public function __construct() {
     parent::__construct();
+
+    $this->filterList = array (
+			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
+			       'lastName' => array('lastName'),
+			       'isActive' => array('nsfRole.isActive', 'localRole.isActive'),
+			       'roleType' => array('nsfRoleType.roleType', 'localRoleType.roleType'),
+			       'site' => array('s1.site', 's1.siteAcronym', 's2.site', 's2.siteAcronym'),
+			       'siteAcronym' => array('s1.siteAcronym', 's2.siteAcronym'),
+			       );
   }
   
   public function __destruct() {
@@ -17,18 +30,27 @@ class PersonStore extends Store {
 
   /* ACCESS METHODS */
 
+  // Returns an empty Person entity
   public function getEmpty() {
     return new Person();
   }
 
+  // Returns an array of all people in the database
   public function getAll() {
+    return $this->makeEntityArray('Person', PERSON_GETALL);
   }
 
+  // Returns a single person matching $id, or null if no match exists
   public function getById($id) {
-
+    $list = $this->makeEntityArray('Person', PERSON_GETBYID, array($id));
+    return isset($list[0]) ? $list[0] : null;
   }
 
-  public function getByFilter() { }
+  // Returns an array of people matching the filter/value pairs
+  //  given in $filters, or null if there are no matches
+  public function getByFilter($filters = array()) {
+    return $this->makeFilteredArray('Person', PERSON_GETBYFILTER_STUB, $filters);
+  }
 
 
   /* UPDATE METHODS */

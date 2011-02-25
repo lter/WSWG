@@ -3,6 +3,8 @@
 namespace PersonnelDB;
 use \DOMElement as DOMElement;
 
+require_once('Entity.php');
+
 class Person extends Entity {
 
   /* METHODS */
@@ -18,15 +20,21 @@ class Person extends Entity {
 
   /* RELATION METHODS */
 
-  public function getIdentity() { }
+  public function getIdentity() {
+    return $this->storeFront->IdentityStore->getById($this->personID);
+  }
 
   public function setIdentity() { }
 
-  public function getRoles() { }
+  public function getRoles() {
+    return $this->storeFront->RoleStore->getByFilter(array('personID' => $this->personID));
+  }
 
   public function setRoles() { }
 
-  public function getContactInfo() { }
+  public function getContactInfo() {
+    return $this->storeFront->ContactInfoStore->getByFilter(array('personID' => $this->personID));
+  }
 
   public function setContactInfo() { }
 
@@ -53,7 +61,7 @@ class Person extends Entity {
   public function from_xml($xml_dom) {
     if ($xml_dom->nodeName == 'person')
       throw new \Exception('person->from_xml can only deal with person nodes');
-     }
+
     $xpath = new \DOMXPath($xml_dom);
     $this->personID = $xpath.query("*/personID/")->nodeValue;
     $roles = array();
