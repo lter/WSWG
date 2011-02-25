@@ -14,12 +14,12 @@ class ContactInfoStore extends Store {
     parent::__construct();
 
     $this->filterList = array (
+			       'isActive' => array('isActive'),
 			       'site' => array('site', 'siteAcronym'),
 			       'siteAcronym' => array('siteAcronym'),
-			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
 			       'personID' => array('personID'),
+			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
 			       'lastName' => array('lastName'),
-			       'isActive' => array('isActive'),
 			       );
   }
   

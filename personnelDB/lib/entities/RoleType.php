@@ -17,6 +17,4 @@ class RoleType extends Entity {
 
   /* RELATION METHODS */
 
-  public function getRoles() { }
-
 }

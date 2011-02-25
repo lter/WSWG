@@ -28,9 +28,13 @@ class ContactInfo extends Entity {
 
   /* RELATION METHODS */
 
-  public function getPerson() { }
+  public function getPerson() {
+    return $this->storeFront->PersonStore->getByID($this->personID);
+  }
 
-  public function getSite() { }
+  public function getSite() {
+    return $this->storeFront->SiteStore->getByID($this->siteID);
+  }
 
   /* serialization */
   public function to_xml() {

@@ -17,10 +17,6 @@ class Site extends Entity {
 
   /* RELATION METHODS */
 
-  public function getRoles() { }
-
-  public function getContactInfo() { }
-
   /* serialization */
   public function to_xml_fragment() {
     $xml_doc = new \DOMDocument('1.0','utf-8');

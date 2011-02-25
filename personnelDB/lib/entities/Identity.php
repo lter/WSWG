@@ -28,7 +28,9 @@ class Identity extends Entity {
 
   /* RELATION METHODS */
 
-  public function getPerson() { }
+  public function getPerson() {
+    return $this->storeFront->PersonStore->getByID($this->personID);
+  }
 
  /* Serialization */
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 

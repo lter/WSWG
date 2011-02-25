@@ -20,7 +20,9 @@ class Role extends Entity {
 
   /* RELATION METHODS */
 
-  public function getPerson() { }
+  public function getPerson() {
+    return $this->storeFront->PersonStore->getByID($this->personID);
+  }
 
   public function getIdentity() {
     return $this->storeFront->IdentityStore->getById($this->personID);
