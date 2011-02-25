@@ -123,9 +123,4 @@ class ContactInfo extends Entity {
       return $field;
   }
 
-  protected function add_xml_if($xml_doc, $xml_obj,$field) {
-    if ($this->$field) {
-      $xml_obj->appendChild($xml_doc->createElement($field,$this->$field));
-    }
-  }
 }
