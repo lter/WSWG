@@ -3,7 +3,14 @@
 namespace PersonnelDB;
 use \DOMElement as DOMElement;
 
+require_once('Entity.php');
+
 class ContactInfo extends Entity {
+
+  /* MEMBER DATA */
+
+  public $fields = array();
+
 
   /* METHODS */
 
@@ -11,7 +18,7 @@ class ContactInfo extends Entity {
     parent::__construct($inf);
 
     // Populate contact info fields
-    $this->contactInfoFields = $this->storefront->ContactInfoStore->getFields($this->contactInfoID);
+    $this->fields = $this->storeFront->ContactInfoStore->getFields($this->contactInfoID);
   }
 
   public function destruct() {
@@ -70,7 +77,7 @@ class ContactInfo extends Entity {
   public function from_xml($xml_dom) {
     if ($xml_dom->nodeName == 'contactInfo')
       throw new \Exception('contactInfo->from_xml can only deal with contactInfo nodes');
-     }
+
     $xpath = new \DOMXPath($xml_dom);
     $this->contactInfoID = $xpath.query("*/contactInfoID/")->nodeValue;
     $this->label = $xpath.query("*/label/")->nodeValue;
@@ -92,7 +99,7 @@ class ContactInfo extends Entity {
     }
     unset($phone);
     //fax
-    foreach($xpath.query("*/fax") as $i => $fax {
+    foreach($xpath.query("*/fax") as $i => $fax) {
       $this->contactInfoFields[] = assemble_contactInfoFields($phone, 'fax');
     }
     unset($fax);

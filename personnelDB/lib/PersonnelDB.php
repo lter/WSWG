@@ -5,7 +5,7 @@ use \Exception as Exception;
 
 // Include stores
 //include('stores/PersonStore.php');
-//include('stores/ContactInfoStore.php');
+include('stores/ContactInfoStore.php');
 include('stores/IdentityStore.php');
 include('stores/RoleStore.php');
 include('stores/RoleTypeStore.php');

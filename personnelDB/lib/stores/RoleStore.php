@@ -19,9 +19,9 @@ class RoleStore extends Store {
 			       'site' => array('site', 'siteAcronym'),
 			       'siteAcronym' => array('siteAcronym'),
 			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
-			       'lastName' => array('lastName')
+			       'lastName' => array('lastName'),
+			       'isActive' => array('isActive')
 			       );
-
   }
   
   public function __destruct() {

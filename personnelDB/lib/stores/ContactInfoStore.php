@@ -2,12 +2,24 @@
 
 namespace PersonnelDB;
 
+require_once('Store.php');
+require_once('personnelDB/SQL/ContactInfoSQL.php');
+require_once('personnelDB/entities/ContactInfo.php');
+
 class ContactInfoStore extends Store {
 
   /* METHODS */
   
   public function __construct() {
     parent::__construct();
+
+    $this->filterList = array (
+			       'site' => array('site', 'siteAcronym'),
+			       'siteAcronym' => array('siteAcronym'),
+			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
+			       'lastName' => array('lastName'),
+			       'isActive' => array('isActive')
+			       );
   }
   
   public function __destruct() {
@@ -17,15 +29,40 @@ class ContactInfoStore extends Store {
 
   /* ACCESS METHODS */
 
-  public function getEmpty() { }
+  // Returns an empty ContactInfo entity
+  public function getEmpty() {
+    return new ContactInfo();
+  }
 
-  public function getAll() { }
+  // Returns all contact info blocks in the database
+  public function getAll() {
+    return $this->makeEntityArray('ContactInfo', CONTACT_GETALL);
+  }
 
-  public function getById() { }
+  // Returns a single contact info block matching $id, or null if no match exists
+  public function getById($id) {
+    $list = $this->makeEntityArray('ContactInfo', CONTACT_GETBYID, array($id));
+    return isset($list[0]) ? $list[0] : null;
+  }
 
-  public function getByFilter() { }
+  // Returns an array of contact info blocks matching the filter/value pairs
+  //  given in $filters, or null if there are no matches
+  public function getByFilter() {
+    return $this->makeFilteredArray('ContactInfo', CONTACT_GETBYFILTER_STUB, $filters);
+  }
 
-  public function getFields() { }
+  // Gets an array of fields associated with contact info block $id
+  public function getFields($id) {
+    $f = function($e) { return array(null, $e); };
+    return $this->makeArray($f, FIELD_GETBYCONTACT, array($id));
+  }
+
+  // Gets a field type id given the field type name
+  public function getFieldTypeIDByName($name) {
+    $f = function($e) { return array($e['contactInfoFieldType'], $e['contactInfoFieldTypeID']); };
+    $list = $this->makeArray($f, FIELDTYPE_GETBYNAME, array($name));
+    return $list[$name];
+  }
 
   /* UPDATE METHODS */
 
