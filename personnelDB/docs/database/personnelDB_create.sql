@@ -19,6 +19,7 @@ CREATE  TABLE IF NOT EXISTS `person` (
   `primaryEmail` VARCHAR(255) NOT NULL ,
   `title` VARCHAR(255) NULL DEFAULT NULL ,
   `optOut` BIT(1) NOT NULL DEFAULT b'0' ,
+  `changeDate` DATE NULL ,
   PRIMARY KEY (`personID`) )
 ENGINE = InnoDB
 AUTO_INCREMENT = 179
@@ -88,12 +89,12 @@ DROP TABLE IF EXISTS `localRoleType` ;
 
 CREATE  TABLE IF NOT EXISTS `localRoleType` (
   `localRoleTypeID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `scope` INT(10) UNSIGNED NOT NULL ,
+  `siteID` INT(10) UNSIGNED NOT NULL ,
   `roleType` VARCHAR(255) NOT NULL ,
   `isRepeatable` BIT(1) NOT NULL DEFAULT b'1' ,
-  PRIMARY KEY (`localRoleTypeID`, `scope`) ,
+  PRIMARY KEY (`localRoleTypeID`, `siteID`) ,
   CONSTRAINT `fk_site_localRoleType`
-    FOREIGN KEY (`scope` )
+    FOREIGN KEY (`siteID` )
     REFERENCES `site` (`siteID` )
     ON DELETE CASCADE
     ON UPDATE CASCADE)
@@ -101,7 +102,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
-CREATE INDEX `fk_site_localRoleType` ON `localRoleType` (`scope` ASC) ;
+CREATE INDEX `fk_site_localRoleType` ON `localRoleType` (`siteID` ASC) ;
 
 
 -- -----------------------------------------------------
