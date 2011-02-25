@@ -31,21 +31,24 @@ class Identity extends Entity {
   public function getPerson() { }
 
  /* Serialization */
+  // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
 
   public function to_xml() {
-    xml_obj = new DOMElement('identity');
-    xml_obj->appendChild(new DOMElement('prefix',$this->prefix ));
-    xml_obj->appendChild(new DOMElement('firstName',$this->firstName ));
-    xml_obj->appendChild(new DOMElement('middleName',$this->middleName ));
-    xml_obj->appendChild(new DOMElement('lastName',$this->lastName ));
-    xml_obj->appendChild(new DOMElement('preferredName',$this->preferredName ));
-    xml_obj->appendChild(new DOMElement('title',$this->title ));
-    xml_obj->appendChild(new DOMElement('optOut',$this->optOut ));
+    $xml_obj = new DOMElement('identity');
+    $xml_obj->appendChild(new DOMElement('prefix',$this->prefix ));
+    $xml_obj->appendChild(new DOMElement('firstName',$this->firstName ));
+    $xml_obj->appendChild(new DOMElement('middleName',$this->middleName ));
+    $xml_obj->appendChild(new DOMElement('lastName',$this->lastName ));
+    $xml_obj->appendChild(new DOMElement('preferredName',$this->preferredName ));
+    $xml_obj->appendChild(new DOMElement('title',$this->title ));
+    $xml_obj->appendChild(new DOMElement('optOut',$this->optOut ));
     if (aliases.length > 0){
-      xml_obj->appendChild(new DOMElement('aliases',$this->aliases ));
+      $xml_obj->appendChild(new DOMElement('aliases',$this->aliases ));
     }
-    return xml_obj;
+    return $xml_obj;
   }
 
-  public function from_xml() {}
+  public function from_xml($xml_string) {}
+
+  }
 }
