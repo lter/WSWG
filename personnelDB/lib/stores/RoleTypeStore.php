@@ -1,6 +1,7 @@
 <?php
 
 namespace PersonnelDB;
+use \Exception as Exception;
 
 require_once('Store.php');
 require_once('personnelDB/SQL/RoleTypeSQL.php');
@@ -14,8 +15,8 @@ class RoleTypeStore extends Store {
     parent::__construct();
 
     $this->filterList = array (
-			       'name' => array('roleType'),
-			       'scope' => array('site', 'siteAcronym'),
+			       'roleType' => array('roleType'),
+			       'scope' => array('site','siteAcronym'),
 			       );
   }
   
@@ -33,7 +34,9 @@ class RoleTypeStore extends Store {
 
   // Returns an array of all the roleTypes in the database
   public function getAll() {
-    return $this->makeEntityArray('RoleType', ROLETYPE_GETALL);
+    $n = $this->getByType('nsf');
+    $l = $this->getByType('local');
+    return array_merge($n, $l);
   }
 
   // Returns an array of roleTypes of the given $type (nsf or local)
@@ -41,7 +44,7 @@ class RoleTypeStore extends Store {
     switch ($type) {
     case 'nsf': $sql = ROLETYPE_GETALL_NSF; break;
     case 'local': $sql = ROLETYPE_GETALL_LOCAL; break;
-    default: throw new \Exception("Type must be 'nsf' or 'local'");
+    default: throw new Exception("Type must be 'nsf' or 'local'");
     }
 
     return $this->makeEntityArray('RoleType', $sql);
@@ -52,7 +55,7 @@ class RoleTypeStore extends Store {
     switch ($type) {
     case 'nsf': $sql = ROLETYPE_GETBYID_NSF; break;
     case 'local': $sql = ROLETYPE_GETBYID_LOCAL; break;
-    default: throw new \Exception("Type must be 'nsf' or 'local'"); break;
+    default: throw new Exception("Type must be 'nsf' or 'local'"); break;
     }
 
     $list = $this->makeEntityArray('RoleType', $sql, array($id));
@@ -64,9 +67,12 @@ class RoleTypeStore extends Store {
   //  $type parameter restricts to nsf or local roleTypes
   public function getByFilter($filters = array(), $type = null) {
     switch ($type) {
-    case 'nsf': $sql = ROLETYPE_GETBYFILTER_NSF_STUB; break;
-    case 'local': $sql = ROLETYPE_GETBYFILTER_LOCAL_STUB; break;
-    default: $sql = ROLETYPE_GETBYFILTER_STUB; break;
+    case 'nsf':  return $this->makeFilteredArray('RoleType', ROLETYPE_GETBYFILTER_NSF_STUB, $filters);
+    case 'local': return $this->makeFilteredArray('RoleType', ROLETYPE_GETBYFILTER_LOCAL_STUB, $filters);
+    default:
+      $n = $this->getByFilter($filters, 'nsf');
+      $l = $this->getByFilter($filters, 'local');
+      return array_merge($n, $l);
     }
 
     return $this->makeFilteredArray('RoleType', $sql, $filters);

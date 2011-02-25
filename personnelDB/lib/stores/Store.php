@@ -1,6 +1,7 @@
 <?php
 
 namespace PersonnelDB;
+use \Exception as Exception;
 
 require_once('iDBConnection/iDBConnection.php');
 
@@ -96,7 +97,7 @@ abstract class Store {
 	    $where[$filter][] = array($field, $value);
 	}
       } else {
-	throw new \Exception("'$filter' is not a valid Identity filter");
+	throw new Exception("'$filter' is not a valid Identity filter");
       }
     }
 

@@ -1,12 +1,13 @@
 <?php
 
 namespace PersonnelDB;
+use \Exception as Exception;
 
 // Include stores
 //include('stores/PersonStore.php');
 //include('stores/ContactInfoStore.php');
 include('stores/IdentityStore.php');
-//include('stores/RoleStore.php');
+include('stores/RoleStore.php');
 include('stores/RoleTypeStore.php');
 include('stores/SiteStore.php');
 
@@ -52,7 +53,7 @@ class PersonnelDB {
       return $this->stores[$store];
     } else {
       // This is not a recognized store class!
-      throw new \Exception('Attempt to create unknown store type: '.$store);
+      throw new Exception('Attempt to create unknown store type: '.$store);
     }
   }
 }

@@ -14,7 +14,8 @@ class SiteStore extends Store {
     parent::__construct();
 
     $this->filterList = array (
-			       'name' => array('site', 'siteAcronym')
+			       'site' => array('site', 'siteAcronym'),
+			       'siteAcronym' => array('siteAcronym')
 			       );
   }
   
