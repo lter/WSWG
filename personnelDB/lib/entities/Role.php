@@ -69,9 +69,9 @@ class Role extends Entity {
     $this->roleID = $xpath.query("*/roleID/")->nodeValue;
     
     $role_fragment = $xpath.query("*/roleType/");
-    $this->roleTypeID = $this->storeFront->RoleTypeStore->getByFilter(array('roleType' => $role_fragment->nodeValue),($role_fragment->getAttribute('type'))
+    $this->roleTypeID = $this->storeFront->RoleTypeStore->getByFilter(array('roleType' => $role_fragment->nodeValue),($role_fragment->getAttribute('type')));
 
-    $this->siteID = $this->storeFront->SiteStore->getByFilter(array('siteAcronym'=>$xpath.query("*/siteAcronym/")->nodeValue));
+    $this->siteID = $this->storeFront->SiteStore->getByFilter(array('siteAcronym' => $xpath.query("*/siteAcronym/")->nodeValue));
 
     $this->beginDate = $xpath.query("*/beginDate/")->nodeValue;
     $this->endDate = $xpath.query("*/endDate/")->nodeValue;
