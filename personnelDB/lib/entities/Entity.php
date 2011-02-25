@@ -53,7 +53,8 @@ abstract class Entity {
 
   protected function add_xml_if($xml_doc, $xml_obj,$field) {
     if ($this->$field) {
-      $xml_obj->appendChild($xml_doc->createElement($field,$this->$field));
+      $xml_child = $xml_obj->appendChild($xml_doc->createElement($field,$this->$field));
     }
+    return $xml_child;
   }
 }

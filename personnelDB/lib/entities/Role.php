@@ -46,9 +46,11 @@ class Role extends Entity {
   public function to_xml_fragment() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('role'));
-    $xml_obj->setAttribute('type',$this->getRoleType()->roleType);
     $xml_obj->appendChild($xml_doc->createElement('roleID',$this->roleID ));
-    $this->add_xml_if($xml_doc, $xml_obj, 'roleType');
+    $role_type = $this->add_xml_if($xml_doc, $xml_obj, 'roleType');
+    if ($role_type) {
+      $role_type->setAttribute('type',$this->getRoleType()->roleType);
+    }
     $site = $this->getSite();
     $this->add_xml_if($xml_doc, $xml_obj, 'siteAcronym');
     $this->add_xml_if($xml_doc, $xml_obj, 'beginDate');
