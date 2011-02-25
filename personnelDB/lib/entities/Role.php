@@ -1,6 +1,7 @@
 <?php
 
 namespace PersonnelDB;
+use \DOMElement as DOMElement;
 
 class Role extends Entity {
 
