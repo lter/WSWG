@@ -159,8 +159,8 @@
                                                                 <xs:extension base="textField">
                                                                     <xs:attribute name="type" use="required">
                                                                         <xs:annotation>
-                                                                            <xs:documentation>The type attribute specifies the type or scope of the roleType. Allowed values are "nsf"
-                                                                                for pre-defined NSF roles and "local" for site-defined and network-wide roles in the Personnel
+                                                                            <xs:documentation>The type attribute specifies the type or scope of the roleType. Allowed values are
+                                                                                "nsf" for pre-defined NSF roles and "local" for site-defined and network-wide roles in the Personnel
                                                                                 Database.</xs:documentation>
                                                                         </xs:annotation>
                                                                         <xs:simpleType>
@@ -257,14 +257,14 @@
                                                     </xs:element>
                                                     <xs:element name="beginDate" type="xs:date" minOccurs="0" maxOccurs="1">
                                                         <xs:annotation>
-                                                            <xs:documentation>The beginDate element contains the beginning date for the respective contact information. This
-                                                                element is optional but highly recommended when known.</xs:documentation>
+                                                            <xs:documentation>The beginDate element contains the beginning date for the respective contact information. This element
+                                                                is optional but highly recommended when known.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="endDate" type="xs:date" minOccurs="0" maxOccurs="1">
                                                         <xs:annotation>
-                                                            <xs:documentation>The endDate element contains the ending date for the respective contact information. This element
-                                                                is optional but highly recommended when known, and should agree with the value of the isActive element value (i.e.
+                                                            <xs:documentation>The endDate element contains the ending date for the respective contact information. This element is
+                                                                optional but highly recommended when known, and should agree with the value of the isActive element value (i.e.
                                                                 endDate in the past when isActive = false, endDate empty or in the future when isActive = true).</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
@@ -336,6 +336,12 @@
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
+                        <xs:attribute name="changeDate" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>The changeDate attribute lists the date any content in the personnel record was last modified. This is a read-only attribute that
+                                    will be ignored when submitting or updating personnel information in the database.</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
