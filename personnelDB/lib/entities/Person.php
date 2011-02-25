@@ -43,16 +43,16 @@ class Person extends Entity {
     $xml_doc = new \DOMDocument('1.0','utf-8');
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
-    $xml_obj->appendChild(getIdentity()->to_xml_fragment());
-    if (getRoles()) {
+    $xml_obj->appendChild($this->getIdentity()->to_xml_fragment());
+    if ($this->roles) {
       $role_xml = $xml_obj->appendChild(new DOMElement('roleList'));
-      foreach(roles as $role) {
+      foreach($this->roles as $role) {
         $role_xml->appendChild($role->to_xml_fragment());
       }
     }
-    if (getContactInfo()) {
+    if ($this->contactInfo) {
       $contact_xml = $xml_obj->appendChild(new DOMElement('contactInfoList'));
-      foreach(contactInfo as $contact) {
+      foreach($this->contactInfo as $contact) {
         $contact_xml->appendChild($contact->to_xml_fragment());
       }
     }
@@ -60,7 +60,7 @@ class Person extends Entity {
   }
 
   public function from_xml($xml_dom) {
-    if ($xml_dom->nodeName == 'person')
+    if ($xml_dom->nodeName != 'person') {
       throw new \Exception('person->from_xml can only deal with person nodes');
 
     $xpath = new \DOMXPath($xml_dom);
