@@ -1,0 +1,24 @@
+==========================================================================================
+XPath 1.0 library for filtering records in the LTER Personnel Database XML exchange format
+
+Wade Sheldon
+LTER Web Services Working Group
+Last updated: 2011-02-25
+
+==========================================================================================
+
+all people with any active nsf role:
+/personnel/person[roleList/role[roleType/@type='nsf' and (isActive='true' or isActive=1)]]
+
+all people at a specific site with any active nsf role:
+/personnel/person[roleList/role[roleType/@type='nsf' and siteAcronym='GCE' and (isActive='true' or isActive=1)]]
+
+all people with an active nsf role of 'Lead Principal Investigator':
+/personnel/person[roleList/role[roleType/@type='nsf' and roleType='Lead Principal Investigator' and (isActive='true' or isActive=1)]]
+
+all people with an active nsf role and active primary contact info:
+/personnel/person[roleList/role[roleType/@type='nsf' and (isActive='true' or isActive=1)]][contactInfoList/contactInfo[(isPrimary='true' or isPrimary=1) and (isActive='true' or isActive=1)]]
+
+all people with no active nsf or local role (inactive personnel):
+/personnel/person[not(roleList/role[(isActive=1 or isActive='true')])]
+

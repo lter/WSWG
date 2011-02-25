@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding="UTF-8" ?>
-<personnel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<personnel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="../../lib/xml-schema/lter-personnelDB.xsd">
    <person>
       <personID>0</personID>
       <identity>
@@ -5276,6 +5277,14 @@
             <siteAcronym>GCE</siteAcronym>
             <beginDate>2007-01-01</beginDate>
             <isActive>1</isActive>
+         </role>
+         <role>
+            <roleID>0</roleID>
+            <roleType type="nsf">Lead Principal Investigator</roleType>
+            <siteAcronym>GCE</siteAcronym>
+            <beginDate>2000-05-01</beginDate>
+            <endDate>2007-01-01</endDate>
+            <isActive>0</isActive>
          </role>
       </roleList>
       <contactInfoList>
