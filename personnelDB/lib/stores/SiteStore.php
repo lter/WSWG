@@ -15,7 +15,7 @@ class SiteStore extends Store {
 
     $this->filterList = array (
 			       'site' => array('site', 'siteAcronym'),
-			       'siteAcronym' => array('siteAcronym')
+			       'siteAcronym' => array('siteAcronym'),
 			       );
   }
   

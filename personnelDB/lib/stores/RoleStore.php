@@ -15,12 +15,13 @@ class RoleStore extends Store {
     parent::__construct();
 
     $this->filterList = array (
+			       'isActive' => array('isActive'),
 			       'roleType' => 'roleType',
 			       'site' => array('site', 'siteAcronym'),
 			       'siteAcronym' => array('siteAcronym'),
+			       'personID' => array('personID'),
 			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
 			       'lastName' => array('lastName'),
-			       'isActive' => array('isActive')
 			       );
   }
   

@@ -16,7 +16,7 @@ class RoleTypeStore extends Store {
 
     $this->filterList = array (
 			       'roleType' => array('roleType'),
-			       'scope' => array('site','siteAcronym'),
+			       'scope' => array('siteAcronym'),
 			       );
   }
   

@@ -17,8 +17,9 @@ class ContactInfoStore extends Store {
 			       'site' => array('site', 'siteAcronym'),
 			       'siteAcronym' => array('siteAcronym'),
 			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
+			       'personID' => array('personID'),
 			       'lastName' => array('lastName'),
-			       'isActive' => array('isActive')
+			       'isActive' => array('isActive'),
 			       );
   }
   
