@@ -40,26 +40,30 @@ class Role extends Entity {
   }
 
   /* Serialization */
-  public function to_xml() {
-    $xml_obj = new DOMElement('person');
-    $xml_obj->appenChild(new DOMElement('personID'), $this->personID);
-    $xml_obj->appenChild(new DOMElement('roleList'))->appendChild($this->to_xml_fragment());
-    return $xml_obj;
-  }
-
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml_fragment() {
-    $xml_obj = new DOMElement('role');
-    $xml_obj->setAttribute('type',getNodeType()->roleType);
-    $xml_obj->appendChild(new DOMElement('roleID',$this->roleID ));
-    $xml_obj->appendChild(new DOMElement('roleType',$this->roleType ));
-    $xml_obj->appendChild(new DOMElement('getSite()->siteAcronym',$this->getSite()->siteAcronym ));
-    $xml_obj->appendChild(new DOMElement('beginDate',$this->beginDate ));
-    $xml_obj->appendChild(new DOMElement('endDate',$this->endDate ));
-    $xml_obj->appendChild(new DOMElement('isActive',$this->isActive ));
+    $xml_doc = new \DOMDocument('1.0','utf-8');
+    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('role'));
+    $xml_obj->setAttribute('type',$this->getRoleType()->roleType);
+    $xml_obj->appendChild($xml_doc->createElement('roleID',$this->roleID ));
+    $xml_obj->appendChild($xml_doc->createElement('roleType',$this->roleType ));
+    $site = $this->getSite();
+    $xml_obj->appendChild($xml_doc->createElement('siteAcronym',$site->siteAcronym ));
+    $xml_obj->appendChild($xml_doc->createElement('beginDate',$this->beginDate ));
+    $xml_obj->appendChild($xml_doc->createElement('endDate',$this->endDate ));
+    $xml_obj->appendChild($xml_doc->createElement('isActive',$this->isActive ));
 
     return $xml_obj;
   }
+  public function to_xml() {
+    $xml_doc = new \DOMDocument('1.0','utf-8');
+    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
+    $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
+    $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
+    $xml_obj->appendChild($xml_doc->createElement('roleList'))->appendChild($fragment);
+    return $xml_doc;
+  }
+
 
   public function from_xml($xml_dom) {
     if ($xml_dom->nodeName == 'role')
