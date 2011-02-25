@@ -111,8 +111,13 @@ abstract class Store {
       foreach ($constraints as $constraint) {
 	$constraintPieces = array();
 	foreach ($constraint['fields'] as $field) {
-	  $constraintPieces[] = "{$field} LIKE ?";
-	  $queryVars[] = "%{$constraint['value']}%";
+	  if (is_numeric($constraint['value'])) {
+	    $constraintPieces[] = "{$field} = ?";
+	    $queryVars[] = $constraint['value'];
+	  } else {
+	    $constraintPieces[] = "{$field} LIKE ?";
+	    $queryVars[] = "%{$constraint['value']}%";
+	  }
 	}
 
 	// Within a constraint, fields are ORed
