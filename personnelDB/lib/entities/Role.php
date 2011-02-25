@@ -3,6 +3,8 @@
 namespace PersonnelDB;
 use \DOMElement as DOMElement;
 
+require_once('Entity.php');
+
 class Role extends Entity {
 
   /* METHODS */
@@ -20,9 +22,17 @@ class Role extends Entity {
 
   public function getPerson() { }
 
-  public function getRoleType() { }
+  public function getIdentity() {
+    return $this->storeFront->IdentityStore->getById($this->personID);
+  }
 
-  public function getSite() { }
+  public function getRoleType() {
+    return $this->storeFront->RoleTypeStore->getById($this->roleTypeID, $this->type);
+  }
+
+  public function getSite() {
+    return $this->storeFront->SiteStore->getById($this->siteID);
+  }
 
   public function setSiteByAcronym($acronym) {
     // find site by acronym
@@ -40,7 +50,7 @@ class Role extends Entity {
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml_fragment() {
     $xml_obj = new DOMElement('role');
-    $xml_obj->setAttribute('type',getNodeType()->roleType));
+    $xml_obj->setAttribute('type',getNodeType()->roleType);
     $xml_obj->appendChild(new DOMElement('roleID',$this->roleID ));
     $xml_obj->appendChild(new DOMElement('roleType',$this->roleType ));
     $xml_obj->appendChild(new DOMElement('getSite()->siteAcronym',$this->getSite()->siteAcronym ));
@@ -54,7 +64,6 @@ class Role extends Entity {
   public function from_xml($xml_dom) {
     if ($xml_dom->nodeName == 'role')
       throw new \Exception('role->from_xml can only deal with role nodes');
-     }
     
     $xpath = new \DOMXPath($xml_dom);
     $this->roleID = $xpath.query("*/roleID/")->nodeValue;
