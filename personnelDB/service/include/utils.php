@@ -72,11 +72,14 @@ function serializeEntities($entities, $content) {
 }
 
 function serializeAsXML($entities) {
-  $xml_obj = new DOMDocument('1.0', 'utf-8');
-	$xml_root = $xml_obj->appendChild($xml_obj->createElement('personnel'));
+  $xml_doc = new DOMDocument('1.0', 'utf-8');
+	$xml_root = $xml_doc->appendChild($xml_doc->createElement('personnel'));
   foreach($entities as $entity) {
-    $xml_root->appendChild($entity->to_xml());
+    $xml_entity = $entity->to_xml(); // Need to get the root node not the document
+    $fragment = $xml_doc->importNode($xml_entity, TRUE);
+    $xml_doc->appendChild($fragment);
   }
+  $xml_doc.saveXML();
 }
 
 function serializeAsJSON($entities){
