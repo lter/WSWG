@@ -1,6 +1,6 @@
 <?php
 
-use \RESTServer\RESTServer;
+use \WSWG\RESTServer;
 
 /**
  * LTER Unit Registry REST server
