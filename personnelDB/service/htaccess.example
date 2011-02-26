@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+        # Rewrite to index
+        RewriteEngine On
+        RewriteBase /relative/path/to/service
+        RewriteRule .* server.php
+</IfModule>

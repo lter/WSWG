@@ -28,31 +28,27 @@ $r_server = new RESTServer('/services/person');
 
 
 // Register patterns
-$r_server->registerHandler('GET', '/^\/(person|contact|role|site|identity)$/i', 'getentity');
-$r_server->registerHandler('GET', '/^\/(person|contact|role|site|identity)\/_$/i', 'getnewentity');
-$r_server->registerHandler('GET', '/^\/(person|contact|role|site|identity)\/(\d+(,\d+){0,})$/i', 'getentitybyid');
-$r_server->registerHandler('GET', '/^\/(person|contact|role|site|identity)\/(\D.*)$/i', 'getentitybyfilter');
-
-$r_server->registerHandler('POST', '/^\/(person|contact|identity|role)$/i', 'postentity');
-$r_server->registerHandler('PUT', '/^\/(person|contact|identity|role)\/(\d+)$/i', 'putentity');
+$r_server->registerHandler('GET', '/^\/(person|identity|contact|role|roleType|site)$/i', 'getEntity');
+$r_server->registerHandler('GET', '/^\/(person|identity|contact|role|roleType|site)\/_$/i', 'getEntityBlank');
+$r_server->registerHandler('GET', '/^\/(person|contact|site|identity)\/(\d+(,\d+){0,})$/i', 'getEntityById');
+$r_server->registerHandler('GET', '/^\/(role|roleType)\/(nsf|local)$/i', 'getRoleByType');
+$r_server->registerHandler('GET', '/^\/(role|roleType)\/(nsf|local)\/(\d+(,\d+){0,})$/i', 'getRoleById');
 
 
 // set allowed request methods
 //
 $r_server->registerMethod('GET');
-$r_server->registerMethod('POST');
-$r_server->registerMethod('PUT');
 
 
 // register acceptable content types
 //
 $r_server->registerContentType('text/xml');
-$r_server->registerContentType('application/json');
-$r_server->registerContentType('text/plain');
+
 
 // set cache control
 //
 $r_server->cacheControl('no-cache');
+
 
 // call REST server
 //

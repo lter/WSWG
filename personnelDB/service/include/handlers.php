@@ -10,7 +10,7 @@
  * Get all entities 
  * args should have the name of the entity that has been requested
  */
-function getentity($server, $args) { 
+function getEntity($server, $args) { 
   // get args
   list($e_name) = $args;
 
@@ -28,7 +28,7 @@ function getentity($server, $args) {
  * Get a new entity
  * args should be the name of the entity requested. The name is used to find the appropriate store
  */
-function getnewentity($server, $args) { 
+function getEntityBlank($server, $args) { 
   // get args
   list($e_name) = $args;
 
@@ -46,7 +46,7 @@ function getnewentity($server, $args) {
  * Get a list of enties by id
  * args should be one or more id number separated by commas
  */
-function getentitybyid($server, $args) { 
+function getEntityById($server, $args) { 
   // get args
   list($e_name, $idstr) = $args;
 
@@ -67,26 +67,17 @@ function getentitybyid($server, $args) {
 }
 
 
-/*
- * Get a list of entries by a filter expression
- * args the name of store and a string
- */
-function getentitybyfilter($server, $args) {
-  // Get args
-  list($e_name, $filter) = $args;
+// NYI
+function getRoleByType($server, $args) {
 
-  $personel =& PersonnelDB::getInstance();
-  $store_name = getEntityStore(strtolower($e_name));
-
-  // Scan expression, tokenize, execute
-  $parser = new FilterParser($filter, $personel, $store_name);
-  $parser->tokenize();
-  $entities = $parser->evaluate();
-
-  // return serialized output
-  return serializeEntities($entities, $server->contentType);
 }
 
+// NYI
+function getRoleById($server, $args) {
+
+}
+
+/*
 function postentity($server, $args) {
   $login = authorize($server);
 
@@ -149,5 +140,6 @@ function putentity($server, $args) {
   // Return serialized output
   return serializeEntities(array($entity), $server->contentType);
 }
+*/
 
 ?>
