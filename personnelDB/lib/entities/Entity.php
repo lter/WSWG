@@ -52,9 +52,9 @@ abstract class Entity {
   /* UTILITY FUNCTION */
 
   protected function add_xml_if($xml_doc, $xml_obj,$field) {
-    if ($this->$field) {
-      $xml_child = $xml_obj->appendChild($xml_doc->createElement($field,$this->$field));
-    }
-    return $xml_child;
+    if ($this->$field)
+      return $xml_obj->appendChild($xml_doc->createElement($field,$this->$field));
+    
+    return null;
   }
 }

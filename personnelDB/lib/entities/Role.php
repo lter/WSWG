@@ -59,15 +59,16 @@ class Role extends Entity {
 
     return $xml_obj;
   }
+
   public function to_xml() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
     $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
     $xml_obj->appendChild($xml_doc->createElement('roleList'))->appendChild($fragment);
-    return $xml_doc;
-  }
 
+    return $xml_obj;
+  }
 
   public function from_xml($xml_dom) {
     if ($xml_dom->nodeName == 'role')

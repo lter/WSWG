@@ -44,21 +44,25 @@ class Person extends Entity {
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
     $fragment = $xml_doc->importNode($this->getIdentity()->to_xml_fragment(), TRUE);
-
     $xml_obj->appendChild($fragment);
-    if ($this->roles) {
+
+    if ($roles = $this->getRoles()) {
       $role_xml = $xml_obj->appendChild(new DOMElement('roleList'));
-      foreach($this->roles as $role) {
-        $role_xml->appendChild($role->to_xml_fragment());
+      foreach($roles as $role) {
+	$fragment = $xml_doc->importNode($role->to_xml_fragment(), TRUE);
+	$role_xml->appendChild($fragment);
       }
     }
-    if ($this->contactInfo) {
+
+    if ($contacts = $this->getContactInfo()) {
       $contact_xml = $xml_obj->appendChild(new DOMElement('contactInfoList'));
-      foreach($this->contactInfo as $contact) {
-        $contact_xml->appendChild($contact->to_xml_fragment());
+      foreach($contacts as $contact) {
+	$fragment = $xml_doc->importNode($contact->to_xml_fragment(), TRUE);
+	$contact_xml->appendChild($fragment);
       }
     }
-    return $xml_doc;
+
+    return $xml_obj;
   }
 
   public function from_xml($xml_dom) {

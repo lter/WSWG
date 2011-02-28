@@ -43,7 +43,8 @@ class ContactInfo extends Entity {
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
     $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
     $xml_obj->appendChild($xml_doc->createElement('contactInfoList'))->appendChild($fragment);
-    return $xml_doc;
+
+    return $xml_obj;
   }
 
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
@@ -118,13 +119,13 @@ class ContactInfo extends Entity {
   }
 
   private function assemble_contactInfoFields($field, $type_string){
-      $field= new ContactInfoField();
-      $field->value = $phone->nodeValue;
-      $field->contactInfoID = $this.contactInfoID;
-      $field->sortOrder = $i;
-      // TODO: grab the correct ID
-      $field->contactInfoFieldTypeID = $this->getContactInfoFieldTypeBy($type_string);
-      return $field;
+    $field= new ContactInfoField();
+    $field->value = $phone->nodeValue;
+    $field->contactInfoID = $this.contactInfoID;
+    $field->sortOrder = $i;
+    // TODO: grab the correct ID
+    $field->contactInfoFieldTypeID = $this->getContactInfoFieldTypeBy($type_string);
+    return $field;
   }
 
 }

@@ -32,7 +32,7 @@ class Identity extends Entity {
     return $this->storeFront->PersonStore->getByID($this->personID);
   }
 
- /* Serialization */
+  /* Serialization */
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml_fragment() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
@@ -56,7 +56,8 @@ class Identity extends Entity {
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
     $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
     $xml_obj->appendChild($fragment);
-    return $xml_doc;
+
+    return $xml_obj;
   }
 
 
