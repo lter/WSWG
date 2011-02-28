@@ -24,7 +24,7 @@ include('include/config.php');
 
 // Initialize REST server
 //
-$r_server = new RESTServer('/services/person');
+$r_server = new RESTServer('/services/personnelDB');
 
 
 // Register patterns

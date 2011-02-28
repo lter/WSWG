@@ -14,16 +14,16 @@
 function getTransmuter($ctype) { 
   switch ($ctype) {
   case 'text/plain':
-	$trans_obj = new TextTransmuter();
-	break;
+    $trans_obj = new TextTransmuter();
+    break;
   case 'application/json':
-	$trans_obj = new JSONTransmuter();
-	break;
+    $trans_obj = new JSONTransmuter();
+    break;
   case 'text/xml':
-	$trans_obj = new XMLTransmuter();
-	break;
+    $trans_obj = new XMLTransmuter();
+    break;
   default:
-	$trans_obj = new XMLTransmuter();
+    $trans_obj = new XMLTransmuter();
   }
   return $trans_obj;
 }
@@ -37,35 +37,38 @@ function getTransmuter($ctype) {
  *
  */
 function getEntityStore($ename) { 
-    switch ($ename) { 
-    case 'identity':
-	$store = 'IdentityStore';
-	break;
-    case 'role':
-	$store = 'RoleStore';
-	break;
-    case 'site':
-	$store = 'SiteStore';
-	break;
-    case 'contact':
-  $store = 'ContactInfoStore';
-  break;
-    case 'person':
-  $store = 'PersonStore';
-  break;
-    default:
-	$store = null;
-    }
-    return $store;
+  switch ($ename) { 
+  case 'person':
+    $store = 'PersonStore';
+    break;
+  case 'identity':
+    $store = 'IdentityStore';
+    break;
+  case 'contact':
+    $store = 'ContactInfoStore';
+    break;
+  case 'role':
+    $store = 'RoleStore';
+    break;
+  case 'roletype':
+    $store = 'RoleTypeStore';
+    break;
+  case 'site':
+    $store = 'SiteStore';
+    break;
+  default:
+    $store = null;
+  }
+  return $store;
 }
 
 
 function serializeEntities($entities, $content) {
   switch ($content) {
-  case 'xml':
+  case 'text/xml':
     return serializeAsXML($entities);
     break;
-  case 'json':
+  case 'application/json':
     return serializeAsJSON($entities);
     break;
   }
@@ -73,13 +76,14 @@ function serializeEntities($entities, $content) {
 
 function serializeAsXML($entities) {
   $xml_doc = new DOMDocument('1.0', 'utf-8');
-	$xml_root = $xml_doc->appendChild($xml_doc->createElement('personnel'));
+  $xml_root = $xml_doc->appendChild($xml_doc->createElement('personnel'));
   foreach($entities as $entity) {
     $xml_entity = $entity->to_xml(); // Need to get the root node not the document
     $fragment = $xml_doc->importNode($xml_entity, TRUE);
-    $xml_doc->appendChild($fragment);
+    $xml_root->appendChild($fragment);
   }
-  $xml_doc.saveXML();
+
+  return $xml_doc->saveXML();
 }
 
 function serializeAsJSON($entities){
@@ -102,9 +106,9 @@ function authorize($server) {
   $login = $personneldb->LoginStore->getBySignature($server->params['sig']);
 
   if ($login === null) {
-	// Exit with access denied error
-	$server->dieRespond(UNAUTHORIZED, 'Signature was not included or was invalid');
+    // Exit with access denied error
+    $server->dieRespond(UNAUTHORIZED, 'Signature was not included or was invalid');
   } else {
-	return $login;
+    return $login;
   }
 }

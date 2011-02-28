@@ -1,10 +1,12 @@
 <?php
-  /**
-   * REST request handlers
-   * the general format is function(server, args) where the server is the RESTServer object and the args are the
-   * matches that are found in the regular expression that the hander has been registered with
-   */
 
+use \PersonnelDB\PersonnelDB;
+
+/**
+ * REST request handlers
+ * the general format is function(server, args) where the server is the RESTServer object and the args are the
+ * matches that are found in the regular expression that the hander has been registered with
+ */
 
 /* 
  * Get all entities 
@@ -14,11 +16,11 @@ function getEntity($server, $args) {
   // get args
   list($e_name) = $args;
 
-  $personel =& PersonnelDB::getInstance();
+  $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
 
   // Get all entities from the store
-  $entities = $personel->$store_name->getAll();
+  $entities = $personnel->$store_name->getAll();
 
   // return serialized output
   return serializeEntities($entities, $server->contentType);
@@ -32,11 +34,11 @@ function getEntityBlank($server, $args) {
   // get args
   list($e_name) = $args;
 
-  $personel =& PersonnelDB::getInstance();
+  $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
     
   // Get a blank entity
-  $entity = $personel->$store_name->getEmpty();
+  $entity = $personnel->$store_name->getEmpty();
 
   // return serialized output
   return serializeEntities(array($entity), $server->contentType);
@@ -50,14 +52,14 @@ function getEntityById($server, $args) {
   // get args
   list($e_name, $idstr) = $args;
 
-  $personel =& PersonnelDB::getInstance();
+  $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
   $entities = array();
 
   // get entity objects for set of ids passed
   $ids = array_unique(explode(',', $idstr));    
   foreach ($ids as $id) {
-	if ($entity = $personel->$store_name->getById($id)) {
+	if ($entity = $personnel->$store_name->getById($id)) {
 	  $entities[] = $entity;
 	}
   }
@@ -84,24 +86,24 @@ function postentity($server, $args) {
   // get args
   list($e_name) = $args;
 
-  $personel =& PersonnelDB::getInstance();
+  $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
   $trans_obj = getTransmuter($server->contentType);
 
   // Untransmute entity and write to database
-  $entity = $personel->$store_name->getEmpty();
+  $entity = $personnel->$store_name->getEmpty();
   $trans_obj->parse($server->body);
   $trans_obj->next();
   $trans_obj->untransmuteRoot($entity);
-  $entity = $personel->$store_name->put($entity);
+  $entity = $personnel->$store_name->put($entity);
 
   // Create ChangeLog entry
-  $cl = $personel->ChangeLogStore->getEmpty();
+  $cl = $personnel->ChangeLogStore->getEmpty();
   $cl->entityType = get_class($entity);
   $cl->entityId = $entity->uniqueId;
   $cl->signature = $login->signature;
 
-  $personel->ChangeLogStore->put($cl);
+  $personnel->ChangeLogStore->put($cl);
 
   // return serialized output
   return serializeEntities(array($entity), $server->contentType);
@@ -114,7 +116,7 @@ function putentity($server, $args) {
   // get args
   list($e_name, $id) = $args;
 
-  $personel =& PersonnelDB::getInstance();
+  $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
   $trans_obj = getTransmuter($server->contentType);
 
@@ -122,20 +124,20 @@ function putentity($server, $args) {
   $snap = snapshot($id, $store_name);
 
   // Untransmute entity and write to database
-  $entity = $personel->$store_name->getEmpty();
+  $entity = $personnel->$store_name->getEmpty();
   $trans_obj->parse($server->body);
   $trans_obj->next();
   $trans_obj->untransmuteRoot($entity);
-  $entity = $personel->$store_name->put($entity);
+  $entity = $personnel->$store_name->put($entity);
 
   // Create ChangeLog entry
-  $cl = $personel->ChangeLogStore->getEmpty();
+  $cl = $personnel->ChangeLogStore->getEmpty();
   $cl->entityType = get_class($entity);
   $cl->entityId = $entity->uniqueId;
   $cl->signature = $login->signature;
   $cl->snapshot = $snap;
 
-  $personel->ChangeLogStore->put($cl);
+  $personnel->ChangeLogStore->put($cl);
   
   // Return serialized output
   return serializeEntities(array($entity), $server->contentType);
