@@ -41,24 +41,8 @@ class Role extends Entity {
     // set siteID to site->id
   }
 
-  /* Serialization */
-  // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
-  public function to_xml_fragment() {
-    $xml_doc = new \DOMDocument('1.0','utf-8');
-    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('role'));
-    $xml_obj->appendChild($xml_doc->createElement('roleID',$this->roleID ));
-    $role_type = $this->add_xml_if($xml_doc, $xml_obj, 'roleType');
-    if ($role_type) {
-      $role_type->setAttribute('type',$this->getRoleType()->roleType);
-    }
-    $site = $this->getSite();
-    $this->add_xml_if($xml_doc, $xml_obj, 'siteAcronym');
-    $this->add_xml_if($xml_doc, $xml_obj, 'beginDate');
-    $this->add_xml_if($xml_doc, $xml_obj, 'endDate');
-    $this->add_xml_if($xml_doc, $xml_obj, 'isActive');
 
-    return $xml_obj;
-  }
+  /* Serialization */
 
   public function to_xml() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
@@ -66,6 +50,26 @@ class Role extends Entity {
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
     $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
     $xml_obj->appendChild($xml_doc->createElement('roleList'))->appendChild($fragment);
+
+    return $xml_obj;
+  }
+
+  // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
+  public function to_xml_fragment() {
+    $xml_doc = new \DOMDocument('1.0','utf-8');
+    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('role'));
+    $xml_obj->appendChild($xml_doc->createElement('roleID', $this->roleID));
+    $xml_obj->appendChild($xml_doc->createElement('isActive', $this->isActive));
+
+    $roleType = $this->getRoleType();
+    $rt = $xml_obj->appendChild($xml_doc->createElement('roleType', $roleType->roleType));
+    $rt->setAttribute('type', $roleType->type);
+
+    $site = $this->getSite();
+    $xml_obj->appendChild($xml_doc->createElement('siteAcronym', $site->siteAcronym));
+
+    $this->add_xml_if($xml_doc, $xml_obj, 'beginDate');
+    $this->add_xml_if($xml_doc, $xml_obj, 'endDate');
 
     return $xml_obj;
   }

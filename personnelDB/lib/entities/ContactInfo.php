@@ -55,30 +55,12 @@ class ContactInfo extends Entity {
     $this->add_xml_if($xml_doc, $xml_obj, 'label');
     $this->add_xml_if($xml_doc, $xml_obj, 'isPrimary');
     $this->add_xml_if($xml_doc, $xml_obj, 'isActive');
-    
-    // address
-    if ($this->contactInfoFields){
-      $xml_obj->appendChild($xml_doc->createElement('address',$this->address ));
-    }
-    $this->add_xml_if($xml_doc, $xml_obj, 'institution');
-    $this->add_xml_if($xml_doc, $xml_obj, 'city');
-    $this->add_xml_if($xml_doc, $xml_obj, 'administrativeArea');
-    $this->add_xml_if($xml_doc, $xml_obj, 'postalCode');
-    $this->add_xml_if($xml_doc, $xml_obj, 'county');
-    // phone 
-    if ($this->contactInfoFields)  {
-      $xml_obj->appendChild($xml_doc->createElement('phone',$this->phone ));
+
+    // contact info fields
+    foreach ($this->fields as $f) {
+      $xml_obj->appendChild($xml_doc->createElement($f['contactInfoFieldType'], $f['value']));     
     }
 
-    // fax
-    if ($this->contactInfoFields) {
-      $xml_obj->appendChild($xml_doc->createElement('fax',$this->fax ));
-    }
-
-    // email
-    if ($this->contactInfoFields ) {
-      $xml_obj->appendChild($xml_doc->createElement('email',$this->email ));
-    }
     return $xml_obj;
   }
 
