@@ -1,4 +1,7 @@
 <?php
+
+use \PersonnelDB\PersonnelDB;
+
 /**
  * REST Server Utility functions
  */
@@ -66,40 +69,14 @@ function getEntityStore($ename) {
 function serializeEntities($entities, $content) {
   switch ($content) {
   case 'text/xml':
-    return serializeAsXML($entities);
+    $personnel =& PersonnelDB::getInstance();
+    $xml_doc = $personnel->to_xml($entities);
+    return $xml_doc->saveXML();
     break;
   case 'application/json':
-    return serializeAsJSON($entities);
     break;
   }
 }
-
-function serializeAsXML($entities) {
-  $xml_doc = new DOMDocument('1.0', 'utf-8');
-  $xml_root = $xml_doc->appendChild($xml_doc->createElement('personnel'));
-  foreach($entities as $entity) {
-    $xml_entity = $entity->to_xml(); // Need to get the root node not the document
-    $fragment = $xml_doc->importNode($xml_entity, TRUE);
-    $xml_root->appendChild($fragment);
-  }
-
-  return $xml_doc->saveXML();
-}
-
-function serializeAsJSON($entities){
-
-}
-
-function snapshot($id, $store_name) {
-  $personneldb =& PersonnelDB::getInstance();
-  $trans_array = new TextTransmuter();
-
-  $entity = $personneldb->$store_name->getById($id);
-  $trans_array->transmuteRoot($entity);
-
-  return $trans_array->flush();
-}
-
 
 function authorize($server) {
   $personneldb =& PersonnelDB::getInstance();
