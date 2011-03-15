@@ -36,16 +36,8 @@ class ContactInfo extends Entity {
     return $this->storeFront->SiteStore->getByID($this->siteID);
   }
 
-  /* serialization */
-  public function to_xml() {
-    $xml_doc = new \DOMDocument('1.0','utf-8');
-    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
-    $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
-    $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
-    $xml_obj->appendChild($xml_doc->createElement('contactInfoList'))->appendChild($fragment);
 
-    return $xml_obj;
-  }
+  /* SERIALIZATION */
 
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml_fragment() {

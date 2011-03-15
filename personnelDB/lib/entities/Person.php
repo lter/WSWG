@@ -38,8 +38,11 @@ class Person extends Entity {
 
   public function setContactInfo() { }
 
+
+  /* SERIALIZATION */
+
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
-  public function to_xml() {
+  public function to_xml_fragment() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
