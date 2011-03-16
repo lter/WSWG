@@ -19,8 +19,13 @@ function getEntity($server, $args) {
   $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
 
-  // Get all entities from the store
-  $entities = $personnel->$store_name->getAll();
+  if (!empty($server->params)) {
+    // If there are params, use them for filtering
+    $entities = $personnel->$store_name->getByFilter($server->params);
+  } else {
+    // Otherwise, get all entities
+    $entities = $personnel->$store_name->getAll();
+  }
 
   // return serialized output
   return serializeEntities($entities, $server->contentType);

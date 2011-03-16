@@ -65,7 +65,6 @@ function getEntityStore($ename) {
   return $store;
 }
 
-
 function serializeEntities($entities, $content) {
   switch ($content) {
   case 'text/xml':
