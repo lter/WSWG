@@ -1,0 +1,119 @@
+/* MAIN LAYOUT STYLES FOR PERSONNELDB */
+
+/* General text styles */
+
+h1 {
+    font: normal 200% sans-serif;
+}
+
+h2 {
+    font: bold 125% sans-serif;
+    color: #FFFFFF;
+    background-color: #669966;
+    border: 1px solid #505050;
+    padding: 3px;
+}
+
+h3 {
+    font: bold 110% sans-serif;
+}
+
+.inactive {
+    color: #606060;
+}
+
+
+/* Search form styles */
+
+.search-input {
+    width: 200px;
+}
+
+#adv-search table {
+    margin: auto;
+    text-align: left;
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+#adv-search table th {
+    color: #303030;
+    font: normal 125% sans-serif;
+}
+
+
+/* Result list styles */
+
+#results {
+
+}
+
+table.search-results {
+    width: 95%;
+    margin-top: 20px;
+}
+
+table.search-results th {
+    text-align: left;
+    color: #FFFFFF;
+    background: #669966;
+    padding: 5px;
+    font: bold 125% sans-serif;
+    border-bottom: 2px solid #505050;
+}
+
+table.search-results td {
+    text-align: left;
+    vertical-align: top;
+    color: #303030;
+    font: normal 100% sans-serif;
+    padding: 5px;
+}
+
+table.search-results .odd td {
+    background: #FFFFFF;
+}
+
+table.search-results .even td {
+    background: #EEEEEE;
+}
+
+/* Person display styles */
+
+#identity {
+    margin: 20px 0px;
+    width: 100%;
+}
+
+#identity #primary-email {
+    margin: 10px 0px;
+    font: normal 125% sans-serif;
+}
+
+#roles {
+    float: left;
+    width: 48%;
+}
+
+
+#contacts {
+    float: right;
+    width: 48%;
+}
+
+.role {
+    margin: 5px;
+    text-align: left;
+    font: 110% sans-serif;
+}
+
+.contact {
+    margin: 10px 5px;
+    text-align: left;
+}
+
+.contact span {
+    width: 90%;
+    margin-left: 10%;
+    display: block;
+}

@@ -1,0 +1,22 @@
+/* RESKINNING OF YUI STYLES */
+
+/* YUI Grid Styles */
+
+#hd {
+    text-align: center;
+    width: 100%;
+    min-height: 120px;
+    margin: 20px 0px;
+}
+
+#ft {
+    text-align: center;
+    width: 100%;
+    min-height: 30px;
+    margin: 40px 0px 0px 0px;
+}
+
+.yui-g {
+    text-align: center;
+    position: relative;
+}
