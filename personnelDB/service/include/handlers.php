@@ -41,7 +41,7 @@ function getEntityBlank($server, $args) {
 
   $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
-    
+  
   // Get a blank entity
   $entity = $personnel->$store_name->getEmpty();
 
@@ -64,28 +64,55 @@ function getEntityById($server, $args) {
   // get entity objects for set of ids passed
   $ids = array_unique(explode(',', $idstr));    
   foreach ($ids as $id) {
-	if ($entity = $personnel->$store_name->getById($id)) {
-	  $entities[] = $entity;
-	}
+    if ($entity = $personnel->$store_name->getById($id)) {
+      $entities[] = $entity;
+    }
   }
 
   // return serialized output
   return serializeEntities($entities, $server->contentType);
 }
 
-
-// NYI
+/*
+ * Get a list of roles by type (nsf or local)
+ */
 function getRoleByType($server, $args) {
+  // get args
+  list($e_name, $r_type) = $args;
 
-}
+  $personnel =& PersonnelDB::getInstance();
+  $store_name = getEntityStore(strtolower($e_name));
 
-// NYI
-function getRoleById($server, $args) {
+  $entities = $personnel->$store_name->getByType($r_type);
 
+  // return serialized output
+  return serializeEntities($entities, $server->contentType);
 }
 
 /*
-function postentity($server, $args) {
+ * Get a list of roles by ids and type (nsf or local)
+ */
+function getRoleById($server, $args) {
+  // get args
+  list($e_name, $r_type, $idstr) = $args;
+
+  $personnel =& PersonnelDB::getInstance();
+  $store_name = getEntityStore(strtolower($e_name));
+  $entities = array();
+
+  // get entity objects for set of ids passed
+  $ids = array_unique(explode(',', $idstr));    
+  foreach ($ids as $id) {
+    if ($entity = $personnel->$store_name->getById($id, $r_type)) {
+      $entities[] = $entity;
+    }
+  }
+
+  // return serialized output
+  return serializeEntities($entities, $server->contentType);
+}
+
+function addEntity($server, $args) {
   $login = authorize($server);
 
   // get args
@@ -102,20 +129,12 @@ function postentity($server, $args) {
   $trans_obj->untransmuteRoot($entity);
   $entity = $personnel->$store_name->put($entity);
 
-  // Create ChangeLog entry
-  $cl = $personnel->ChangeLogStore->getEmpty();
-  $cl->entityType = get_class($entity);
-  $cl->entityId = $entity->uniqueId;
-  $cl->signature = $login->signature;
-
-  $personnel->ChangeLogStore->put($cl);
-
   // return serialized output
   return serializeEntities(array($entity), $server->contentType);
 }
 
-
-function putentity($server, $args) {
+/*
+  function updateEntity($server, $args) {
   $login = authorize($server);
 
   // get args
@@ -146,7 +165,7 @@ function putentity($server, $args) {
   
   // Return serialized output
   return serializeEntities(array($entity), $server->contentType);
-}
+  }
 */
 
 ?>

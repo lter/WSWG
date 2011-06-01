@@ -27,12 +27,19 @@ include('include/config.php');
 $r_server = new RESTServer('/services/personnelDB');
 
 
-// Register patterns
+// Register patterns - GET
 $r_server->registerHandler('GET', '/^\/(person|identity|contact|role|roleType|site)$/i', 'getEntity');
 $r_server->registerHandler('GET', '/^\/(person|identity|contact|role|roleType|site)\/_$/i', 'getEntityBlank');
 $r_server->registerHandler('GET', '/^\/(person|contact|site|identity)\/(\d+(,\d+){0,})$/i', 'getEntityById');
 $r_server->registerHandler('GET', '/^\/(role|roleType)\/(nsf|local)$/i', 'getRoleByType');
 $r_server->registerHandler('GET', '/^\/(role|roleType)\/(nsf|local)\/(\d+(,\d+){0,})$/i', 'getRoleById');
+
+// Register patterns - PUT
+
+
+// Register patterns - POST
+$r_server->registerHandler('POST', '/^\/(person|roleType)$/i', 'newEntity');
+
 
 
 // set allowed request methods
