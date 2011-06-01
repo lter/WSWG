@@ -9,10 +9,10 @@ define('ROLE_GETALL_NSF',		'SELECT nsfRole.*, "nsf" as type FROM nsfRole');
 define('ROLE_GETALL_LOCAL',		'SELECT localRole.*, "local" as type FROM localRole');
 
 define('ROLE_GETBYID_NSF',		'SELECT nsfRole.*, "nsf" as type
-					FROM nsfRole WHERE nsfRoleID = ?');
+					FROM nsfRole WHERE roleID = ?');
 
 define('ROLE_GETBYID_LOCAL',		'SELECT localRole.*, "local" as type
-					FROM localRole WHERE localRoleID = ?');
+					FROM localRole WHERE roleID = ?');
 
 define('ROLE_GETBYFILTER_NSF_STUB',	'SELECT nsfRole.*, "nsf" as type FROM nsfRole
 						NATURAL JOIN site

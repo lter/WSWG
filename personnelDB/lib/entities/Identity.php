@@ -43,6 +43,7 @@ class Identity extends Entity {
     $this->add_xml_if($xml_doc, $xml_obj, 'lastName');
     $this->add_xml_if($xml_doc, $xml_obj, 'preferredName');
     $this->add_xml_if($xml_doc, $xml_obj, 'title');
+    $this->add_xml_if($xml_doc, $xml_obj, 'primaryEmail');
     $this->add_xml_if($xml_doc, $xml_obj, 'optOut');
     foreach($this->aliases as $alias) {
       $xml_obj->appendChild($xml_doc->createElement('aliases',$alias));

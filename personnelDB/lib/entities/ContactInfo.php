@@ -43,10 +43,14 @@ class ContactInfo extends Entity {
   public function to_xml_fragment() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('contactInfo'));
-    $this->add_xml_if($xml_doc, $xml_obj, 'contactInfoID');
-    $this->add_xml_if($xml_doc, $xml_obj, 'label');
-    $this->add_xml_if($xml_doc, $xml_obj, 'isPrimary');
-    $this->add_xml_if($xml_doc, $xml_obj, 'isActive');
+    
+    $xml_obj->appendChild($xml_doc->createElement('contactInfoID', $this->contactInfoID));
+    $xml_obj->appendChild($xml_doc->createElement('label', $this->label));
+    $xml_obj->appendChild($xml_doc->createElement('isPrimary', $this->isPrimary));
+    $xml_obj->appendChild($xml_doc->createElement('isActive', $this->isActive));
+
+    $this->add_xml_if($xml_doc, $xml_obj, 'beginDate');
+    $this->add_xml_if($xml_doc, $xml_obj, 'endDate');
 
     // contact info fields
     foreach ($this->fields as $f) {

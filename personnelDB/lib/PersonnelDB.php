@@ -89,6 +89,10 @@ class PersonnelDB {
     return $xml_doc;
   }
 
+  public function from_xml() {
+
+  }
+
   private function import_xml($e, $xml_obj, $xml_doc) {
     $fragment = $xml_doc->importNode($e->to_xml_fragment(), TRUE);
     $xml_obj->appendChild($fragment);
