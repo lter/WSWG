@@ -41,7 +41,9 @@ $r_server->registerHandler('PUT', '/^\/(person)\/(\d+(,\d+){0,})($/i', 'updateEn
 
 
 // set allowed request methods
-$r_server->registerMethod('GET', 'POST', 'PUT');
+$r_server->registerMethod('GET');
+$r_server->registerMethod('POST');
+$r_server->registerMethod('PUT');
 
 
 // register acceptable content types

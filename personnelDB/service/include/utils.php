@@ -54,9 +54,9 @@ function serializeEntities($entities, $content) {
 function unserializeEntities($xml, $entityType) {
   $personnel =& PersonnelDB::getInstance();
   $xml_doc = new DOMDocument();
-  $xml_doc->load($xml);
+  $xml_doc->loadXML($xml);
 
-  return $personnel->from_xml($xml, $entityType);
+  return $personnel->from_xml($xml_doc, $entityType);
 }
 
 function authorize($server) {

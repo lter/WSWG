@@ -123,7 +123,7 @@ function addEntity($server, $args) {
   $newEntities = array();
 
   // Untransmute entity and write to database
-  $entities = unserializeEntities($server->body, $store_name);
+  $entities = unserializeEntities($server->body, strtolower($e_name));
   foreach ($entities as $e) {
     /* CHECK PERMISSIONS HERE */
 
@@ -132,7 +132,7 @@ function addEntity($server, $args) {
   }
 
   // return serialized output
-  return serializeEntities($newEntities), $server->contentType);
+  return serializeEntities($newEntities, $server->contentType);
 }
 
 function updateEntity($server, $args) {
@@ -146,7 +146,7 @@ function updateEntity($server, $args) {
   $updEntities = array();
 
   // Untransmute entity and write to database
-  $entities = unserializeEntities($server->body, $store_name);
+  $entities = unserializeEntities($server->body, strtolower($e_name));
   foreach ($entities as $e) {
     $entity = $personnel->$store_name->put($e);
     $updEntities[] = $entity;
