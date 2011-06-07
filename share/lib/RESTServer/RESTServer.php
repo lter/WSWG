@@ -121,6 +121,8 @@ class RESTServer {
 
     // Select callback function
     list($function, $args) = $this->findHandler($method, $uri);
+    if (!$function)
+      $this->dieRespond(INVALID_REQUEST_SYNTAX, "URL does not match a request handler");
 
     // Call function
     $response = call_user_func_array($function, array($this, $args));
