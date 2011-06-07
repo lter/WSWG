@@ -17,7 +17,7 @@ class PersonStore extends Store {
 			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
 			       'lastName' => array('lastName'),
 			       'isActive' => array('nsfRole.isActive', 'localRole.isActive'),
-			       'roleType' => array('nsfRoleType.roleType', 'localRoleType.roleType'),
+			       'roleType' => array('nsfRoleType.roleName', 'localRoleType.roleName'),
 			       'site' => array('s1.site', 's1.siteAcronym', 's2.site', 's2.siteAcronym'),
 			       'siteAcronym' => array('s1.siteAcronym', 's2.siteAcronym'),
 			       );

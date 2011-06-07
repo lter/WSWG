@@ -121,7 +121,9 @@ class PersonnelDB {
   private function find_fragments($xml_doc, $tagname, $store) {
     $entities = array();
 
-    $fragments = $xml_doc->getElementsByTagName($tagname);
+    $xpath = new \DOMXPath($node->ownerDocument);
+    $fragments = $xpath->query("*/$tagname");
+
     foreach ($fragments as $f) {
       $e = $store->getEmpty();
       $e->from_xml_fragment($f);

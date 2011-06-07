@@ -25,14 +25,37 @@ class RoleType extends Entity {
 
     $this->add_xml_if($xml_doc, $xml_obj, 'nsfRoleTypeID');
     $this->add_xml_if($xml_doc, $xml_obj, 'localRoleTypeID');
-    $this->add_xml_if($xml_doc, $xml_obj, 'roleType');
-    $this->add_xml_if($xml_doc, $xml_obj, 'type');
-    $this->add_xml_if($xml_doc, $xml_obj, 'isRepeatable');
+
+    $xml_obj->appendChild($xml_doc->createElement('roleName', $this->roleName));
+    $xml_obj->appendChild($xml_doc->createElement('type', $this->type));
+    $xml_obj->appendChild($xml_doc->createElement('isRepeatable', $this->isRepeatable));
 
     return $xml_obj;
   }
 
   public function from_xml_fragment($node) {
-    
+    if ($node->nodeName != 'roleType')
+      throw new \Exception('roleType->from_xml_fragment() can only deal with roleType nodes');
+
+    $xpath = new \DOMXPath($node->ownerDocument);
+    $this->type = $xpath->evaluate("type");
+
+    switch ($this->type) {
+    case 'nsf':
+      $this->nsfRoleTypeID = $xpath->query("nsfRoleTypeID")->nodeValue;
+      $this->roleName = $xpath->query("roleName")->nodeValue;
+      $this->isRepeatable = $xpath->query("isRepeatable")->nodeValue;
+      break;
+      
+    case 'local':
+      $this->localRoleTypeID = $xpath->query("localRoleTypeID")->nodeValue;
+      $this->roleName = $xpath->query("roleName")->nodeValue;
+      $this->isRepeatable = $xpath->query("isRepeatable")->nodeValue;
+
+      $siteAcronym = $xpath->query("siteAcronym")->nodeValue;
+      $sites = $this->storeFront->SiteStore->getByFilter(array('siteAcronym' => $siteAcronym));
+      $this->siteID = $sites[0]->siteID;
+      break;
+    }
   }
 }

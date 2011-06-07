@@ -64,12 +64,12 @@ class Person extends Entity {
   }
 
   public function from_xml_fragment($node) {
-    if ($xml_dom->nodeName != 'person') {
+    if ($node->nodeName != 'person') {
       throw new \Exception('person->from_xml_fragment can only deal with person nodes');
     }
 
-    $xpath = new \DOMXPath($xml_dom);
-    $this->personID = $xpath.query("*/personID/")->nodeValue;
+    $xpath = new \DOMXPath($node->ownerDocument);
+    $this->personID = $xpath->query("*/personID/")->nodeValue;
     $roles = array();
 
     // Untransmute component parts

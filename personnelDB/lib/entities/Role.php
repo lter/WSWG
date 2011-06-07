@@ -52,7 +52,7 @@ class Role extends Entity {
     $xml_obj->appendChild($xml_doc->createElement('isActive', $this->isActive));
 
     $roleType = $this->getRoleType();
-    $rt = $xml_obj->appendChild($xml_doc->createElement('roleType', $roleType->roleType));
+    $rt = $xml_obj->appendChild($xml_doc->createElement('roleType', $roleType->roleName));
     $rt->setAttribute('type', $roleType->type);
 
     $site = $this->getSite();
@@ -69,9 +69,9 @@ class Role extends Entity {
       throw new \Exception('role->from_xml can only deal with role nodes');
     
     $xpath = new \DOMXPath($xml_dom);
-    $this->roleID = $xpath.query("*/roleID/")->nodeValue;
+    $this->roleID = $xpath->query("*/roleID/")->nodeValue;
     
-    $role_fragment = $xpath.query("*/roleType/");
+    $role_fragment = $xpath->query("*/roleType/");
     $this->roleTypeID = $this->storeFront->RoleTypeStore->getByFilter(array('roleType' => $role_fragment->nodeValue),($role_fragment->getAttribute('type')));
 
     $this->siteID = $this->storeFront->SiteStore->getByFilter(array('siteAcronym' => $xpath.query("*/siteAcronym/")->nodeValue));

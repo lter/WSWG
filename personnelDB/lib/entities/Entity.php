@@ -57,4 +57,13 @@ abstract class Entity {
     
     return null;
   }
+
+  protected function get_xml_if($xml_obj, $tagName) {
+    $nodes = $xml_obj->getElementsByTagName($tagName);
+    if ($nodes->length) {
+      return $nodes->item(0)->nodeValue;
+    } else {
+      return null;
+    }
+  }
 }

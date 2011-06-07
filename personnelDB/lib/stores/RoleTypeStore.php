@@ -15,7 +15,7 @@ class RoleTypeStore extends Store {
     parent::__construct();
 
     $this->filterList = array (
-			       'roleType' => array('roleType'),
+			       'roleName' => array('roleName'),
 			       'scope' => array('siteAcronym'),
 			       );
   }
@@ -81,7 +81,24 @@ class RoleTypeStore extends Store {
 
   /* UPDATE METHODS */
 
-  public function put() {
+  public function put($roleType) {
+    switch ($roleType->type) {
+    case 'nsf':
+      $inf = array($roleType->roleName, $roleType->isRepeatable);
+      $sth = $this->iDBConnection->prepare(ROLETYPE_INSERT_NSF);
+      $this->iDBConnection->execute($sth, $inf);
+      return $this->getById($this->iDBConnection->insertId());
+      break;
+     
+    case 'local':
+      $inf = array($roleType->siteID, $roleType->roleName, $roleType->isRepeatable);
+      $sth = $this->iDBConnection->prepare(ROLETYPE_INSERT_LOCAL);
+      $this->iDBConnection->execute($sth, $inf);
+      return $this->getById($this->iDBConnection->insertId());
+      break;
+      
+    default: throw new Exception("Type must be 'nsf' or 'local'"); break;
+    }
   }
 
 }

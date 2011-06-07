@@ -25,7 +25,10 @@ define('ROLETYPE_GETBYFILTER_LOCAL_STUB','SELECT localRoleType.*, "local" as typ
 /* UPDATE STATEMENTS */
 
 define('ROLETYPE_INSERT_LOCAL',		'INSERT INTO localRoleType
-					SET siteID = ?, roleType = ? isRepeatable = ?');
+					SET siteID = ?, roleName = ?, isRepeatable = ?');
+
+define('ROLETYPE_INSERT_NSF',		'INSERT INTO nsfRoleType
+					SET roleName = ?, isRepeatable = ?');
 
 define('ROLETYPE_DELETE_LOCAL',		'DELETE FROM localRoleType
 					WHERE localRoleTypeID = ?');

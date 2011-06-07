@@ -16,7 +16,7 @@ class RoleStore extends Store {
 
     $this->filterList = array (
 			       'isActive' => array('isActive'),
-			       'roleType' => 'roleType',
+			       'roleType' => 'roleName',
 			       'site' => array('site', 'siteAcronym'),
 			       'siteAcronym' => array('siteAcronym'),
 			       'personID' => array('personID'),
