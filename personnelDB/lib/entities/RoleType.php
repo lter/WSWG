@@ -31,4 +31,8 @@ class RoleType extends Entity {
 
     return $xml_obj;
   }
+
+  public function from_xml_fragment($node) {
+    
+  }
 }

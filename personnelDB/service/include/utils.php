@@ -6,32 +6,6 @@ use \PersonnelDB\PersonnelDB;
  * REST Server Utility functions
  */
 
-
-/**
- * Get correct Transmuter object for content-type
- *
- * @param string $ctype Content-type value
- * @return Transmuter $trans_obj Transmuter object
- *
- */
-function getTransmuter($ctype) { 
-  switch ($ctype) {
-  case 'text/plain':
-    $trans_obj = new TextTransmuter();
-    break;
-  case 'application/json':
-    $trans_obj = new JSONTransmuter();
-    break;
-  case 'text/xml':
-    $trans_obj = new XMLTransmuter();
-    break;
-  default:
-    $trans_obj = new XMLTransmuter();
-  }
-  return $trans_obj;
-}
-
-
 /**
  * Get correct entity store name for entity key
  *
@@ -75,6 +49,14 @@ function serializeEntities($entities, $content) {
   case 'application/json':
     break;
   }
+}
+
+function unserializeEntities($xml, $entityType) {
+  $personnel =& PersonnelDB::getInstance();
+  $xml_doc = new DOMDocument();
+  $xml_doc->load($xml);
+
+  return $personnel->from_xml($xml, $entityType);
 }
 
 function authorize($server) {

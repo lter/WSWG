@@ -23,3 +23,9 @@ define('ROLETYPE_GETBYFILTER_LOCAL_STUB','SELECT localRoleType.*, "local" as typ
 					FROM localRoleType NATURAL JOIN site');
 
 /* UPDATE STATEMENTS */
+
+define('ROLETYPE_INSERT_LOCAL',		'INSERT INTO localRoleType
+					SET siteID = ?, roleType = ? isRepeatable = ?');
+
+define('ROLETYPE_DELETE_LOCAL',		'DELETE FROM localRoleType
+					WHERE localRoleTypeID = ?');

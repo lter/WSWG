@@ -89,8 +89,16 @@ class PersonnelDB {
     return $xml_doc;
   }
 
-  public function from_xml() {
+  public function from_xml($xml_doc, $entityType) {
+    switch ($entityType) {
+    case 'person':
+      return $this->find_fragments($xml_doc, 'person', $this->PersonStore);
+      break;
 
+    case 'roletype':
+      return $this->find_fragments($xml_doc, 'roleType', $this->RoleTypeStore);
+      break;
+    }
   }
 
   private function import_xml($e, $xml_obj, $xml_doc) {
@@ -108,6 +116,19 @@ class PersonnelDB {
     }
 
     return $this->lists[$type][$personID];
+  }
+
+  private function find_fragments($xml_doc, $tagname, $store) {
+    $entities = array();
+
+    $fragments = $xml_doc->getElementsByTagName($tagname);
+    foreach ($fragments as $f) {
+      $e = $store->getEmpty();
+      $e->from_xml_fragment($f);
+      $entities[] = $e;
+    }
+    
+    return $entities;
   }
 
   /* OVERLOADED METHODS */

@@ -62,9 +62,9 @@ class Identity extends Entity {
   }
 
 
-  public function from_xml($xml_dom) {
+  public function from_xml_fragment($xml_dom) {
     if ($xml_dom->nodeName == 'identity')
-      throw new \Exception('Identity->from_xml can only deal with identity nodes');
+      throw new \Exception('Identity->from_xml_fragment() can only deal with identity nodes');
 
     $xpath = new \DOMXPath($xml_dom);
     $this->prefix = $xpath.query("*/prefix/")->nodeValue;
@@ -74,7 +74,8 @@ class Identity extends Entity {
     $this->title = $xpath.query("*/title/")->nodeValue;
     $this->primaryEmail = $xpath.query("*/primaryEmail/")->nodeValue;
     $this->optOut = $xpath.query("*/optOut/")->nodeValue;
-    $this->nameAlias = $xpath.query("*/nameAlias/")->nodeValue;
+
+    $this->aliases = ();xs
   }
 
 }

@@ -34,17 +34,16 @@ $r_server->registerHandler('GET', '/^\/(person|contact|site|identity)\/(\d+(,\d+
 $r_server->registerHandler('GET', '/^\/(role|roleType)\/(nsf|local)$/i', 'getRoleByType');
 $r_server->registerHandler('GET', '/^\/(role|roleType)\/(nsf|local)\/(\d+(,\d+){0,})$/i', 'getRoleById');
 
-// Register patterns - PUT
-
-
 // Register patterns - POST
-$r_server->registerHandler('POST', '/^\/(person|roleType)$/i', 'newEntity');
+$r_server->registerHandler('POST', '/^\/(person|roleType)$/i', 'addEntity');
 
+// Register patterns - PUT
+$r_server->registerHandler('PUT', '/^\/(person)\/(\d+(,\d+){0,})($/i', 'updateEntity');
 
 
 // set allowed request methods
 //
-$r_server->registerMethod('GET');
+$r_server->registerMethod('GET', 'POST', 'PUT');
 
 
 // register acceptable content types

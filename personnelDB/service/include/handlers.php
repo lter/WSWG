@@ -120,21 +120,20 @@ function addEntity($server, $args) {
 
   $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
-  $trans_obj = getTransmuter($server->contentType);
+  $newEntities = array();
 
   // Untransmute entity and write to database
-  $entity = $personnel->$store_name->getEmpty();
-  $trans_obj->parse($server->body);
-  $trans_obj->next();
-  $trans_obj->untransmuteRoot($entity);
-  $entity = $personnel->$store_name->put($entity);
+  $entities = unserializeEntities($server->body, $store_name);
+  foreach ($entities as $e) {
+    $entity = $personnel->$store_name->put($e);
+    $newEntities[] = $entity;
+  }
 
   // return serialized output
-  return serializeEntities(array($entity), $server->contentType);
+  return serializeEntities($newEntities), $server->contentType);
 }
 
-/*
-  function updateEntity($server, $args) {
+function updateEntity($server, $args) {
   $login = authorize($server);
 
   // get args
@@ -142,30 +141,17 @@ function addEntity($server, $args) {
 
   $personnel =& PersonnelDB::getInstance();
   $store_name = getEntityStore(strtolower($e_name));
-  $trans_obj = getTransmuter($server->contentType);
-
-  // Get snapshot of existing entity
-  $snap = snapshot($id, $store_name);
+  $updEntities = array();
 
   // Untransmute entity and write to database
-  $entity = $personnel->$store_name->getEmpty();
-  $trans_obj->parse($server->body);
-  $trans_obj->next();
-  $trans_obj->untransmuteRoot($entity);
-  $entity = $personnel->$store_name->put($entity);
-
-  // Create ChangeLog entry
-  $cl = $personnel->ChangeLogStore->getEmpty();
-  $cl->entityType = get_class($entity);
-  $cl->entityId = $entity->uniqueId;
-  $cl->signature = $login->signature;
-  $cl->snapshot = $snap;
-
-  $personnel->ChangeLogStore->put($cl);
-  
-  // Return serialized output
-  return serializeEntities(array($entity), $server->contentType);
+  $entities = unserializeEntities($server->body, $store_name);
+  foreach ($entities as $e) {
+    $entity = $personnel->$store_name->put($e);
+    $updEntities[] = $entity;
   }
-*/
+
+  // return serialized output
+  return serializeEntities($updEntities, $server->contentType);
+}
 
 ?>

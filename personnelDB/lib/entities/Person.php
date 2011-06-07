@@ -24,28 +24,23 @@ class Person extends Entity {
     return $this->storeFront->IdentityStore->getById($this->personID);
   }
 
-  public function setIdentity() { }
-
   public function getRoles() {
     return $this->storeFront->RoleStore->getByFilter(array('personID' => $this->personID));
   }
-
-  public function setRoles() { }
 
   public function getContactInfo() {
     return $this->storeFront->ContactInfoStore->getByFilter(array('personID' => $this->personID));
   }
 
-  public function setContactInfo() { }
-
 
   /* SERIALIZATION */
 
-  // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
+  // returns a representation of itself as an xml fragment that conforms to the personnelDB.xsd 
   public function to_xml_fragment() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
+
     $fragment = $xml_doc->importNode($this->getIdentity()->to_xml_fragment(), TRUE);
     $xml_obj->appendChild($fragment);
 
@@ -56,7 +51,7 @@ class Person extends Entity {
 	$role_xml->appendChild($fragment);
       }
     }
-
+    
     if ($contacts = $this->getContactInfo()) {
       $contact_xml = $xml_obj->appendChild(new DOMElement('contactInfoList'));
       foreach($contacts as $contact) {
@@ -68,41 +63,34 @@ class Person extends Entity {
     return $xml_obj;
   }
 
-  public function from_xml($xml_dom) {
+  public function from_xml_fragment($node) {
     if ($xml_dom->nodeName != 'person') {
-      throw new \Exception('person->from_xml can only deal with person nodes');
+      throw new \Exception('person->from_xml_fragment can only deal with person nodes');
     }
 
     $xpath = new \DOMXPath($xml_dom);
     $this->personID = $xpath.query("*/personID/")->nodeValue;
     $roles = array();
 
-    foreach($xpath->query("*/roleList/role") as $role_element) {
-      $role_xpath = new \DOMXPath($role_element);
-      $node_id = $role_xpath.query("/roleID")->nodeValue;
-      if ($node_id) {
-        $role = $this->storeFront->RoleStore->getById($node_id);
-      } else {
-        $role = new Role();
-      }
-      $role->from_xml($role_element);
-      $role->personID = $this->personID;
-      $roles->push($role);
-    }
-    unset($role_element);
+    // Untransmute component parts
+    $this->identity = $this->storeFront->IdentityStore->getEmpty();
+    $this->identity->from_xml_fragment();
 
-    foreach($xpath->query("*/contactInfoList/contact") as $contact_element) {
-      $contact_xpath = new \DOMXPath($contact_element);
-      $contact_id = $contact_xpath.query("/contactInfoID")->nodeValue;
-      if ($contact_id){
-        $contact = $this->storeFront->ContactInfoStore->getById($contact_id);
-      } else {
-        $contact = new Contact();
-      }
-      $contact->from_xml($contact_element);
-      $contact->personID = $this->personID;
-      $contacts->push($contact);
+    $this->roles = array();
+    foreach($xpath->query("*/roleList/role") as $role_element) {
+      $role = $this->storeFront->RoleStore->getEmpty();
+      $role->from_xml_fragment($role_element);
+      $role->personID = $this->personID;
+      $this->roles[] = $role;
     }
-    unset($contact_elment);
+
+    $this->contacts = array();
+    foreach($xpath->query("*/contactInfoList/contact") as $contact_element) {
+      $contact = $this->storeFront->ContactInfoStore->getEmpty();
+      $contact->from_xml_fragment($contact_element);
+      $contact->personID = $this->personID;
+      $this->contacts[] = $contact;
+    }
   }
+
 }
