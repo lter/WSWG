@@ -60,13 +60,5 @@ function unserializeEntities($xml, $entityType) {
 }
 
 function authorize($server) {
-  $personneldb =& PersonnelDB::getInstance();
-  $login = $personneldb->LoginStore->getBySignature($server->params['sig']);
-
-  if ($login === null) {
-    // Exit with access denied error
-    $server->dieRespond(UNAUTHORIZED, 'Signature was not included or was invalid');
-  } else {
-    return $login;
-  }
+  return true;
 }

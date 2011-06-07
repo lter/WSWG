@@ -23,7 +23,6 @@ use \WSWG\RESTServer;
 include('include/config.php');
 
 // Initialize REST server
-//
 $r_server = new RESTServer('/services/personnelDB');
 
 
@@ -42,22 +41,18 @@ $r_server->registerHandler('PUT', '/^\/(person)\/(\d+(,\d+){0,})($/i', 'updateEn
 
 
 // set allowed request methods
-//
 $r_server->registerMethod('GET', 'POST', 'PUT');
 
 
 // register acceptable content types
-//
 $r_server->registerContentType('text/xml');
 
 
 // set cache control
-//
 $r_server->cacheControl('no-cache');
 
 
 // call REST server
-//
 $r_server->processCurrentRequest();
 
 ?>
