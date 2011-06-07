@@ -37,7 +37,7 @@ abstract class Entity {
   // Getting an unavailable member variable will check the contents array, then
   //   the metadata array (if it exists)
   public function __get($field) {
-    if (isset($this->contents[$field])) {
+    if (array_key_exists($field, $this->contents)) {
       return $this->contents[$field];
     } else {
       return null;
@@ -58,8 +58,10 @@ abstract class Entity {
     return null;
   }
 
-  protected function get_xml_if($xml_obj, $tagName) {
-    $nodes = $xml_obj->getElementsByTagName($tagName);
+  protected function get_xml_if($xml_obj, $stmt) {
+    $xpath = new \DOMXPath($xml_obj->ownerDocument);
+    $nodes = $xpath->query($stmt, $xml_obj);
+
     if ($nodes->length) {
       return $nodes->item(0)->nodeValue;
     } else {

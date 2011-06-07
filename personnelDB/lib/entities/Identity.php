@@ -75,7 +75,7 @@ class Identity extends Entity {
     $this->primaryEmail = $xpath.query("*/primaryEmail/")->nodeValue;
     $this->optOut = $xpath.query("*/optOut/")->nodeValue;
 
-    $this->aliases = ();xs
+    $this->aliases = array();
   }
 
 }

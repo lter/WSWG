@@ -87,14 +87,14 @@ class RoleTypeStore extends Store {
       $inf = array($roleType->roleName, $roleType->isRepeatable);
       $sth = $this->iDBConnection->prepare(ROLETYPE_INSERT_NSF);
       $this->iDBConnection->execute($sth, $inf);
-      return $this->getById($this->iDBConnection->insertId());
+      return $this->getById($this->iDBConnection->insertId(), 'nsf');
       break;
      
     case 'local':
       $inf = array($roleType->siteID, $roleType->roleName, $roleType->isRepeatable);
       $sth = $this->iDBConnection->prepare(ROLETYPE_INSERT_LOCAL);
       $this->iDBConnection->execute($sth, $inf);
-      return $this->getById($this->iDBConnection->insertId());
+      return $this->getById($this->iDBConnection->insertId(), 'local');
       break;
       
     default: throw new Exception("Type must be 'nsf' or 'local'"); break;

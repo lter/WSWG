@@ -96,7 +96,7 @@ class PersonnelDB {
       break;
 
     case 'roletype':
-      return $this->find_fragments($xml_doc, 'roleType', $this->RoleTypeStore);
+      return $this->find_fragments($xml_doc, '/roleTypeList/roleType', $this->RoleTypeStore);
       break;
     }
   }
@@ -118,11 +118,11 @@ class PersonnelDB {
     return $this->lists[$type][$personID];
   }
 
-  private function find_fragments($xml_doc, $tagname, $store) {
+  private function find_fragments($xml_doc, $stmt, $store) {
     $entities = array();
 
-    $xpath = new \DOMXPath($node->ownerDocument);
-    $fragments = $xpath->query("*/$tagname");
+    $xpath = new \DOMXPath($xml_doc);
+    $fragments = $xpath->query($stmt);
 
     foreach ($fragments as $f) {
       $e = $store->getEmpty();
