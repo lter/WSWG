@@ -194,7 +194,11 @@ class iDBConnection {
 
   // Escape a string using MySQL connection
   public function escape($str) {
-    return "'".$this->mysqli->escape_string($str)."'";
+    if (is_numeric($str)) {
+      return $this->mysqli->escape_string($str);
+    } else {
+      return "'".$this->mysqli->escape_string($str)."'";
+    }
   }
 
 
