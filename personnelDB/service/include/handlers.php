@@ -127,7 +127,7 @@ function addEntity($server, $args) {
   foreach ($entities as $e) {
     /* CHECK PERMISSIONS HERE */
 
-    $entity = $personnel->$store_name->put($e);
+    $entity = $personnel->$store_name->insert($e);
     $newEntities[] = $entity;
   }
 
@@ -148,7 +148,7 @@ function updateEntity($server, $args) {
   // Untransmute entity and write to database
   $entities = unserializeEntities($server->body, strtolower($e_name));
   foreach ($entities as $e) {
-    $entity = $personnel->$store_name->put($e);
+    $entity = $personnel->$store_name->update($e);
     $updEntities[] = $entity;
   }
 
