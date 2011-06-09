@@ -23,6 +23,12 @@ define('IDENTITY_INSERT',		'INSERT INTO person
 					lastName = ?, suffix = ?, preferredName = ?,
 					primaryEmail = ?, title = ?, optOut = ?');
 
+define('IDENTITY_UPDATE',		'UPDATE person
+					SET prefix = ?, firstName = ?, middleName = ?,
+					lastName = ?, suffix = ?, preferredName = ?,
+					primaryEmail = ?, title = ?, optOut = ?
+					WHERE personID = ?');
+
 define('ALIAS_INSERT',			'INSERT INTO nameAlias
 					SET personID = ?, nameAlias = ?');
 

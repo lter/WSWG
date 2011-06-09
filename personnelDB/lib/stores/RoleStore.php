@@ -98,4 +98,18 @@ class RoleStore extends Store {
     return $this->getById($this->iDBConnection->insertId(), $role->type);
   }
 
+  public function update($role) {
+    $inf = array($role->personID, $role->roleTypeID, $role->siteID, $role->beginDate,
+		 $role->endDate, $role->isActive, $role->roleID);
+
+    switch ($role->type) {
+    case 'nsf': $sth = $this->iDBConnection->prepare(ROLE_UPDATE_NSF); break;
+    case 'local': $sth = $this->iDBConnection->prepare(ROLE_UPDATE_LOCAL); break;
+    default: throw new Exception("Type must be 'nsf' or 'local'"); break;
+    }
+
+    $this->iDBConnection->execute($sth, $inf);
+    return $this->getById($role->roleID, $role->type);
+  }
+
 }

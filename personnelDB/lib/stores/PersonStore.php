@@ -77,7 +77,23 @@ class PersonStore extends Store {
   }
 
   public function update($person) {
+    $storeFront = PersonnelDB::getInstance();
 
+    // Update Identity information
+    $person->identity = $storeFront->IdentityStore->update($person->identity);
+
+    // Update/insert roles and contacts
+    foreach ($person->roles as $role) {
+      if ($role->roleID) { $storeFront->RoleStore->update($role); }
+      else $storeFront->RoleStore->insert($role);
+    }
+
+    foreach ($person->contacts as $contact) {
+      if ($contact->contactInfoID) { $storeFront->ContactInfoStore->update($contact); }
+      else $storeFront->ContactInfoStore->insert($contact);
+    }
+
+    return $this->getById($person->personID);
   }
 
 }

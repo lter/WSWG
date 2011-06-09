@@ -72,7 +72,20 @@ class IdentityStore extends Store {
     return $this->getById($identity->personID);
   }
 
-  public function update($identity) { }
+  public function update($identity) {
+    // Update identity information
+    $inf = array($identity->prefix, $identity->firstName, $identity->middleName, $identity->lastName,
+		 $identity->suffix, $identity->preferredName, $identity->primaryEmail, $identity->title,
+		 $identity->optOut, $identity->personID);
+
+    $sth = $this->iDBConnection->prepare(IDENTITY_UPDATE);
+    $this->iDBConnection->execute($sth, $inf);
+
+    // Replace aliases
+    $this->putAliases($identity);
+
+    return $this->getById($identity->personID);
+  }
 
   private function putAliases($identity) {
     // Clear existing aliases

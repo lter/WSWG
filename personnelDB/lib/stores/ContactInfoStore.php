@@ -75,7 +75,20 @@ class ContactInfoStore extends Store {
     $this->iDBConnection->execute($sth, $inf);
     $contact->contactInfoID = $this->iDBConnection->insertId();
 
-    // Insert aliases
+    // Insert fields
+    $this->putFields($contact);
+
+    return $this->getById($contact->contactInfoID);
+  }
+
+  public function update($contact) {
+    // Update contact information
+    $inf = array($contact->personID, $contact->siteID, $contact->label, $contact->isPrimary,
+		 $contact->beginDate, $contact->endDate, $contact->isActive, $contact->contactInfoID);
+    $sth = $this->iDBConnection->prepare(CONTACT_UPDATE);
+    $this->iDBConnection->execute($sth, $inf);
+
+    // Replace aliases
     $this->putFields($contact);
 
     return $this->getById($contact->contactInfoID);
@@ -86,7 +99,7 @@ class ContactInfoStore extends Store {
     $sth = $this->iDBConnection->prepare(FIELD_DELETE);
     $this->iDBConnection->execute($sth, array($contact->contactInfoID));
 
-    // Insert new aliases
+    // Insert new fields
     $sth = $this->iDBConnection->prepare(FIELD_INSERT);
     foreach ($contact->fields as $field) {
       $inf = array($contact->contactInfoID, $field['contactInfoFieldTypeID'], $field['value'], $field['sortOrder']);
