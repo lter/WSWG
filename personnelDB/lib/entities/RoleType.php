@@ -52,13 +52,13 @@ class RoleType extends Entity {
       throw new \Exception('roleType->from_xml_fragment() can only deal with roleType nodes');
 
     $xpath = new \DOMXPath($node->ownerDocument);
-    $this->type = $xpath->evaluate("type", $node)->item(0)->nodeValue;
+    $this->type = $this->get_xml_if($node, 'type');
 
     switch ($this->type) {
     case 'nsf':
-      $this->nsfRoleTypeID = $xpath->query("nsfRoleTypeID")->nodeValue;
-      $this->roleName = $xpath->query("roleName")->nodeValue;
-      $this->isRepeatable = $xpath->query("isRepeatable")->nodeValue;
+      $this->nsfRoleTypeID = $this->get_xml_if($node, 'nsfRoleTypeID');
+      $this->roleName = $this->get_xml_if($node, 'roleName');
+      $this->isRepeatable = $this->get_xml_if($node, 'isRepeatable');
       break;
       
     case 'local':

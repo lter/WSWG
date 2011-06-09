@@ -20,7 +20,7 @@ class RoleStore extends Store {
 			       'site' => array('site', 'siteAcronym'),
 			       'siteAcronym' => array('siteAcronym'),
 			       'personID' => array('personID'),
-			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
+			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName'),
 			       'lastName' => array('lastName'),
 			       );
   }
@@ -84,7 +84,18 @@ class RoleStore extends Store {
 
   /* UPDATE METHODS */
 
-  public function put() {
+  public function insert($role) {
+    $inf = array($role->personID, $role->roleTypeID, $role->siteID, $role->beginDate,
+		 $role->endDate, $role->isActive);
+
+    switch ($role->type) {
+    case 'nsf': $sth = $this->iDBConnection->prepare(ROLE_INSERT_NSF); break;
+    case 'local': $sth = $this->iDBConnection->prepare(ROLE_INSERT_LOCAL); break;
+    default: throw new Exception("Type must be 'nsf' or 'local'"); break;
+    }
+
+    $this->iDBConnection->execute($sth, $inf);
+    return $this->getById($this->iDBConnection->insertId(), $role->type);
   }
 
 }

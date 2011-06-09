@@ -17,7 +17,7 @@ define('ROLETYPE_GETBYID_LOCAL',	'SELECT localRoleType.*, "local" as type
 					FROM localRoleType WHERE localRoleTypeID = ?');
 
 define('ROLETYPE_GETBYFILTER_NSF_STUB',	'SELECT nsfRoleType.*, "nsf" as type
-					FROM nsfRoleType JOIN site ON (false)');
+					FROM nsfRoleType LEFT JOIN site ON (false)');
 
 define('ROLETYPE_GETBYFILTER_LOCAL_STUB','SELECT localRoleType.*, "local" as type
 					FROM localRoleType NATURAL JOIN site');

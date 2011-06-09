@@ -64,20 +64,23 @@ class Role extends Entity {
     return $xml_obj;
   }
 
-  public function from_xml($xml_dom) {
-    if ($xml_dom->nodeName == 'role')
-      throw new \Exception('role->from_xml can only deal with role nodes');
+  public function from_xml_fragment($node) {
+    if ($node->nodeName != 'role')
+      throw new \Exception('Role->from_xml_fragment() can only deal with role nodes');
     
-    $xpath = new \DOMXPath($xml_dom);
-    $this->roleID = $xpath->query("*/roleID/")->nodeValue;
+    $xpath = new \DOMXPath($node->ownerDocument);
+    $this->roleID = $this->get_xml_if($node, 'roleID');
+    $this->type = $this->get_xml_if($node, 'roleType/@type');
+    $this->isActive = $this->get_xml_if($node, 'isActive');
+    $this->beginDate = $this->get_xml_if($node, 'beginDate');
+    $this->endDate = $this->get_xml_if($node, 'endDate');
     
-    $role_fragment = $xpath->query("*/roleType/");
-    $this->roleTypeID = $this->storeFront->RoleTypeStore->getByFilter(array('roleType' => $role_fragment->nodeValue),($role_fragment->getAttribute('type')));
+    $roleName = $this->get_xml_if($node, 'roleType');
+    $roleTypes = $this->storeFront->RoleTypeStore->getByFilter(array('roleName' => $roleName), $this->type);
+    $this->roleTypeID = $this->type == 'nsf' ? $roleTypes[0]->nsfRoleTypeID : $roleTypes[0]->localRoleTypeID;
 
-    $this->siteID = $this->storeFront->SiteStore->getByFilter(array('siteAcronym' => $xpath.query("*/siteAcronym/")->nodeValue));
-
-    $this->beginDate = $xpath.query("*/beginDate/")->nodeValue;
-    $this->endDate = $xpath.query("*/endDate/")->nodeValue;
-    $this->isActive = $xpath.query("*/isActive/")->nodeValue;
+    $siteAcronym = $this->get_xml_if($node, 'siteAcronym');
+    $sites = $this->storeFront->SiteStore->getByFilter(array('siteAcronym' => $siteAcronym));
+    $this->siteID = $sites[0]->siteID;
   }
 }

@@ -92,7 +92,7 @@ class PersonnelDB {
   public function from_xml($xml_doc, $entityType) {
     switch ($entityType) {
     case 'person':
-      return $this->find_fragments($xml_doc, 'person', $this->PersonStore);
+      return $this->find_fragments($xml_doc, '/personnel/person', $this->PersonStore);
       break;
 
     case 'roletype':

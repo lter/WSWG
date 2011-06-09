@@ -7,6 +7,12 @@ require_once('Entity.php');
 
 class Person extends Entity {
 
+  /* MEMBER DATA */
+
+  public $roles = array();
+  public $contacts = array();
+
+
   /* METHODS */
 
   public function __construct($inf = null) {
@@ -69,15 +75,16 @@ class Person extends Entity {
     }
 
     $xpath = new \DOMXPath($node->ownerDocument);
-    $this->personID = $xpath->query("*/personID/")->nodeValue;
-    $roles = array();
+    $this->personID = $this->get_xml_if($node, 'personID');
 
     // Untransmute component parts
+    $identity = $xpath->query('identity', $node)->item(0);
     $this->identity = $this->storeFront->IdentityStore->getEmpty();
-    $this->identity->from_xml_fragment();
+    $this->identity->from_xml_fragment($identity);
+    $this->identity->personID = $this->personID;
 
     $this->roles = array();
-    foreach($xpath->query("*/roleList/role") as $role_element) {
+    foreach($xpath->query('roleList/role', $node) as $role_element) {
       $role = $this->storeFront->RoleStore->getEmpty();
       $role->from_xml_fragment($role_element);
       $role->personID = $this->personID;
@@ -85,7 +92,7 @@ class Person extends Entity {
     }
 
     $this->contacts = array();
-    foreach($xpath->query("*/contactInfoList/contact") as $contact_element) {
+    foreach($xpath->query('contactInfoList/contactInfo', $node) as $contact_element) {
       $contact = $this->storeFront->ContactInfoStore->getEmpty();
       $contact->from_xml_fragment($contact_element);
       $contact->personID = $this->personID;

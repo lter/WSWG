@@ -81,7 +81,7 @@ class RoleTypeStore extends Store {
 
   /* UPDATE METHODS */
 
-  public function put($roleType) {
+  public function insert($roleType) {
     switch ($roleType->type) {
     case 'nsf':
       $inf = array($roleType->roleName, $roleType->isRepeatable);

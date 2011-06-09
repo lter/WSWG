@@ -17,14 +17,20 @@ define('ROLE_GETBYID_LOCAL',		'SELECT localRole.*, "local" as type
 define('ROLE_GETBYFILTER_NSF_STUB',	'SELECT nsfRole.*, "nsf" as type FROM nsfRole
 						NATURAL JOIN site
 						NATURAL JOIN person
-						NATURAL LEFT JOIN nameAlias
 						JOIN nsfRoleType ON (roleTypeID = nsfRoleTypeID)');
 
 define('ROLE_GETBYFILTER_LOCAL_STUB',	'SELECT localRole.*, "local" as type FROM localRole
 						NATURAL JOIN site
 						NATURAL JOIN person
-						NATURAL LEFT JOIN nameAlias
 						JOIN localRoleType ON (roleTypeID = localRoleTypeID)');
 
 
 /* UPDATE STATEMENTS */
+
+define('ROLE_INSERT_NSF',		'INSERT INTO nsfRole
+					SET personID = ?, roleTypeID = ?, siteID = ?,
+					beginDate = ?, endDate = ?, isActive = ?');
+
+define('ROLE_INSERT_LOCAL',		'INSERT INTO localRole
+					SET personID = ?, roleTypeID = ?, siteID = ?,
+					beginDate = ?, endDate = ?, isActive = ?');

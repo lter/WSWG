@@ -9,7 +9,7 @@ class Identity extends Entity {
 
   /* MEMBER DATA */
 
-  private $aliases = array();
+  public $aliases = array();
 
 
   /* METHODS */
@@ -32,50 +32,48 @@ class Identity extends Entity {
     return $this->storeFront->PersonStore->getByID($this->personID);
   }
 
-  /* Serialization */
+
+  /* SERIALIZATION */
+
   // returns a representation of itself as an xml fragment that conforms to the personelDB.xsd 
   public function to_xml_fragment() {
     $xml_doc = new \DOMDocument('1.0','utf-8');
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('identity'));
+
     $this->add_xml_if($xml_doc, $xml_obj, 'prefix');
-    $this->add_xml_if($xml_doc, $xml_obj, 'firstName');
+    $xml_obj->appendChild($xml_doc->createElement('firstName', $this->firstName));
     $this->add_xml_if($xml_doc, $xml_obj, 'middleName');
-    $this->add_xml_if($xml_doc, $xml_obj, 'lastName');
+    $xml_obj->appendChild($xml_doc->createElement('lastName', $this->lastName));
     $this->add_xml_if($xml_doc, $xml_obj, 'preferredName');
     $this->add_xml_if($xml_doc, $xml_obj, 'title');
-    $this->add_xml_if($xml_doc, $xml_obj, 'primaryEmail');
-    $this->add_xml_if($xml_doc, $xml_obj, 'optOut');
+    $xml_obj->appendChild($xml_doc->createElement('primaryEmail', $this->primaryEmail));
+    $xml_obj->appendChild($xml_doc->createElement('optOut', $this->optOut));
+
     foreach($this->aliases as $alias) {
-      $xml_obj->appendChild($xml_doc->createElement('aliases',$alias));
+      $xml_obj->appendChild($xml_doc->createElement('nameAlias', $alias));
     }
-    return $xml_obj;
-  }
-
-  public function to_xml() {
-    $xml_doc = new \DOMDocument('1.0','utf-8');
-    $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
-    $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
-    $fragment = $xml_doc->importNode($this->to_xml_fragment(), TRUE);
-    $xml_obj->appendChild($fragment);
 
     return $xml_obj;
   }
 
-
-  public function from_xml_fragment($xml_dom) {
-    if ($xml_dom->nodeName == 'identity')
+  public function from_xml_fragment($node) {
+    if ($node->nodeName != 'identity')
       throw new \Exception('Identity->from_xml_fragment() can only deal with identity nodes');
 
-    $xpath = new \DOMXPath($xml_dom);
-    $this->prefix = $xpath.query("*/prefix/")->nodeValue;
-    $this->firstName = $xpath.query("*/firstName/")->nodeValue;
-    $this->middleName = $xpath.query("*/middleName/")->nodeValue;
-    $this->lastName = $xpath.query("*/lastName/")->nodeValue;
-    $this->title = $xpath.query("*/title/")->nodeValue;
-    $this->primaryEmail = $xpath.query("*/primaryEmail/")->nodeValue;
-    $this->optOut = $xpath.query("*/optOut/")->nodeValue;
+    $xpath = new \DOMXPath($node->ownerDocument);
 
-    $this->aliases = array();
+    $this->prefix = $this->get_xml_if($node, 'prefix');
+    $this->firstName = $this->get_xml_if($node, 'firstName');
+    $this->middleName = $this->get_xml_if($node, 'middleName');
+    $this->lastName = $this->get_xml_if($node, 'lastName');
+    $this->preferredName = $this->get_xml_if($node, 'preferredName');
+    $this->title = $this->get_xml_if($node, 'title');
+    $this->primaryEmail = $this->get_xml_if($node, 'primaryEmail');
+    $this->optOut = $this->get_xml_if($node, 'optOut');
+
+    foreach($xpath->query('nameAlias', $node) as $alias) {
+      $this->aliases[] = $alias->nodeValue;
+    }
   }
 
 }

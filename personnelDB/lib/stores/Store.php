@@ -99,7 +99,7 @@ abstract class Store {
 	  $where[$filter][] = array('not' => $not, 'value' => $value, 'fields' => $fields);
 	}
       } else {
-	throw new Exception("'$filter' is not a valid Identity filter");
+	throw new Exception("'$filter' is not a valid filter");
       }
     }
 

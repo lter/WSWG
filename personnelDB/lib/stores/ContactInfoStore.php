@@ -18,7 +18,7 @@ class ContactInfoStore extends Store {
 			       'site' => array('site', 'siteAcronym'),
 			       'siteAcronym' => array('siteAcronym'),
 			       'personID' => array('personID'),
-			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName', 'nameAlias'),
+			       'name' => array('firstName', 'middleName', 'lastName', 'preferredName'),
 			       'lastName' => array('lastName'),
 			       );
   }
@@ -67,8 +67,31 @@ class ContactInfoStore extends Store {
 
   /* UPDATE METHODS */
 
-  public function put() { }
+  public function insert($contact) {
+    // Insert contact information
+    $inf = array($contact->personID, $contact->siteID, $contact->label, $contact->isPrimary,
+		 $contact->beginDate, $contact->endDate, $contact->isActive);
+    $sth = $this->iDBConnection->prepare(CONTACT_INSERT);
+    $this->iDBConnection->execute($sth, $inf);
+    $contact->contactInfoID = $this->iDBConnection->insertId();
 
-  private function putContactInfoFields() { }
+    // Insert aliases
+    $this->putFields($contact);
+
+    return $this->getById($contact->contactInfoID);
+  }
+
+  private function putFields($contact) {
+    // Clear existing fields
+    $sth = $this->iDBConnection->prepare(FIELD_DELETE);
+    $this->iDBConnection->execute($sth, array($contact->contactInfoID));
+
+    // Insert new aliases
+    $sth = $this->iDBConnection->prepare(FIELD_INSERT);
+    foreach ($contact->fields as $field) {
+      $inf = array($contact->contactInfoID, $field['contactInfoFieldTypeID'], $field['value'], $field['sortOrder']);
+      $this->iDBConnection->execute($sth, $inf);
+    }
+  }
 
 }
