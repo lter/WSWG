@@ -37,7 +37,7 @@ $r_server->registerHandler('GET', '/^\/(role|roleType)\/(nsf|local)\/(\d+(,\d+){
 $r_server->registerHandler('POST', '/^\/(person|roleType)$/i', 'addEntity');
 
 // Register patterns - PUT
-$r_server->registerHandler('PUT', '/^\/(person)\/(\d+(,\d+){0,})($/i', 'updateEntity');
+$r_server->registerHandler('PUT', '/^\/(person)\/(\d+(,\d+){0,})$/i', 'updateEntity');
 
 
 // set allowed request methods
