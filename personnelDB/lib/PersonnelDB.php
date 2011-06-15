@@ -14,9 +14,12 @@ include('stores/SiteStore.php');
 
 class PersonnelDB {
 
+  /* MEMBER DATA */
+
   private static $storeFront;
   private $stores = array();
   private $lists = array();
+
 
   /* METHODS */
 

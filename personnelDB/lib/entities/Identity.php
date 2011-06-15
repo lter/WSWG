@@ -62,14 +62,15 @@ class Identity extends Entity {
 
     $xpath = new \DOMXPath($node->ownerDocument);
 
-    $this->prefix = $this->get_xml_if($node, 'prefix');
     $this->firstName = $this->get_xml_if($node, 'firstName');
-    $this->middleName = $this->get_xml_if($node, 'middleName');
     $this->lastName = $this->get_xml_if($node, 'lastName');
-    $this->preferredName = $this->get_xml_if($node, 'preferredName');
-    $this->title = $this->get_xml_if($node, 'title');
     $this->primaryEmail = $this->get_xml_if($node, 'primaryEmail');
     $this->optOut = $this->get_xml_if($node, 'optOut');
+
+    $this->prefix = $this->get_xml_if($node, 'prefix');
+    $this->middleName = $this->get_xml_if($node, 'middleName');
+    $this->preferredName = $this->get_xml_if($node, 'preferredName');
+    $this->title = $this->get_xml_if($node, 'title');
 
     foreach($xpath->query('nameAlias', $node) as $alias) {
       $this->aliases[] = $alias->nodeValue;

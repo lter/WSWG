@@ -31,11 +31,17 @@ class Person extends Entity {
   }
 
   public function getRoles() {
-    return $this->storeFront->RoleStore->getByFilter(array('personID' => $this->personID));
+    if ($this->personID)
+      return $this->storeFront->RoleStore->getByFilter(array('personID' => $this->personID));
+    else
+      return null;
   }
 
   public function getContactInfo() {
-    return $this->storeFront->ContactInfoStore->getByFilter(array('personID' => $this->personID));
+    if ($this->personID)
+      return $this->storeFront->ContactInfoStore->getByFilter(array('personID' => $this->personID));
+    else
+      return null;
   }
 
 
@@ -47,19 +53,22 @@ class Person extends Entity {
     $xml_obj = $xml_doc->appendChild($xml_doc->createElement('person'));
     $xml_obj->appendChild($xml_doc->createElement('personID', $this->personID));
 
-    $fragment = $xml_doc->importNode($this->getIdentity()->to_xml_fragment(), TRUE);
+    if (!$identity = $this->getIdentity())
+      $identity = $this->storeFront->IdentityStore->getEmpty();
+
+    $fragment = $xml_doc->importNode($identity->to_xml_fragment(), TRUE);
     $xml_obj->appendChild($fragment);
 
+    $role_xml = $xml_obj->appendChild(new DOMElement('roleList'));
     if ($roles = $this->getRoles()) {
-      $role_xml = $xml_obj->appendChild(new DOMElement('roleList'));
       foreach($roles as $role) {
 	$fragment = $xml_doc->importNode($role->to_xml_fragment(), TRUE);
 	$role_xml->appendChild($fragment);
       }
     }
     
+    $contact_xml = $xml_obj->appendChild(new DOMElement('contactInfoList'));
     if ($contacts = $this->getContactInfo()) {
-      $contact_xml = $xml_obj->appendChild(new DOMElement('contactInfoList'));
       foreach($contacts as $contact) {
 	$fragment = $xml_doc->importNode($contact->to_xml_fragment(), TRUE);
 	$contact_xml->appendChild($fragment);

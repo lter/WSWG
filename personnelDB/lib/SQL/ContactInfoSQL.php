@@ -26,16 +26,16 @@ define('FIELDTYPE_GETBYNAME',		'SELECT contactInfoFieldType.* FROM contactInfoFi
 
 define('CONTACT_INSERT',		'INSERT INTO contactInfo
 					SET personID = ?, siteID = ?, label = ?, isPrimary = ?,
-					beginDate = ?, endDate = ?, isActive = ?');
+						beginDate = ?, endDate = ?, isActive = ?');
 
 define('CONTACT_UPDATE',		'UPDATE contactInfo
-					SET personID = ?, siteID = ?, label = ?, isPrimary = ?,
-					beginDate = ?, endDate = ?, isActive = ?
+					SET label = ?, isPrimary = ?, beginDate = ?, endDate = ?,
+						isActive = ?
 					WHERE contactInfoID = ?');
 
 define('FIELD_INSERT',			'INSERT INTO contactInfoField
 					SET contactInfoID = ?, contactInfoFieldTypeID = ?,
-					value = ?, sortOrder = ?');
+						value = ?, sortOrder = ?');
 
 define('FIELD_DELETE',			'DELETE FROM contactInfoField
 					WHERE contactInfoID = ?');

@@ -99,8 +99,7 @@ class RoleStore extends Store {
   }
 
   public function update($role) {
-    $inf = array($role->personID, $role->roleTypeID, $role->siteID, $role->beginDate,
-		 $role->endDate, $role->isActive, $role->roleID);
+    $inf = array($role->roleTypeID, $role->beginDate, $role->endDate, $role->isActive, $role->roleID);
 
     switch ($role->type) {
     case 'nsf': $sth = $this->iDBConnection->prepare(ROLE_UPDATE_NSF); break;

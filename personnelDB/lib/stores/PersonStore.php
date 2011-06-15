@@ -1,6 +1,7 @@
 <?php
 
 namespace PersonnelDB;
+use \Exception as Exception;
 
 require_once('Store.php');
 require_once('personnelDB/SQL/PersonSQL.php');
@@ -84,13 +85,29 @@ class PersonStore extends Store {
 
     // Update/insert roles and contacts
     foreach ($person->roles as $role) {
-      if ($role->roleID) { $storeFront->RoleStore->update($role); }
-      else $storeFront->RoleStore->insert($role);
+      if ($role->roleID) {
+	// Make sure the role being updated is linked to this person
+	$existing = $storeFront->RoleStore->getById($role->roleID, $role->type);
+	if ($existing->personID == $person->personID)
+	  $storeFront->RoleStore->update($role);
+	else
+	  throw new Exception("roleID {$role->roleID} belongs to personID {$existing->personID}");
+      } else {
+	$storeFront->RoleStore->insert($role);
+      }
     }
 
     foreach ($person->contacts as $contact) {
-      if ($contact->contactInfoID) { $storeFront->ContactInfoStore->update($contact); }
-      else $storeFront->ContactInfoStore->insert($contact);
+      if ($contact->contactInfoID) {
+	// Make sure the contact being updated is linked to this person
+	$existing = $storeFront->ContactInfoStore->getById($contact->contactInfoID);
+	if ($existing->personID == $contact->personID)
+	  $storeFront->ContactInfoStore->update($contact);
+	else
+	  throw new Exception("contactInfoID {$contact->contactInfoID} belongs to personID {$existing->personID}");
+      } else {
+	$storeFront->ContactInfoStore->insert($contact);
+      }
     }
 
     return $this->getById($person->personID);

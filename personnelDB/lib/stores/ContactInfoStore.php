@@ -83,8 +83,8 @@ class ContactInfoStore extends Store {
 
   public function update($contact) {
     // Update contact information
-    $inf = array($contact->personID, $contact->siteID, $contact->label, $contact->isPrimary,
-		 $contact->beginDate, $contact->endDate, $contact->isActive, $contact->contactInfoID);
+    $inf = array($contact->label, $contact->isPrimary, $contact->beginDate, $contact->endDate,
+		 $contact->isActive, $contact->contactInfoID);
     $sth = $this->iDBConnection->prepare(CONTACT_UPDATE);
     $this->iDBConnection->execute($sth, $inf);
 

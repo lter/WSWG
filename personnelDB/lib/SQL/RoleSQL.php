@@ -36,11 +36,9 @@ define('ROLE_INSERT_LOCAL',		'INSERT INTO localRole
 					beginDate = ?, endDate = ?, isActive = ?');
 
 define('ROLE_UPDATE_NSF',		'UPDATE nsfRole
-					SET personID = ?, roleTypeID = ?, siteID = ?,
-					beginDate = ?, endDate = ?, isActive = ?
+					SET roleTypeID = ?, beginDate = ?, endDate = ?, isActive = ?
 					WHERE roleID = ?');
 
 define('ROLE_UPDATE_LOCAL',		'UPDATE localRole
-					SET personID = ?, roleTypeID = ?, siteID = ?,
-					beginDate = ?, endDate = ?, isActive = ?
+					SET roleTypeID = ?, beginDate = ?, endDate = ?, isActive = ?
 					WHERE roleID = ?');
