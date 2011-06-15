@@ -1,0 +1,62 @@
+/* MAIN LAYOUT STYLES FOR PERSONNELDB */
+
+/* General text styles */
+
+h1 {
+    font: normal 200% sans-serif;
+}
+
+h2 {
+    font: bold 125% sans-serif;
+    color: #FFFFFF;
+    background-color: #669966;
+    border: 1px solid #505050;
+    padding: 3px;
+}
+
+h3 {
+    font: bold 110% sans-serif;
+}
+
+.inactive {
+    color: #606060;
+}
+
+/* Person edit form styles */
+
+button.new {
+    margin: 10px;
+}
+
+.instruction {
+    font-size: 90%;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#identity,
+#roles,
+#contacts {
+    margin: 20px 0px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    padding: 2px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+td {
+    padding: 2px 5px 2px 5px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#contact-list > tbody > tr > td {
+    border-bottom: 2px solid #909090;
+}

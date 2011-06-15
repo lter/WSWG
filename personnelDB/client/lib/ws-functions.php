@@ -39,6 +39,24 @@ function getResults($entity, $id = null, $filters = null) {
   }
 }
 
+function getEmpty($entity) {
+  // Define HTTP context
+  $httpOptions = array('method' => 'GET', 'header' => 'Accept: text/xml', 'timeout' => '10');
+  $httpContext = stream_context_create(array('http' => $httpOptions));
+
+  // Build URL
+  $url = WS_URL.$entity.'/_';
+
+  // Get XML
+  if ($filec = file_get_contents($url, false, $httpContext)) {
+    $doc = new DOMDocument();
+    $doc->loadXML($filec);
+    return $doc;
+  } else {
+    return false;
+  }
+}
+
 function getTransformed($entity, $xsl, $id = null, $filters = null, $params = array()) {
   // Get XML DOMDocument
   if ($doc = getResults($entity, $id, $filters)) {

@@ -39,9 +39,9 @@
 	<xsl:sort select="type" order="descending"/>
 	<option>
 	  <xsl:attribute name="value">
-	    <xsl:value-of select="roleType"/>
+	    <xsl:value-of select="roleName"/>
 	  </xsl:attribute>
-	  <xsl:value-of select="roleType"/>
+	  <xsl:value-of select="roleName"/>
 	</option>
       </xsl:for-each>
     </select>

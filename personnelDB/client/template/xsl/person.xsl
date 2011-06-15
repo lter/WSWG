@@ -8,10 +8,12 @@
     </div>
 
     <div id="roles">
+      <h2>Roles</h2>
       <xsl:apply-templates select="personnel/person/roleList"/>
     </div>
 
     <div id="contacts">
+      <h2>Contact Information</h2>
       <xsl:apply-templates select="personnel/person/contactInfoList"/>
     </div>
   </xsl:template>
@@ -46,7 +48,6 @@
 
   <!-- role information -->
   <xsl:template match="//roleList">
-    <h2>Roles</h2>
     <xsl:for-each select="role">
       <xsl:sort select="beginDate" order="descending"/>
       <div>
@@ -69,7 +70,6 @@
 
   <!-- contact information -->
   <xsl:template match="//contactInfoList">
-    <h2>Contact Information</h2>
     <xsl:for-each select="contactInfo">
       <xsl:sort select="isPrimary" order="descending"/>
       <xsl:sort select="beginDate" order="descending"/>

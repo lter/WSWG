@@ -1,7 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-
 include 'PersonnelDBConfig.php';
 
 if (isset($_GET['md'])) {
@@ -12,11 +10,13 @@ if (isset($_GET['md'])) {
     $filters['roleType'] = gIf('role');
     
     $params = gIf('ia') == 1 ? array('showInactive' => true) : array();
+    $params['isLoggedIn'] = true;
     break;
     
   case 'b':
     $filters = array('name' => $_GET['q'], 'isActive' => '1');
     $params = array();
+    $params['isLoggedIn'] = true;
     break;
   }
   
@@ -31,13 +31,15 @@ if (isset($_GET['md'])) {
   <head>
     <title>LTER PersonnelDB</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css"/>
-    <link rel="stylesheet" href="template/css/main.css" type="text/css"/>
-    <link rel="stylesheet" href="template/css/yui-reskin.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo PDB_URL; ?>template/css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo PDB_URL; ?>template/css/yui-reskin.css" type="text/css"/>
+
+    <script type="text/javascript" src="<?php echo PDB_URL; ?>js/personneldb.js"></script>
   </head>
   <body>
     <div id="doc" class="yui-t7">
       <div id="hd" role="banner">
-	<?php include 'template/header.php'; ?>
+	<?php include ROOT_PATH.'template/header.php'; ?>
       </div>
       <div id="bd" role="main">
 	<div role="search" class="yui-g">
@@ -48,7 +50,7 @@ if (isset($_GET['md'])) {
 	      <table>
 		<tr><th>Name</th><td><input type="text" class="search-input" name="name"/></td></tr>
 		<tr><th>&nbsp;</th><td><input type="checkbox" name="ln" value="1"/> search last name only</td></tr>
-		<tr><th>Site</th><td><?php echo getTransformed('site', 'selects.xsl'); ?></td></tr>
+		<tr><th>Site</th><td><?php echo getTransformed('site', 'selects.xsl', null, null, array('template' => 'siteSelect')); ?></td></tr>
 		<tr><th>Role</th><td><?php echo getTransformed('roleType', 'selects.xsl'); ?></td></tr>
 		<tr><th>&nbsp;</th><td><input type="checkbox" name="ia" value="1"/> include inactive roles</td></tr>
 	      </table>
@@ -75,10 +77,9 @@ if (isset($_GET['md'])) {
 	<div id="results" role="application" class="yui-g">
 	  <?php if(isset($results)) echo $results; ?>
 	</div>
-
       </div>
       <div id="ft" role="contentinfo">
-	<?php include 'template/footer.php'; ?>
+	<?php include ROOT_PATH.'template/footer.php'; ?>
       </div>
     </div>
   </body>
@@ -88,10 +89,6 @@ if (isset($_GET['md'])) {
 
 function gIf($index) {
   return isset($_GET[$index]) ? $_GET[$index] : null;
-}	     
-
-function eIf($index) {
-  echo isset($_GET[$index]) ? $_GET[$index] : '';
 }	     
 
 ?>

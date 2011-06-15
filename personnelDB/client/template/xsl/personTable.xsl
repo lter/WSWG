@@ -16,6 +16,7 @@
 	<th>Primary Email</th>
 	<th>Role</th>
 	<th>Site</th>
+	<th><xsl:text> </xsl:text></th>
       </tr>
 
       <xsl:for-each select="personnel/person">
@@ -67,7 +68,23 @@
 		    <xsl:with-param name="rows" select="count(../role[isActive=1])"/>
 		  </xsl:apply-templates>
 		</xsl:if>
+
 		<xsl:apply-templates select="."/>
+
+		<!-- on the first role, show edit link -->
+		<xsl:if test="position() = 1">
+		  <td style="vertical-align: middle;">
+		    <xsl:attribute name="rowspan">
+		      <xsl:value-of select="count(../role[isActive=1])"/>
+		    </xsl:attribute>
+		    <a>
+		      <xsl:attribute name="href">
+			management/edit.php?pid=<xsl:value-of select="../../personID"/>
+		      </xsl:attribute>
+		      Edit
+		    </a>
+		  </td>
+		</xsl:if>
 	      </tr>
 	    </xsl:for-each>
 	  </xsl:otherwise>

@@ -4,4 +4,4 @@
     <a href="http://intranet2.lternet.edu/">Intranet</a>
 </div>
 
-<img src="template/image/PersonnelDB-logo.png"/>
+<img src="<?php echo PDB_URL; ?>template/image/PersonnelDB-logo.png"/>
