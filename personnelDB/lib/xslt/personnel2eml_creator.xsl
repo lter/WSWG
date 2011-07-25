@@ -14,12 +14,11 @@
       <!-- create root personnel element for xml document -->
       <xsl:element name="personnel">
          
-         <!-- iterate through person elements skipping any records without an active nsf role -->
-         <xsl:for-each select="person[roleList/role[roleType/@type='nsf' and (isActive='true' or isActive=1)]]">
+         <!-- iterate through person elements without checking for active NSF role -->
+         <xsl:for-each select="person">
             
             <!-- generate eml party element with identity and primary contact info from LTER personnelDB record -->
-            <xsl:element name="party">
-               <xsl:attribute name="system">LTER</xsl:attribute>
+            <xsl:element name="creator">
 
                <!-- add individual name fields, checking for existance of optional elements -->
                <xsl:element name="individualName">

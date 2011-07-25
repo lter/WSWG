@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <personnel>
-   <party system="LTER">
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Adrian</givenName>
@@ -22,8 +22,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>adrianb@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Aimee</givenName>
          <surName>Gaddis</surName>
@@ -42,8 +42,25 @@
       <phone type="facsimile">(912) 485-2141</phone>
       <electronicMailAddress>aimee@darientel.net</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Amy</givenName>
+         <givenName>E.</givenName>
+         <surName>Kunza Vargas</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Alana</givenName>
+         <givenName>R.</givenName>
+         <surName>Lynes</surName>
+      </individualName>
+      <positionName>Pennings M.S. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Alicia</givenName>
@@ -63,8 +80,8 @@
       <phone type="voice">(803) 777-1240</phone>
       <electronicMailAddress>awilson@geol.sc.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Brittany</givenName>
          <givenName>DeLoach</givenName>
@@ -81,8 +98,8 @@
       </address>
       <electronicMailAddress>bldeloach@uh.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>William</givenName>
@@ -102,8 +119,23 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>bmiller@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>William</givenName>
+         <givenName>P.</givenName>
+         <surName>Porubsky</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Briana</givenName>
+         <surName>Ransom</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Brian</givenName>
@@ -123,8 +155,8 @@
       <phone type="voice">(352) 392-1137</phone>
       <electronicMailAddress>brs@ufl.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Brooke</givenName>
          <surName>Vallaster</surName>
@@ -141,8 +173,8 @@
       <phone type="facsimile">(912) 485-2141</phone>
       <electronicMailAddress>brooke@darientel.net</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Bob</givenName>
          <surName>Williams</surName>
@@ -160,8 +192,8 @@
       <phone type="voice">(912) 598-2353</phone>
       <electronicMailAddress>bobwms@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Clark</givenName>
@@ -183,8 +215,8 @@
       <phone type="facsimile">(912) 598-2310</phone>
       <electronicMailAddress>clark.alexander@skio.usg.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Christopher</givenName>
          <surName>Comerford</surName>
@@ -202,8 +234,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>ccomer@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Christopher</givenName>
@@ -224,8 +256,8 @@
       <phone type="facsimile">(812) 855-7802</phone>
       <electronicMailAddress>ccraft@indiana.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Carrie</givenName>
          <surName>Givens</surName>
@@ -241,8 +273,8 @@
       </address>
       <electronicMailAddress>givensc3@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Christine</givenName>
          <givenName>M.</givenName>
@@ -260,8 +292,8 @@
       </address>
       <electronicMailAddress>chladik@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Christine</givenName>
          <surName>Holdredge</surName>
@@ -278,8 +310,8 @@
       </address>
       <electronicMailAddress>choldredge@ufl.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Charles</givenName>
@@ -301,8 +333,8 @@
       <phone type="facsimile">(706)542-5888</phone>
       <electronicMailAddress>chopkins@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Christelle</givenName>
@@ -321,8 +353,8 @@
       <phone type="voice">706-542-6818</phone>
       <electronicMailAddress>hyacinth@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Christopher</givenName>
          <givenName>J.</givenName>
@@ -340,8 +372,17 @@
       </address>
       <electronicMailAddress>ckenned1@uwyo.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Dr.</salution>
+         <givenName>Chuan-Kai</givenName>
+         <surName>Ho</surName>
+      </individualName>
+      <positionName>Postdoctoral Research Associate</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Christine</givenName>
          <surName>Laporte</surName>
@@ -360,8 +401,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>claporte@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Caroline</givenName>
          <givenName>R.</givenName>
@@ -379,8 +420,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>car@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Christof</givenName>
@@ -398,8 +439,8 @@
       </address>
       <electronicMailAddress>cmeile@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Christina</givenName>
@@ -420,8 +461,8 @@
       <phone type="facsimile">(813) 974-3263</phone>
       <electronicMailAddress>clr@usf.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Charles</givenName>
          <surName>Schutte</surName>
@@ -437,8 +478,16 @@
       </address>
       <electronicMailAddress>cschutte@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Christine</givenName>
+         <surName>Tilburg</surName>
+      </individualName>
+      <positionName>GA Coastal Research Council Program Coordinator</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Claudia</givenName>
          <surName>Venherm</surName>
@@ -454,8 +503,8 @@
       </address>
       <electronicMailAddress>claudia.venherm@skio.usg.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Thomas</givenName>
@@ -474,8 +523,8 @@
       </address>
       <electronicMailAddress>tdbish@sc.rr.com</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Daniela</givenName>
@@ -495,8 +544,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>daniela@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Dorset</givenName>
          <surName>Hurley</surName>
@@ -514,8 +563,33 @@
       <phone type="facsimile">(912) 485-2141</phone>
       <electronicMailAddress>dhurley@darientel.net</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Dan</givenName>
+         <surName>Runfola</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Daniel</givenName>
+         <givenName>F.</givenName>
+         <surName>Saucedo</surName>
+      </individualName>
+      <positionName>GCE-LTER Research Technician</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Dr.</salution>
+         <givenName>Edgardo</givenName>
+         <surName>Diaz-Ferguson</surName>
+      </individualName>
+      <positionName>Post-doctoral Associate (Silliman/Wares)</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Ellen</givenName>
          <surName>Herbert</surName>
@@ -532,8 +606,8 @@
       </address>
       <electronicMailAddress>erherber@indiana.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Elizabeth</givenName>
@@ -553,8 +627,17 @@
       </address>
       <electronicMailAddress>ereitz@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Gabriela</givenName>
+         <givenName>M.</givenName>
+         <surName>Blohm</surName>
+      </individualName>
+      <positionName>M.S. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Galen</givenName>
          <surName>Kaufman</surName>
@@ -571,8 +654,8 @@
       </address>
       <electronicMailAddress>4flfish@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Gracie</givenName>
          <surName>Townsend</surName>
@@ -589,8 +672,8 @@
       <phone type="voice">(912) 222-2221</phone>
       <electronicMailAddress>graciet@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Hongyu</givenName>
          <surName>Guo</surName>
@@ -608,8 +691,8 @@
       </address>
       <electronicMailAddress>greatuniverse@hotmail.com</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Heather</givenName>
          <givenName>E.</givenName>
@@ -627,8 +710,8 @@
       </address>
       <electronicMailAddress>hereader@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Huy</givenName>
          <surName>Vu</surName>
@@ -645,8 +728,16 @@
       </address>
       <electronicMailAddress>Huy.Vu@mail.uh.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Julie</givenName>
+         <surName>Amft</surName>
+      </individualName>
+      <positionName>Research Coordinator</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Jackson</givenName>
@@ -666,8 +757,8 @@
       <phone type="facsimile">(912) 598-2310</phone>
       <electronicMailAddress>jack.blanton@skio.usg.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Janice</givenName>
@@ -688,8 +779,34 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>jeflory@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Ms.</salution>
+         <givenName>Jenny</givenName>
+         <givenName>Leigh</givenName>
+         <surName>Fenton</surName>
+      </individualName>
+      <positionName>Research Technician (Alber)</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Mr.</salution>
+         <givenName>Josh</givenName>
+         <givenName>W.</givenName>
+         <surName>Frost</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Jon</givenName>
+         <surName>Garbisch</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>John</givenName>
@@ -708,8 +825,30 @@
       <phone type="voice">(352) 392-1137</phone>
       <electronicMailAddress>johngriffin@ufl.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Josh</givenName>
+         <surName>Hall</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Justin</givenName>
+         <surName>Hartmann</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Justine</givenName>
+         <givenName>I.</givenName>
+         <surName>Lyons</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>John</givenName>
          <surName>Marton</surName>
@@ -726,8 +865,8 @@
       </address>
       <electronicMailAddress>jmarton@imail.iu.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>James</givenName>
          <givenName>C.</givenName>
@@ -747,8 +886,8 @@
       <phone type="voice">(352) 392-1137</phone>
       <electronicMailAddress>ncboy@ufl.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Jonathan</givenName>
          <surName>Pahlas</surName>
@@ -765,8 +904,17 @@
       </address>
       <electronicMailAddress>jrocker1@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>John</givenName>
+         <givenName>P.</givenName>
+         <surName>Carpenter</surName>
+      </individualName>
+      <positionName>Assistant Information Manager / GIS Specialist</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>John</givenName>
@@ -787,8 +935,17 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>jps@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>John</givenName>
+         <givenName>D.</givenName>
+         <surName>Robinson</surName>
+      </individualName>
+      <positionName>Wares Ph.D. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Jack</givenName>
          <givenName>T.</givenName>
@@ -804,8 +961,8 @@
       </address>
       <electronicMailAddress>jtsandow@btconline.net</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>John</givenName>
@@ -823,8 +980,8 @@
       </address>
       <electronicMailAddress>jfsaqua@creighton.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Jacob</givenName>
          <surName>Shalack</surName>
@@ -842,8 +999,16 @@
       <phone type="facsimile">(912) 485-2133</phone>
       <electronicMailAddress>shalack@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Mr.</salution>
+         <givenName>Jon</givenName>
+         <surName>Shelby</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Joan</givenName>
          <givenName>E.</givenName>
@@ -863,8 +1028,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>jsheldon@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>John</givenName>
          <givenName>A.</givenName>
@@ -883,8 +1048,8 @@
       </address>
       <electronicMailAddress>jaturck@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>John</givenName>
@@ -905,8 +1070,8 @@
       <phone type="facsimile">(706) 542-3910</phone>
       <electronicMailAddress>jpwares@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Kristen</givenName>
          <surName>Anstead</surName>
@@ -923,8 +1088,16 @@
       <phone type="facsimile">(912) 485-2133</phone>
       <electronicMailAddress>kanstead@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Kenneth</givenName>
+         <surName>Helm</surName>
+      </individualName>
+      <positionName>Principal Monitoring Technician</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Kimberley</givenName>
          <givenName>S.</givenName>
@@ -942,8 +1115,24 @@
       </address>
       <electronicMailAddress>kshunter@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Kandy</givenName>
+         <surName>Krull</surName>
+      </individualName>
+      <positionName>Craft M.S. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Kristin</givenName>
+         <surName>Meehan</surName>
+      </individualName>
+      <positionName>Assistant Information Manager / GIS Specialist</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Katherine</givenName>
          <surName>Segarra</surName>
@@ -959,8 +1148,16 @@
       </address>
       <electronicMailAddress>K8S@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Ms.</salution>
+         <givenName>Kristen</givenName>
+         <surName>Wardlaw</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Kazimierz</givenName>
@@ -978,8 +1175,8 @@
       </address>
       <electronicMailAddress>trudnoswietnie@gmail.com</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Laura</givenName>
          <givenName>W.</givenName>
@@ -997,8 +1194,8 @@
       <phone type="facsimile">(912) 485-2133</phone>
       <electronicMailAddress>lcammon@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>LeeAnn</givenName>
          <surName>DeLeo</surName>
@@ -1014,8 +1211,8 @@
       <phone type="voice"> (912) 598-3312</phone>
       <electronicMailAddress>LeeAnn.DeLeo@skio.usg.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Lisa</givenName>
@@ -1036,8 +1233,15 @@
       <phone type="facsimile">(706) 542-1805</phone>
       <electronicMailAddress>donovan@plantbio.uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Liqing</givenName>
+         <surName>Jiang</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Laura</givenName>
@@ -1056,8 +1260,8 @@
       <phone type="voice">706-542-6818</phone>
       <electronicMailAddress>lpalomo@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Merryl</givenName>
@@ -1077,8 +1281,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>malber@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Melissa</givenName>
@@ -1099,8 +1303,16 @@
       <phone type="facsimile">(912) 485-2133</phone>
       <electronicMailAddress>booth@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Matthew</givenName>
+         <givenName>R.</givenName>
+         <surName>First</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Marc</givenName>
          <givenName>Simon</givenName>
@@ -1117,8 +1329,8 @@
       </address>
       <electronicMailAddress>mhensel@ufl.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Samantha</givenName>
@@ -1139,8 +1351,25 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>mjoye@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Mr.</salution>
+         <givenName>Mark</givenName>
+         <givenName>J.</givenName>
+         <surName>Loomis</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Megan</givenName>
+         <surName>Machmuller</surName>
+      </individualName>
+      <positionName>Joye M.S. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Mary Ann</givenName>
@@ -1160,8 +1389,16 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>mmoran@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Mario</givenName>
+         <surName>Muscarella</surName>
+      </individualName>
+      <positionName>Research Technician</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Matthew</givenName>
          <surName>Napolitano</surName>
@@ -1176,8 +1413,24 @@
       </address>
       <electronicMailAddress>mfn1@students.uwf.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Mark</givenName>
+         <surName>Pendergras</surName>
+      </individualName>
+      <positionName>Hammock project technician (Alber)</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Monica</givenName>
+         <surName>Poelchau</surName>
+      </individualName>
+      <positionName>Research Technician (Wares)</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Mary</givenName>
          <givenName>T.</givenName>
@@ -1195,8 +1448,8 @@
       <phone type="voice">(912) 485-2238</phone>
       <electronicMailAddress>mtprice1@darientel.net</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Michael</givenName>
          <surName>Robinson</surName>
@@ -1214,8 +1467,8 @@
       <phone type="voice">912-598-3310</phone>
       <electronicMailAddress>mike.robinson@skio.usg.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Martin</givenName>
@@ -1236,8 +1489,8 @@
       <phone type="facsimile">+43 / 662 / 8044-5698</phone>
       <electronicMailAddress>martin.zimmer@sbg.ac.at</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Nick</givenName>
          <surName>Scoville</surName>
@@ -1253,8 +1506,25 @@
       </address>
       <electronicMailAddress>scoville@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Nicholas</givenName>
+         <givenName>W.</givenName>
+         <surName>Tackett</surName>
+      </individualName>
+      <positionName>Craft M.S. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Peter</givenName>
+         <surName>Baas</surName>
+      </individualName>
+      <positionName>Joye M.S. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Patrick</givenName>
          <surName>Hagan</surName>
@@ -1273,8 +1543,51 @@
       <phone type="facsimile">(912) 485-2141</phone>
       <electronicMailAddress>bluewatermotion@hotmail.com</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Dr.</salution>
+         <givenName>Patricia</givenName>
+         <givenName>A.</givenName>
+         <surName>Hembree</surName>
+      </individualName>
+      <positionName>Teacher, Hull Middle School</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Dr.</salution>
+         <givenName>Paul</givenName>
+         <surName>McKay</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Ross</givenName>
+         <surName>Brittain</surName>
+      </individualName>
+      <positionName>Craft Ph.D. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Rachel</givenName>
+         <surName>Gisewhite</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <salution>Dr.</salution>
+         <givenName>Robert</givenName>
+         <givenName>E.</givenName>
+         <surName>Hodson</surName>
+      </individualName>
+      <positionName>Affiliated Investigator / Professor</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Richard</givenName>
@@ -1296,8 +1609,8 @@
       <phone type="facsimile">(843) 349-4042</phone>
       <electronicMailAddress>rpeters2@coastal.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Wendy</givenName>
          <surName>Plessinger</surName>
@@ -1312,8 +1625,8 @@
       </address>
       <electronicMailAddress>wplessinger@geol.sc.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Richard</givenName>
@@ -1335,8 +1648,15 @@
       <phone type="facsimile">(843) 349-4042</phone>
       <electronicMailAddress>rviso@coastal.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Steven</givenName>
+         <surName>Bell</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <givenName>Scott</givenName>
          <surName>Gifford</surName>
@@ -1353,8 +1673,23 @@
       </address>
       <electronicMailAddress>sgifford@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Sean</givenName>
+         <surName>Graham</surName>
+      </individualName>
+      <userId>0</userId>
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Sabrina</givenName>
+         <surName>Pankey</surName>
+      </individualName>
+      <positionName>Research Technician (Wares)</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Steven</givenName>
@@ -1375,8 +1710,8 @@
       <phone type="facsimile">(713) 743-2622</phone>
       <electronicMailAddress>scpennin@central.uh.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Sylvia</givenName>
          <givenName>C.</givenName>
@@ -1394,8 +1729,8 @@
       </address>
       <electronicMailAddress>sylvia@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Schuyler</givenName>
          <surName>van Montfrans</surName>
@@ -1412,8 +1747,8 @@
       </address>
       <electronicMailAddress>svanmontfrans@ufl.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Travis</givenName>
          <surName>Douce</surName>
@@ -1432,8 +1767,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>tdouce@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>James</givenName>
@@ -1454,8 +1789,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>aquadoc@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Trent</givenName>
          <givenName>C.</givenName>
@@ -1474,8 +1809,8 @@
       <phone type="facsimile">(912) 598-2310</phone>
       <electronicMailAddress>trent.moore@skio.usg.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Vladimir</givenName>
@@ -1494,8 +1829,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>samarkin@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Victor</givenName>
@@ -1516,8 +1851,8 @@
       <phone type="voice">(614) 292-9771</phone>
       <electronicMailAddress>thompson.2042@osu.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Wei-Jun</givenName>
@@ -1537,8 +1872,16 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>wcai@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
+      <individualName>
+         <givenName>Wes</givenName>
+         <surName>Ket</surName>
+      </individualName>
+      <positionName>Craft M.S. Student</positionName>
+      <userId>0</userId>
+   </creator>
+   <creator>
       <individualName>
          <salution>Dr.</salution>
          <givenName>Willard</givenName>
@@ -1559,8 +1902,8 @@
       <phone type="facsimile">(803) 777-6610</phone>
       <electronicMailAddress>moore@geol.sc.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Wade</givenName>
          <givenName>M.</givenName>
@@ -1580,8 +1923,8 @@
       <phone type="facsimile">(706) 542-5888</phone>
       <electronicMailAddress>sheldon@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Yanlong</givenName>
          <surName>He</surName>
@@ -1596,8 +1939,8 @@
       </address>
       <electronicMailAddress>yanlhe@indiana.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
-   <party system="LTER">
+   </creator>
+   <creator>
       <individualName>
          <givenName>Yeajin</givenName>
          <surName>Jung</surName>
@@ -1614,5 +1957,5 @@
       </address>
       <electronicMailAddress>yeajin84@uga.edu</electronicMailAddress>
       <userId>0</userId>
-   </party>
+   </creator>
 </personnel>

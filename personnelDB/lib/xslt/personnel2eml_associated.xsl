@@ -3,9 +3,12 @@
    
    <xsl:output method="xml" omit-xml-declaration="no" encoding="UTF-8"/>
    
+   <!-- define input paramter role for populating required EML associatedParty element-->
+   <xsl:param name="role">co-author</xsl:param>
+   
    <!-- main template -->
    <xsl:template match="/">
-      <xsl:apply-templates select="personnel"/>
+      <xsl:apply-templates select="personnel"/>      
    </xsl:template>
    
    <!-- match personnel with any active NSF role-->
@@ -14,12 +17,11 @@
       <!-- create root personnel element for xml document -->
       <xsl:element name="personnel">
          
-         <!-- iterate through person elements skipping any records without an active nsf role -->
-         <xsl:for-each select="person[roleList/role[roleType/@type='nsf' and (isActive='true' or isActive=1)]]">
+         <!-- iterate through person elements without checking for active NSF role -->
+         <xsl:for-each select="person">
             
             <!-- generate eml party element with identity and primary contact info from LTER personnelDB record -->
-            <xsl:element name="party">
-               <xsl:attribute name="system">LTER</xsl:attribute>
+            <xsl:element name="associatedParty">
 
                <!-- add individual name fields, checking for existance of optional elements -->
                <xsl:element name="individualName">
@@ -54,6 +56,11 @@
                <!-- add LTER personnel ID -->
                <xsl:element name="userId">
                   <xsl:value-of select="personID"/>
+               </xsl:element>
+               
+               <!-- add required role element -->
+               <xsl:element name="role">
+                  <xsl:value-of select="$role"/>
                </xsl:element>
                
             </xsl:element>
