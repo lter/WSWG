@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:import href="http://gce-lter.marsci.uga.edu/public/xsl/gce_main_public.xsl" />
+<xsl:import href="gce_main_public.xsl" />
 <xsl:output method="xml" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" />
 
     <!-- call main template to generate page layout and scaffolding, which calls topnav and body templates at appropriate points in doc -->
@@ -10,7 +10,7 @@
             <!-- note: a url_js parameter is also supported but not included here -->
         </xsl:call-template>
     </xsl:template>
-        
+
     <!-- template for top bread-crumb navigation -->
     <xsl:template name="topnav">
         <!-- this is page-level navigation that will be inserted into the generic page scaffolding -->
@@ -19,7 +19,7 @@
         <a href="http://intranet.lternet.edu/im/projects/webservices">Web Services Working Group</a><xsl:text> &#62; </xsl:text>
         <span class="current-page">PersonnelDB demo</span>
     </xsl:template>
-    
+
     <!-- template for page contents  -->
     <xsl:template name="body">
         <!-- open a div and table for displaying the list-->
@@ -30,7 +30,7 @@
                     <th>Name</th>
                     <th>Institution</th>
                     <th>Email Address</th>
-                </tr>                  
+                </tr>
                 <!-- serially call template to add rows, filtering by NSF role to enforce specific role ordering -->
                 <xsl:call-template name="build-table">
                     <xsl:with-param name="nsf_role">Lead Principal Investigator</xsl:with-param>
@@ -56,7 +56,7 @@
                 <xsl:call-template name="build-table">
                     <xsl:with-param name="nsf_role">Graduate Student</xsl:with-param>
                 </xsl:call-template>
-            </table>            
+            </table>
         </div>
     </xsl:template>
 
@@ -83,7 +83,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </tr>
-        </xsl:for-each>                     
+        </xsl:for-each>
     </xsl:template>
-    
+
 </xsl:stylesheet>
