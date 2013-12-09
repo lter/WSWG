@@ -12,20 +12,12 @@
     <select name="site">
       <option value=""> -- All Sites -- </option>
       <xsl:for-each select="site">
+	<xsl:sort select="siteAcronym" order="ascending"/>
 	<option>
 	  <xsl:attribute name="value">
 	    <xsl:value-of select="siteAcronym"/>
 	  </xsl:attribute>
-	  <xsl:choose>
-	    <!-- If the site name is defined, use for text -->
-	    <xsl:when test='site'>
-	      <xsl:value-of select="site"/>
-	    </xsl:when>
-	    <!-- Otherwise, use site acronym -->
-	    <xsl:otherwise>
-	      <xsl:value-of select="siteAcronym"/>
-	    </xsl:otherwise>
-	  </xsl:choose>
+	  <xsl:value-of select="siteAcronym"/>
 	</option>
       </xsl:for-each>
     </select>

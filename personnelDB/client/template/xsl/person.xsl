@@ -3,6 +3,15 @@
   <xsl:output method="html" doctype-public="-//W3C//DTD HTML 4.01//EN" doctype-system="http://www.w3.org/TR/html4/strict.dtd" />
 
   <xsl:template match="/">
+	  <!--
+	  <xsl:when test='errors/error'>
+	   ERROR MESSAGE: <xsl:value-of select="errors/error"/>
+   </xsl:when>
+   -->
+	<div id="id_error">
+		   <xsl:apply-templates select="errors"/>
+	</div>
+
     <div id="identity">
       <xsl:apply-templates select="personnel/person/identity"/>
     </div>
@@ -16,7 +25,32 @@
       <h2>Contact Information</h2>
       <xsl:apply-templates select="personnel/person/contactInfoList"/>
     </div>
+
   </xsl:template>
+
+
+	<xsl:template match="//errors">
+		<span>
+		
+		<xsl:choose>
+
+			<xsl:when test='personID'>
+				<span style="color: red;"><b>Error Inserting Record:</b></span><br/>
+				<xsl:value-of select="error"/><br/>
+				<span style="color: green;"><b>The person's existing record id# is: <xsl:value-of select="personID"/></b></span><br/>
+				<b>INSTRUCTIONS:</b> &#160; <xsl:value-of select="instructions"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<span style="color: red;"><b>Error Inserting Record:</b></span><br/>
+				<xsl:value-of select="error"/><br/>
+				<b>INSTRUCTIONS:</b> &#160; <xsl:value-of select="instructions"/>
+			</xsl:otherwise>
+  
+		</xsl:choose>
+	
+		</span>
+	</xsl:template>
+
 
   <!-- identity information -->
   <xsl:template match="//identity">
@@ -24,7 +58,14 @@
       <xsl:choose>
 	<!-- use perferred name if defined -->
 	<xsl:when test='preferredName'>
+	  <xsl:value-of select="firstName"/>
+	  <xsl:text> </xsl:text>
+	  <xsl:value-of select="middleName"/>
+	  <xsl:text> </xsl:text>
+	  <xsl:value-of select="lastName"/>
+	  <xsl:text> (</xsl:text>
 	  <xsl:value-of select="preferredName"/>
+	  <xsl:text>)</xsl:text>
 	</xsl:when>
 	<!-- otherwise, build name -->
 	<xsl:otherwise>
@@ -86,7 +127,8 @@
 	<h3>
 	  <xsl:value-of select="label"/>
 	  <xsl:if test="beginDate">
-	    (<xsl:value-of select="beginDate"/> &#8212; <xsl:value-of select="endDate"/>)
+<!--james	    (<xsl:value-of select="beginDate"/> &#8212; <xsl:value-of select="endDate"/>)
+-->
 	  </xsl:if>
 	</h3>
 

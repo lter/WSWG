@@ -8,19 +8,19 @@
 	<xsl:attribute name="value"><xsl:value-of select="//personnel/person/personID"/></xsl:attribute>
       </input>
 
-      <div id="identity">
+      <div class="edit">
 	<h2>Identity Information</h2>
 	<xsl:apply-templates select="//personnel/person/identity"/>
       </div>
       
-      <div id="roles">
+      <div class="edit">
 	<h2>Roles </h2>
 	<xsl:apply-templates select="//personnel/person/roleList"/>
 	<button type="button" class="new" onClick="PersonnelDB.addRole('nsf')">Add new NSF role</button>
 	<button type="button" class="new" onClick="PersonnelDB.addRole('local')">Add new local role</button>
       </div>
       
-      <div id="contacts">
+      <div class="edit">
 	<h2>Contact Information</h2>
 	<xsl:apply-templates select="//personnel/person/contactInfoList"/>
 	<button type="button" class="new" onClick="PersonnelDB.addContact()">Add new contact information</button>
@@ -55,6 +55,27 @@
   <!-- identity information -->
   <xsl:template match="//identity">
     <table>
+
+
+	<tr>
+	  <th>Username: </th>
+	    <td>
+		  <input type="text" name="ldapUser">
+		  <xsl:attribute name="value"><xsl:value-of select="ldapUser"/></xsl:attribute>
+		  </input>
+		</td>
+	  <th>Password</th>
+    <td>
+	<input type="password" name="ldapPass">
+	<!--<input type="text" name="ldapPass">-->
+		<xsl:attribute name="value"><xsl:value-of select="ldapPass"/></xsl:attribute>
+		</input>
+	</td>
+    <td> </td>
+	</tr>
+
+
+
       <tr>
 	<th>Prefix: </th>
 	<td>
@@ -67,8 +88,9 @@
 	  <input type="text" name="title">
 	    <xsl:attribute name="value"><xsl:value-of select="title"/></xsl:attribute>
 	  </input>
-	</td>
+    </td>
 	<td rowspan="5" style="text-align: center">
+	  <!--
 	  <span style="font-weight: bold">Aliases</span>
 	  <xsl:text> </xsl:text>
 	  <span class="instruction">(one per line)</span><br/>
@@ -78,6 +100,7 @@
 	      <xsl:text>&#10;</xsl:text>
 	    </xsl:for-each>
 	  </textarea>
+	  -->
 	</td>
       </tr>
       <tr>

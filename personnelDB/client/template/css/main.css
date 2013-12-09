@@ -9,7 +9,7 @@ h1 {
 h2 {
     font: bold 125% sans-serif;
     color: #FFFFFF;
-    background-color: #669966;
+    background-color: #336299;
     border: 1px solid #505050;
     padding: 3px;
 }
@@ -20,6 +20,14 @@ h3 {
 
 .inactive {
     color: #606060;
+}
+
+
+/* Header styles */
+
+#login {
+    padding: 5px;
+    font-size: 75%;
 }
 
 
@@ -37,16 +45,12 @@ h3 {
 }
 
 #adv-search table th {
-    color: #303030;
+    color: #336299;
     font: normal 125% sans-serif;
 }
 
 
 /* Result list styles */
-
-#results {
-
-}
 
 table.search-results {
     width: 95%;
@@ -56,7 +60,7 @@ table.search-results {
 table.search-results th {
     text-align: left;
     color: #FFFFFF;
-    background: #669966;
+    background: #336299;
     padding: 5px;
     font: bold 125% sans-serif;
     border-bottom: 2px solid #505050;
@@ -91,13 +95,13 @@ table.search-results .even td {
 }
 
 #roles {
-    float: left;
+    float: right;
     width: 48%;
 }
 
 
 #contacts {
-    float: right;
+    float: left;
     width: 48%;
 }
 
@@ -116,4 +120,41 @@ table.search-results .even td {
     width: 90%;
     margin-left: 10%;
     display: block;
+}
+
+/* Person edit form styles */
+
+button.new {
+    margin: 10px;
+}
+
+.instruction {
+    font-size: 90%;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.edit {
+    margin: 20px 0px;
+    width: 100%;
+}
+
+.edit table {
+    width: 100%;
+}
+
+.edit table th {
+    padding: 2px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.edit table td {
+    padding: 2px 5px 2px 5px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#contact-list > tbody > tr > td {
+    border-bottom: 2px solid #909090;
 }

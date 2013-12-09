@@ -5,9 +5,12 @@
   <!-- override this param to show inactive roles -->
   <xsl:param name="showInactive" select="false()"/>
 
+  <!-- override this param to show edit links -->
+  <xsl:param name="isLoggedIn" select="false()"/>
+
   <!-- generate HTML table entity from XML -->
   <xsl:template match="/">
-    <table>
+    <table style="width: 100%">
       <xsl:attribute name='class'>search-results</xsl:attribute>
 
       <!-- table headers -->
@@ -16,7 +19,9 @@
 	<th>Primary Email</th>
 	<th>Role</th>
 	<th>Site</th>
-	<th><xsl:text> </xsl:text></th>
+	<xsl:if test="$isLoggedIn">
+	  <th><xsl:text> </xsl:text></th>
+	</xsl:if>
       </tr>
 
       <xsl:for-each select="personnel/person">
@@ -38,8 +43,6 @@
 	      <xsl:sort select="isActive" order="descending"/>
 	      <xsl:sort select="roleType/@type" order="descending"/>
 
-	      <xsl:value-of select="$position"/>
-
 	      <tr>
 		<xsl:attribute name="class"><xsl:value-of select="$row-class"/></xsl:attribute>		
 
@@ -50,6 +53,29 @@
 		  </xsl:apply-templates>
 		</xsl:if>
 		<xsl:apply-templates select="."/>
+
+
+
+<!-- SHOW EDIT LINK FOR ADMIN -->
+		<xsl:if test="$isLoggedIn">
+		  <!-- on the first role, show edit link -->
+		  <xsl:if test="position() = 1">
+		    <td style="vertical-align: middle;">
+		      <xsl:attribute name="rowspan">
+			<xsl:value-of select="1"/>
+		      </xsl:attribute>
+		      <a>
+			<xsl:attribute name="href">
+			  management/edit.php?pid=<xsl:value-of select="../../personID"/>
+			</xsl:attribute>
+			Edit
+		      </a>
+		    </td>
+		  </xsl:if>
+		</xsl:if>
+<!-- END SHOW EDIT LINK FOR ADMIN-->
+	
+		
 	      </tr>
 	    </xsl:for-each>
 	  </xsl:when>
@@ -71,20 +97,23 @@
 
 		<xsl:apply-templates select="."/>
 
-		<!-- on the first role, show edit link -->
-		<xsl:if test="position() = 1">
-		  <td style="vertical-align: middle;">
-		    <xsl:attribute name="rowspan">
-		      <xsl:value-of select="count(../role[isActive=1])"/>
-		    </xsl:attribute>
-		    <a>
-		      <xsl:attribute name="href">
-			management/edit.php?pid=<xsl:value-of select="../../personID"/>
+		<xsl:if test="$isLoggedIn">
+		  <!-- on the first role, show edit link -->
+		  <xsl:if test="position() = 1">
+		    <td style="vertical-align: middle;">
+		      <xsl:attribute name="rowspan">
+			<xsl:value-of select="count(../role[isActive=1])"/>
 		      </xsl:attribute>
-		      Edit
-		    </a>
-		  </td>
+		      <a>
+			<xsl:attribute name="href">
+			  management/edit.php?pid=<xsl:value-of select="../../personID"/>
+			</xsl:attribute>
+			Edit
+		      </a>
+		    </td>
+		  </xsl:if>
 		</xsl:if>
+
 	      </tr>
 	    </xsl:for-each>
 	  </xsl:otherwise>
@@ -104,10 +133,18 @@
 	  <xsl:text>/personnelDB/view.php?pid=</xsl:text>
 	  <xsl:value-of select="../personID"/>
 	</xsl:attribute>
+	
 	<xsl:choose>
 	  <!-- use perferred name if defined -->
 	  <xsl:when test='preferredName'>
+	    <xsl:value-of select="firstName"/>
+	    <xsl:text> </xsl:text>
+	    <xsl:value-of select="middleName"/>
+	    <xsl:text> </xsl:text>
+	    <xsl:value-of select="lastName"/>
+	    <xsl:text> (</xsl:text>
 	    <xsl:value-of select="preferredName"/>
+	    <xsl:text>)</xsl:text>
 	  </xsl:when>
 	  <!-- otherwise, build name -->
 	  <xsl:otherwise>
@@ -118,6 +155,9 @@
 	    <xsl:value-of select="lastName"/>
 	  </xsl:otherwise>
 	</xsl:choose>
+
+
+
       </a>
     </td>
     <td>

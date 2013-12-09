@@ -17,6 +17,8 @@ addIf($person, 'personID');
 $identity = addNode($person, 'identity');
 
 // Populate identity
+addRequired($identity, 'ldapUser');
+addRequired($identity, 'ldapPass');
 addRequired($identity, 'firstName');
 addRequired($identity, 'lastName');
 addRequired($identity, 'primaryEmail');
@@ -70,30 +72,76 @@ for($i=1; $i<=$_POST['contactCount']; $i++) {
 
 // Choose HTTP method
 if (array_key_exists('personID', $_POST) && !empty($_POST['personID'])) {
-  // Existing person, use PUT
-  $httpOptions = array('method' => 'PUT',
-		       'header' => array('Accept: text/xml',
-					 'Content-type: text/xml'),
-		       'timeout' => '10',
-		       'content' => $doc->saveXML());
+
+
+    // $usr = 'amonkey';
+    // $pwd = 'changeme';
+
+    $usr = '';
+    $pwd = '';
+
+    if (isset($_SESSION['PDB']['ACCESS'])) {
+        $usr = 'person_'.$_SESSION['PDB']['USERNAME'];
+        $pwd = 'general_password';
+    }
+
+
+
+	$auth_token = base64_encode($usr.':'.$pwd);
+
+	// Existing person, use PUT
+	$httpOptions = array('method' => 'PUT',
+				'header' => array(
+					'Accept: text/xml',
+					'Content-type: text/xml',
+					'Authorization: Basic '. $auth_token
+				),
+				'timeout' => '10',
+				'content' => $doc->saveXML());
+
+//	trigger_error("HTTP OPTIONS: ".print_r($httpOptions, true));
 
   $httpContext = stream_context_create(array('http' => $httpOptions));
   $url = WS_URL.'person/'.$_POST['personID'];
 } else {
   // New person, use POST
-  $httpOptions = array('method' => 'POST',
-		       'header' => array('Accept: text/xml',
-					 'Content-type: text/xml'),
-		       'timeout' => '10',
-		       'content' => $doc->saveXML());
+  
+	// $usr = 'amonkey';
+	// $pwd = 'changeme';
+
+	$usr = '';
+	$pwd = '';
+
+	if (isset($_SESSION['PDB']['ACCESS'])) {
+		$usr = 'person_'.$_SESSION['PDB']['USERNAME'];
+		$pwd = 'general_password';
+	}
+
+
+	$auth_token = base64_encode($usr.':'.$pwd);
+
+
+
+	$httpOptions = array('method' => 'POST',
+				'header' => array(
+					'Accept: text/xml',
+					'Content-type: text/xml',
+					'Authorization: Basic '. $auth_token
+				),
+				'timeout' => '10',
+				'content' => $doc->saveXML());
+
 
   $httpContext = stream_context_create(array('http' => $httpOptions));
   $url = WS_URL.'person/';
 }
 
-$filec = file_get_contents($url, false, $httpContext);
+$filec = trim(file_get_contents($url, false, $httpContext));
+print($filec);
 $xml = new DOMDocument();
-$xml->loadXML($filec);
+
+$xml->loadXML(trim($filec));
+//$xml->loadXML(trim($filec));
 
 $html = processXSLT($xml, XSL_PATH.'person.xsl');
 $person = $html->saveHTML();
@@ -140,7 +188,14 @@ function addIf($node, $key, $tag = null) {
   global $doc;
 
   if (array_key_exists($key, $_POST) && !empty($_POST[$key])) {
-    $tag = is_null($tag) ? $key : $tag;
+	  $tag = is_null($tag) ? $key : $tag;
+
+
+	if ($_POST[$key] == 'beginDate') {
+		
+	}
+
+
     return addNode($node, $tag, $_POST[$key]);
   } else {
     return false;

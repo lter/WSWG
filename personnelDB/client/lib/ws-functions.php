@@ -67,3 +67,7 @@ function getTransformed($entity, $xsl, $id = null, $filters = null, $params = ar
     return '';
   }
 }
+
+function isLoggedIn() {
+  return isset($_SESSION['PDB']['ACCESS']);
+}

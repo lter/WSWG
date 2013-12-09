@@ -33,7 +33,7 @@ $form = $form->saveHTML();
     <title>LTER PersonnelDB</title>
 
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css"/>
-    <link rel="stylesheet" href="<?php echo PDB_URL; ?>template/css/edit.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo PDB_URL; ?>template/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="<?php echo PDB_URL; ?>template/css/yui-reskin.css" type="text/css"/>
 
     <script type="text/javascript" src="<?php echo PDB_URL; ?>js/personneldb.js"></script>
